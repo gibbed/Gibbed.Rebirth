@@ -26,6 +26,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Xml.XPath;
 using Gibbed.Rebirth.FileFormats;
 using NDesk.Options;
 
@@ -98,7 +99,83 @@ namespace Gibbed.Rebirth.ConvertStage
                                         ? extras[1]
                                         : Path.ChangeExtension(inputPath, null) + "_converted.stb";
 
-                throw new NotImplementedException();
+                var culture = CultureInfo.InvariantCulture;
+                var stb = new StageBinaryFile();
+                using (var input = File.OpenRead(inputPath))
+                {
+                    var doc = new XPathDocument(input);
+                    var nav = doc.CreateNavigator();
+                    var root = nav.SelectSingleNode("/stage");
+                    if (root == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+
+                    var rawRooms = root.Select("room");
+                    var rooms = new List<StageBinaryFile.Room>();
+                    while (rawRooms.MoveNext() == true)
+                    {
+                        var rawRoom = rawRooms.Current;
+                        var room = new StageBinaryFile.Room();
+                        ParseAttribute(rawRoom, "type", out room.Type, culture);
+                        ParseAttribute(rawRoom, "variant", out room.Variant, culture);
+                        ParseAttribute(rawRoom, "name", out room.Name);
+                        ParseAttribute(rawRoom, "difficulty", out room.Difficulty, culture);
+                        ParseAttribute(rawRoom, "weight", out room.Weight, culture);
+                        ParseAttribute(rawRoom, "width", out room.Width, culture);
+                        ParseAttribute(rawRoom, "height", out room.Height, culture);
+
+                        var rawDoors = rawRoom.Select("door");
+                        var doors = new List<StageBinaryFile.Door>();
+                        while (rawDoors.MoveNext() == true)
+                        {
+                            var rawDoor = rawDoors.Current;
+                            var door = new StageBinaryFile.Door();
+                            ParseAttribute(rawDoor, "x", out door.X, culture);
+                            ParseAttribute(rawDoor, "y", out door.Y, culture);
+                            ParseAttribute(rawDoor, "exists", out door.Exists);
+                            doors.Add(door);
+                        }
+                        room.Doors = doors.ToArray();
+
+                        var rawSpawns = rawRoom.Select("spawn");
+                        var spawns = new List<StageBinaryFile.Spawn>();
+                        while (rawSpawns.MoveNext() == true)
+                        {
+                            var rawSpawn = rawSpawns.Current;
+                            var spawn = new StageBinaryFile.Spawn();
+                            ParseAttribute(rawSpawn, "x", out spawn.X, culture);
+                            ParseAttribute(rawSpawn, "y", out spawn.Y, culture);
+
+                            var rawEntities = rawSpawn.Select("entity");
+                            var entities = new List<StageBinaryFile.Entity>();
+                            while (rawEntities.MoveNext() == true)
+                            {
+                                var rawEntity = rawEntities.Current;
+                                var entity = new StageBinaryFile.Entity();
+                                ParseAttribute(rawEntity, "type", out entity.Type, culture);
+                                ParseAttribute(rawEntity, "variant", out entity.Variant, culture);
+                                ParseAttribute(rawEntity, "subtype", out entity.Subtype, culture);
+                                ParseAttribute(rawEntity, "weight", out entity.Weight, culture);
+                                entities.Add(entity);
+                            }
+                            spawn.Entities = entities.ToArray();
+
+                            spawns.Add(spawn);
+                        }
+                        room.Spawns = spawns.ToArray();
+                        rooms.Add(room);
+                    }
+
+                    stb.Rooms.Clear();
+                    stb.Rooms.AddRange(rooms);
+                }
+
+                using (var output = File.Create(outputPath))
+                {
+                    stb.Serialize(output);
+                    output.Flush();
+                }
             }
             else if (mode == Mode.ToXml)
             {
@@ -181,6 +258,85 @@ namespace Gibbed.Rebirth.ConvertStage
             {
                 throw new InvalidOperationException();
             }
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out string value)
+        {
+            if (nav.MoveToAttribute(name, "") == false)
+            {
+                throw new KeyNotFoundException(string.Format("could not find attribute '{0}'", name));
+            }
+
+            value = nav.Value;
+            nav.MoveToParent();
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out bool value)
+        {
+            if (nav.MoveToAttribute(name, "") == false)
+            {
+                value = false;
+                return;
+            }
+
+            if (bool.TryParse(nav.Value, out value) == false)
+            {
+                throw new FormatException(
+                    string.Format("could not parse '{0}' as bool ({1})", name, nav.Value));
+            }
+
+            nav.MoveToParent();
+        }
+
+        private static void ParseAttribute<T>(XPathNavigator nav, string name, Func<string, bool> func)
+        {
+            if (nav.MoveToAttribute(name, "") == false)
+            {
+                throw new KeyNotFoundException(string.Format("could not find attribute '{0}'", name));
+            }
+
+            if (func(nav.Value) == false)
+            {
+                throw new FormatException(
+                    string.Format("could not parse '{0}' as {1} ({2})", name, typeof(T).Name, nav.Value));
+            }
+
+            nav.MoveToParent();
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out byte value, CultureInfo culture)
+        {
+            var dummy = default(byte);
+            ParseAttribute<byte>(nav, name, t => byte.TryParse(t, NumberStyles.Integer, culture, out dummy));
+            value = dummy;
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out short value, CultureInfo culture)
+        {
+            var dummy = default(short);
+            ParseAttribute<short>(nav, name, t => short.TryParse(t, NumberStyles.Integer, culture, out dummy));
+            value = dummy;
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out ushort value, CultureInfo culture)
+        {
+            var dummy = default(ushort);
+            ParseAttribute<ushort>(nav, name, t => ushort.TryParse(t, NumberStyles.Integer, culture, out dummy));
+            value = dummy;
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out uint value, CultureInfo culture)
+        {
+            var dummy = default(uint);
+            ParseAttribute<uint>(nav, name, t => uint.TryParse(t, NumberStyles.Integer, culture, out dummy));
+            value = dummy;
+        }
+
+        private static void ParseAttribute(XPathNavigator nav, string name, out float value, CultureInfo culture)
+        {
+            var dummy = default(float);
+            ParseAttribute<float>(nav, name, t => float.TryParse(t, NumberStyles.Float, culture, out dummy));
+            value = dummy;
         }
     }
 }
