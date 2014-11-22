@@ -1,8 +1,9 @@
-; 2017/2300 (87%)
+; 2298/2300 (99%)
 resources/font/droid_0.png
 resources/font/pftempestasevencondensed_0.png
 resources/font/teammeatfont10_0.png
 resources/font/teammeatfont12_0.png
+resources/font/teammeatfont16_0.png
 resources/font/teammeatfont16bold_0.png
 resources/font/teammeatfont20bold_0.png
 resources/font/terminus_0.png
@@ -66,6 +67,8 @@ resources/gfx/bosses/classic/boss_021_gurdyjr.png
 resources/gfx/bosses/classic/boss_024_blightedovum.png
 resources/gfx/bosses/classic/boss_025_fistula.png
 resources/gfx/bosses/classic/boss_027_peep.png
+resources/gfx/bosses/classic/boss_027_peep_b.png
+resources/gfx/bosses/classic/boss_027_peep_c.png
 resources/gfx/bosses/classic/boss_030_gurdy.png
 resources/gfx/bosses/classic/boss_032_chub.png
 resources/gfx/bosses/classic/boss_035_chad.png
@@ -123,6 +126,8 @@ resources/gfx/bosses/rebirth/093_darkone2.png
 resources/gfx/bosses/rebirth/91_megagurdy.png
 resources/gfx/bosses/rebirth/angel.png
 resources/gfx/bosses/rebirth/angel2.png
+resources/gfx/bosses/rebirth/angel2black.png
+resources/gfx/bosses/rebirth/angelblack.png
 resources/gfx/bosses/rebirth/blackglow.png
 resources/gfx/bosses/rebirth/boss_083_haunt.png
 resources/gfx/bosses/rebirth/boss_085_dingle.png
@@ -137,20 +142,55 @@ resources/gfx/bosses/rebirth/polycephalus_womb.png
 resources/gfx/bosses/rebirth/thelamb.png
 resources/gfx/chaos_card_tear.png
 resources/gfx/characters/costumes/character_001_isaac.png
+resources/gfx/characters/costumes/character_001_isaac_black.png
+resources/gfx/characters/costumes/character_001_isaac_blue.png
+resources/gfx/characters/costumes/character_001_isaac_green.png
+resources/gfx/characters/costumes/character_001_isaac_red.png
+resources/gfx/characters/costumes/character_001_isaac_white.png
 resources/gfx/characters/costumes/character_002_magdalene.png
+resources/gfx/characters/costumes/character_002_magdalene_black.png
+resources/gfx/characters/costumes/character_002_magdalene_blue.png
+resources/gfx/characters/costumes/character_002_magdalene_green.png
+resources/gfx/characters/costumes/character_002_magdalene_red.png
+resources/gfx/characters/costumes/character_002_magdalene_white.png
 resources/gfx/characters/costumes/character_002_maggiesbeautifulgoldenlocks.png
 resources/gfx/characters/costumes/character_003_cain.png
+resources/gfx/characters/costumes/character_003_cain_black.png
+resources/gfx/characters/costumes/character_003_cain_blue.png
+resources/gfx/characters/costumes/character_003_cain_green.png
+resources/gfx/characters/costumes/character_003_cain_red.png
+resources/gfx/characters/costumes/character_003_cain_white.png
 resources/gfx/characters/costumes/character_003_cainseyepatch.png
 resources/gfx/characters/costumes/character_004_judas.png
+resources/gfx/characters/costumes/character_004_judas_black.png
+resources/gfx/characters/costumes/character_004_judas_blue.png
+resources/gfx/characters/costumes/character_004_judas_green.png
+resources/gfx/characters/costumes/character_004_judas_red.png
+resources/gfx/characters/costumes/character_004_judas_white.png
 resources/gfx/characters/costumes/character_004_judasfez.png
 resources/gfx/characters/costumes/character_005_eve.png
+resources/gfx/characters/costumes/character_005_eve_black.png
+resources/gfx/characters/costumes/character_005_eve_blue.png
+resources/gfx/characters/costumes/character_005_eve_green.png
+resources/gfx/characters/costumes/character_005_eve_red.png
+resources/gfx/characters/costumes/character_005_eve_white.png
 resources/gfx/characters/costumes/character_005_evehead.png
 resources/gfx/characters/costumes/character_006_bluebaby.png
 resources/gfx/characters/costumes/character_007_samson.png
+resources/gfx/characters/costumes/character_007_samson_black.png
+resources/gfx/characters/costumes/character_007_samson_blue.png
+resources/gfx/characters/costumes/character_007_samson_green.png
+resources/gfx/characters/costumes/character_007_samson_red.png
+resources/gfx/characters/costumes/character_007_samson_white.png
 resources/gfx/characters/costumes/character_007_samsonshairandbandanna.png
 resources/gfx/characters/costumes/character_008_azazel.png
 resources/gfx/characters/costumes/character_008_azazelhead.png
 resources/gfx/characters/costumes/character_009_eden.png
+resources/gfx/characters/costumes/character_009_eden_black.png
+resources/gfx/characters/costumes/character_009_eden_blue.png
+resources/gfx/characters/costumes/character_009_eden_green.png
+resources/gfx/characters/costumes/character_009_eden_red.png
+resources/gfx/characters/costumes/character_009_eden_white.png
 resources/gfx/characters/costumes/character_009_edenhair1.png
 resources/gfx/characters/costumes/character_009_edenhair10.png
 resources/gfx/characters/costumes/character_009_edenhair2.png
@@ -162,19 +202,49 @@ resources/gfx/characters/costumes/character_009_edenhair7.png
 resources/gfx/characters/costumes/character_009_edenhair8.png
 resources/gfx/characters/costumes/character_009_edenhair9.png
 resources/gfx/characters/costumes/character_009_lazarus.png
+resources/gfx/characters/costumes/character_009_lazarus_black.png
+resources/gfx/characters/costumes/character_009_lazarus_blue.png
+resources/gfx/characters/costumes/character_009_lazarus_green.png
+resources/gfx/characters/costumes/character_009_lazarus_red.png
+resources/gfx/characters/costumes/character_009_lazarus_white.png
 resources/gfx/characters/costumes/character_010_lazarus2.png
+resources/gfx/characters/costumes/character_010_lazarus2_black.png
+resources/gfx/characters/costumes/character_010_lazarus2_blue.png
+resources/gfx/characters/costumes/character_010_lazarus2_green.png
+resources/gfx/characters/costumes/character_010_lazarus2_red.png
+resources/gfx/characters/costumes/character_010_lazarus2_white.png
 resources/gfx/characters/costumes/character_012_thelost.png
 resources/gfx/characters/costumes/character_013_blackjudas.png
 resources/gfx/characters/costumes/costume_000_basicbody.png
 resources/gfx/characters/costumes/costume_000_blank.png
+resources/gfx/characters/costumes/costume_000_blank_black.png
+resources/gfx/characters/costumes/costume_000_blank_blue.png
+resources/gfx/characters/costumes/costume_000_blank_green.png
+resources/gfx/characters/costumes/costume_000_blank_red.png
+resources/gfx/characters/costumes/costume_000_blank_white.png
 resources/gfx/characters/costumes/costume_002_bookofbelial.png
+resources/gfx/characters/costumes/costume_002_bookofbelial_black.png
+resources/gfx/characters/costumes/costume_002_bookofbelial_blue.png
+resources/gfx/characters/costumes/costume_002_bookofbelial_green.png
+resources/gfx/characters/costumes/costume_002_bookofbelial_red.png
+resources/gfx/characters/costumes/costume_002_bookofbelial_white.png
 resources/gfx/characters/costumes/costume_004_gamekid.png
+resources/gfx/characters/costumes/costume_004_gamekid_black.png
+resources/gfx/characters/costumes/costume_004_gamekid_blue.png
+resources/gfx/characters/costumes/costume_004_gamekid_green.png
+resources/gfx/characters/costumes/costume_004_gamekid_red.png
+resources/gfx/characters/costumes/costume_004_gamekid_white.png
 resources/gfx/characters/costumes/costume_005_momsbra.png
 resources/gfx/characters/costumes/costume_006_mylittleunicorn.png
 resources/gfx/characters/costumes/costume_007_thenail.png
 resources/gfx/characters/costumes/costume_009_razorblade.png
 resources/gfx/characters/costumes/costume_009_razorblade_body.png
 resources/gfx/characters/costumes/costume_011_shoopdawhoop.png
+resources/gfx/characters/costumes/costume_011_shoopdawhoop_black.png
+resources/gfx/characters/costumes/costume_011_shoopdawhoop_blue.png
+resources/gfx/characters/costumes/costume_011_shoopdawhoop_green.png
+resources/gfx/characters/costumes/costume_011_shoopdawhoop_red.png
+resources/gfx/characters/costumes/costume_011_shoopdawhoop_white.png
 resources/gfx/characters/costumes/costume_012_heart.png
 resources/gfx/characters/costumes/costume_013_9volt.png
 resources/gfx/characters/costumes/costume_015_belt.png
@@ -184,11 +254,21 @@ resources/gfx/characters/costumes/costume_018_boom.png
 resources/gfx/characters/costumes/costume_019_brimstone body.png
 resources/gfx/characters/costumes/costume_019_brimstone.png
 resources/gfx/characters/costumes/costume_021_charmofthevampire.png
+resources/gfx/characters/costumes/costume_021_charmofthevampire_black.png
+resources/gfx/characters/costumes/costume_021_charmofthevampire_blue.png
+resources/gfx/characters/costumes/costume_021_charmofthevampire_green.png
+resources/gfx/characters/costumes/costume_021_charmofthevampire_red.png
+resources/gfx/characters/costumes/costume_021_charmofthevampire_white.png
 resources/gfx/characters/costumes/costume_023_commoncold.png
 resources/gfx/characters/costumes/costume_025_cupidsarrow.png
 resources/gfx/characters/costumes/costume_026_dead bird.png
 resources/gfx/characters/costumes/costume_027_drfetus.png
 resources/gfx/characters/costumes/costume_028_growthhormones.png
+resources/gfx/characters/costumes/costume_028_growthhormones_black.png
+resources/gfx/characters/costumes/costume_028_growthhormones_blue.png
+resources/gfx/characters/costumes/costume_028_growthhormones_green.png
+resources/gfx/characters/costumes/costume_028_growthhormones_red.png
+resources/gfx/characters/costumes/costume_028_growthhormones_white.png
 resources/gfx/characters/costumes/costume_029_theinnereye.png
 resources/gfx/characters/costumes/costume_030_lokishorns.png
 resources/gfx/characters/costumes/costume_032_luckyfoot.png
@@ -196,42 +276,112 @@ resources/gfx/characters/costumes/costume_033_lumpofcoal.png
 resources/gfx/characters/costumes/costume_035_magneto.png
 resources/gfx/characters/costumes/costume_036_themark.png
 resources/gfx/characters/costumes/costume_037_maxshead.png
+resources/gfx/characters/costumes/costume_037_maxshead_black.png
+resources/gfx/characters/costumes/costume_037_maxshead_blue.png
+resources/gfx/characters/costumes/costume_037_maxshead_green.png
+resources/gfx/characters/costumes/costume_037_maxshead_red.png
+resources/gfx/characters/costumes/costume_037_maxshead_white.png
 resources/gfx/characters/costumes/costume_039_momscontact.png
 resources/gfx/characters/costumes/costume_040_kamikaze.png
 resources/gfx/characters/costumes/costume_040_momseye.png
+resources/gfx/characters/costumes/costume_040_momseye_black.png
+resources/gfx/characters/costumes/costume_040_momseye_blue.png
+resources/gfx/characters/costumes/costume_040_momseye_green.png
+resources/gfx/characters/costumes/costume_040_momseye_red.png
+resources/gfx/characters/costumes/costume_040_momseye_white.png
 resources/gfx/characters/costumes/costume_041_momsheels.png
 resources/gfx/characters/costumes/costume_043_momslipstick.png
+resources/gfx/characters/costumes/costume_043_momslipstick_black.png
+resources/gfx/characters/costumes/costume_043_momslipstick_blue.png
+resources/gfx/characters/costumes/costume_043_momslipstick_green.png
+resources/gfx/characters/costumes/costume_043_momslipstick_red.png
+resources/gfx/characters/costumes/costume_043_momslipstick_white.png
 resources/gfx/characters/costumes/costume_044_momsunderwear.png
 resources/gfx/characters/costumes/costume_045_moneyispower.png
 resources/gfx/characters/costumes/costume_046_mrmega.png
+resources/gfx/characters/costumes/costume_046_mrmega_black.png
+resources/gfx/characters/costumes/costume_046_mrmega_blue.png
+resources/gfx/characters/costumes/costume_046_mrmega_green.png
+resources/gfx/characters/costumes/costume_046_mrmega_red.png
+resources/gfx/characters/costumes/costume_046_mrmega_white.png
 resources/gfx/characters/costumes/costume_047_myreflection.png
 resources/gfx/characters/costumes/costume_048_numberone.png
+resources/gfx/characters/costumes/costume_048_numberone_black.png
+resources/gfx/characters/costumes/costume_048_numberone_blue.png
+resources/gfx/characters/costumes/costume_048_numberone_green.png
+resources/gfx/characters/costumes/costume_048_numberone_red.png
+resources/gfx/characters/costumes/costume_048_numberone_white.png
 resources/gfx/characters/costumes/costume_051_ouijaboard.png
 resources/gfx/characters/costumes/costume_052_thepact.png
 resources/gfx/characters/costumes/costume_053_parasite.png
 resources/gfx/characters/costumes/costume_054_pentagram.png
+resources/gfx/characters/costumes/costume_054_pentagram_black.png
+resources/gfx/characters/costumes/costume_054_pentagram_blue.png
+resources/gfx/characters/costumes/costume_054_pentagram_green.png
+resources/gfx/characters/costumes/costume_054_pentagram_red.png
+resources/gfx/characters/costumes/costume_054_pentagram_white.png
 resources/gfx/characters/costumes/costume_055_phd.png
 resources/gfx/characters/costumes/costume_056_roidrage.png
+resources/gfx/characters/costumes/costume_056_roidrage_black.png
+resources/gfx/characters/costumes/costume_056_roidrage_blue.png
+resources/gfx/characters/costumes/costume_056_roidrage_green.png
+resources/gfx/characters/costumes/costume_056_roidrage_red.png
+resources/gfx/characters/costumes/costume_056_roidrage_white.png
 resources/gfx/characters/costumes/costume_058_bookofshadows.png
 resources/gfx/characters/costumes/costume_058_sadonion.png
 resources/gfx/characters/costumes/costume_060_skatole.png
 resources/gfx/characters/costumes/costume_061_skeletonkey.png
+resources/gfx/characters/costumes/costume_061_skeletonkey_black.png
+resources/gfx/characters/costumes/costume_061_skeletonkey_blue.png
+resources/gfx/characters/costumes/costume_061_skeletonkey_green.png
+resources/gfx/characters/costumes/costume_061_skeletonkey_red.png
+resources/gfx/characters/costumes/costume_061_skeletonkey_white.png
 resources/gfx/characters/costumes/costume_062_smallrock.png
 resources/gfx/characters/costumes/costume_063_spelunkerhat.png
 resources/gfx/characters/costumes/costume_064_spiderbite.png
+resources/gfx/characters/costumes/costume_064_spiderbite_black.png
+resources/gfx/characters/costumes/costume_064_spiderbite_blue.png
+resources/gfx/characters/costumes/costume_064_spiderbite_green.png
+resources/gfx/characters/costumes/costume_064_spiderbite_red.png
+resources/gfx/characters/costumes/costume_064_spiderbite_white.png
 resources/gfx/characters/costumes/costume_065_spoonbender.png
 resources/gfx/characters/costumes/costume_066_steamsale.png
 resources/gfx/characters/costumes/costume_067_steven.png
+resources/gfx/characters/costumes/costume_067_steven_black.png
+resources/gfx/characters/costumes/costume_067_steven_blue.png
+resources/gfx/characters/costumes/costume_067_steven_green.png
+resources/gfx/characters/costumes/costume_067_steven_red.png
+resources/gfx/characters/costumes/costume_067_steven_white.png
 resources/gfx/characters/costumes/costume_068_superbandage.png
 resources/gfx/characters/costumes/costume_069_technology.png
+resources/gfx/characters/costumes/costume_069_technology_black.png
+resources/gfx/characters/costumes/costume_069_technology_blue.png
+resources/gfx/characters/costumes/costume_069_technology_green.png
+resources/gfx/characters/costumes/costume_069_technology_red.png
+resources/gfx/characters/costumes/costume_069_technology_white.png
 resources/gfx/characters/costumes/costume_071_virus.png
+resources/gfx/characters/costumes/costume_071_virus_black.png
+resources/gfx/characters/costumes/costume_071_virus_blue.png
+resources/gfx/characters/costumes/costume_071_virus_green.png
+resources/gfx/characters/costumes/costume_071_virus_red.png
+resources/gfx/characters/costumes/costume_071_virus_white.png
 resources/gfx/characters/costumes/costume_072_rosary.png
 resources/gfx/characters/costumes/costume_072_wafer.png
 resources/gfx/characters/costumes/costume_073_whoreofbabylon.png
 resources/gfx/characters/costumes/costume_075_wirehanger.png
 resources/gfx/characters/costumes/costume_076_woodenspoon.png
+resources/gfx/characters/costumes/costume_076_woodenspoon_black.png
+resources/gfx/characters/costumes/costume_076_woodenspoon_blue.png
+resources/gfx/characters/costumes/costume_076_woodenspoon_green.png
+resources/gfx/characters/costumes/costume_076_woodenspoon_red.png
+resources/gfx/characters/costumes/costume_076_woodenspoon_white.png
 resources/gfx/characters/costumes/costume_077_xrayvision.png
 resources/gfx/characters/costumes/costume_078_3dollarbill.png
+resources/gfx/characters/costumes/costume_078_3dollarbill_black.png
+resources/gfx/characters/costumes/costume_078_3dollarbill_blue.png
+resources/gfx/characters/costumes/costume_078_3dollarbill_green.png
+resources/gfx/characters/costumes/costume_078_3dollarbill_red.png
+resources/gfx/characters/costumes/costume_078_3dollarbill_white.png
 resources/gfx/characters/costumes/costume_081_bloodylust.png
 resources/gfx/characters/costumes/costume_082_bobscurse.png
 resources/gfx/characters/costumes/costume_082_lord of the pit.png
@@ -239,6 +389,11 @@ resources/gfx/characters/costumes/costume_082_lordofthepit head.png
 resources/gfx/characters/costumes/costume_085_catoninetails.png
 resources/gfx/characters/costumes/costume_086_celticcross.png
 resources/gfx/characters/costumes/costume_087_chemicalpeel.png
+resources/gfx/characters/costumes/costume_087_chemicalpeel_black.png
+resources/gfx/characters/costumes/costume_087_chemicalpeel_blue.png
+resources/gfx/characters/costumes/costume_087_chemicalpeel_green.png
+resources/gfx/characters/costumes/costume_087_chemicalpeel_red.png
+resources/gfx/characters/costumes/costume_087_chemicalpeel_white.png
 resources/gfx/characters/costumes/costume_088_dead dove body.png
 resources/gfx/characters/costumes/costume_088_deaddove.png
 resources/gfx/characters/costumes/costume_089_epicfetus.png
@@ -247,26 +402,56 @@ resources/gfx/characters/costumes/costume_095_ipecac.png
 resources/gfx/characters/costumes/costume_096_jesusjuice.png
 resources/gfx/characters/costumes/costume_097_magic8ball.png
 resources/gfx/characters/costumes/costume_098_meat.png
+resources/gfx/characters/costumes/costume_098_meat_black.png
+resources/gfx/characters/costumes/costume_098_meat_blue.png
+resources/gfx/characters/costumes/costume_098_meat_green.png
+resources/gfx/characters/costumes/costume_098_meat_red.png
+resources/gfx/characters/costumes/costume_098_meat_white.png
 resources/gfx/characters/costumes/costume_101_momscoinpurse.png
 resources/gfx/characters/costumes/costume_102_mulligan.png
+resources/gfx/characters/costumes/costume_102_mulligan_black.png
+resources/gfx/characters/costumes/costume_102_mulligan_blue.png
+resources/gfx/characters/costumes/costume_102_mulligan_green.png
+resources/gfx/characters/costumes/costume_102_mulligan_red.png
+resources/gfx/characters/costumes/costume_102_mulligan_white.png
 resources/gfx/characters/costumes/costume_103_mutantspider.png
 resources/gfx/characters/costumes/costume_104_pageantboy.png
 resources/gfx/characters/costumes/costume_105_thepeeper.png
 resources/gfx/characters/costumes/costume_106_polyphemus.png
+resources/gfx/characters/costumes/costume_106_polyphemus_black.png
+resources/gfx/characters/costumes/costume_106_polyphemus_blue.png
+resources/gfx/characters/costumes/costume_106_polyphemus_green.png
+resources/gfx/characters/costumes/costume_106_polyphemus_red.png
+resources/gfx/characters/costumes/costume_106_polyphemus_white.png
 resources/gfx/characters/costumes/costume_107_pyro.png
 resources/gfx/characters/costumes/costume_108_sacredheart.png
 resources/gfx/characters/costumes/costume_109_scapular.png
 resources/gfx/characters/costumes/costume_110_smbsuperfan.png
 resources/gfx/characters/costumes/costume_111_speedball.png
+resources/gfx/characters/costumes/costume_111_speedball_black.png
+resources/gfx/characters/costumes/costume_111_speedball_blue.png
+resources/gfx/characters/costumes/costume_111_speedball_green.png
+resources/gfx/characters/costumes/costume_111_speedball_red.png
+resources/gfx/characters/costumes/costume_111_speedball_white.png
 resources/gfx/characters/costumes/costume_113_squeezy.png
 resources/gfx/characters/costumes/costume_114_stemcells.png
 resources/gfx/characters/costumes/costume_115_stigmata.png
 resources/gfx/characters/costumes/costume_116_technology2.png
 resources/gfx/characters/costumes/costume_117_toothpicks.png
 resources/gfx/characters/costumes/costume_118_toughlove.png
+resources/gfx/characters/costumes/costume_118_toughlove_black.png
+resources/gfx/characters/costumes/costume_118_toughlove_blue.png
+resources/gfx/characters/costumes/costume_118_toughlove_green.png
+resources/gfx/characters/costumes/costume_118_toughlove_red.png
+resources/gfx/characters/costumes/costume_118_toughlove_white.png
 resources/gfx/characters/costumes/costume_119_halo.png
 resources/gfx/characters/costumes/costume_129_bucket of lard.png
 resources/gfx/characters/costumes/costume_130_pony.png
+resources/gfx/characters/costumes/costume_130_pony_black.png
+resources/gfx/characters/costumes/costume_130_pony_blue.png
+resources/gfx/characters/costumes/costume_130_pony_green.png
+resources/gfx/characters/costumes/costume_130_pony_red.png
+resources/gfx/characters/costumes/costume_130_pony_white.png
 resources/gfx/characters/costumes/costume_134_guppystail.png
 resources/gfx/characters/costumes/costume_139_momspurse.png
 resources/gfx/characters/costumes/costume_148_infestationbody.png
@@ -277,11 +462,21 @@ resources/gfx/characters/costumes/costume_161_ankh.png
 resources/gfx/characters/costumes/costume_173_mitre.png
 resources/gfx/characters/costumes/costume_179_fate.png
 resources/gfx/characters/costumes/costume_181_whitepony.png
+resources/gfx/characters/costumes/costume_181_whitepony_black.png
+resources/gfx/characters/costumes/costume_181_whitepony_blue.png
+resources/gfx/characters/costumes/costume_181_whitepony_green.png
+resources/gfx/characters/costumes/costume_181_whitepony_red.png
+resources/gfx/characters/costumes/costume_181_whitepony_white.png
 resources/gfx/characters/costumes/costume_198_box.png
 resources/gfx/characters/costumes/costume_200_momseyeshadow.png
 resources/gfx/characters/costumes/costume_201_ironbar.png
 resources/gfx/characters/costumes/costume_202_midastouch.png
 resources/gfx/characters/costumes/costume_203_humblingbundle.png
+resources/gfx/characters/costumes/costume_203_humblingbundle_black.png
+resources/gfx/characters/costumes/costume_203_humblingbundle_blue.png
+resources/gfx/characters/costumes/costume_203_humblingbundle_green.png
+resources/gfx/characters/costumes/costume_203_humblingbundle_red.png
+resources/gfx/characters/costumes/costume_203_humblingbundle_white.png
 resources/gfx/characters/costumes/costume_204_fannypack.png
 resources/gfx/characters/costumes/costume_205_sharpplug.png
 resources/gfx/characters/costumes/costume_208_championbelt.png
@@ -313,9 +508,19 @@ resources/gfx/characters/costumes/costume_231_balloftar_head.png
 resources/gfx/characters/costumes/costume_233_tiny planet.png
 resources/gfx/characters/costumes/costume_234_infestation2.png
 resources/gfx/characters/costumes/costume_235_taurus.png
+resources/gfx/characters/costumes/costume_235_taurus_black.png
+resources/gfx/characters/costumes/costume_235_taurus_blue.png
+resources/gfx/characters/costumes/costume_235_taurus_green.png
+resources/gfx/characters/costumes/costume_235_taurus_red.png
+resources/gfx/characters/costumes/costume_235_taurus_white.png
 resources/gfx/characters/costumes/costume_236_ecoli.png
 resources/gfx/characters/costumes/costume_237_deathstouch.png
 resources/gfx/characters/costumes/costume_240_experimentaltreatment.png
+resources/gfx/characters/costumes/costume_240_experimentaltreatment_black.png
+resources/gfx/characters/costumes/costume_240_experimentaltreatment_blue.png
+resources/gfx/characters/costumes/costume_240_experimentaltreatment_green.png
+resources/gfx/characters/costumes/costume_240_experimentaltreatment_red.png
+resources/gfx/characters/costumes/costume_240_experimentaltreatment_white.png
 resources/gfx/characters/costumes/costume_241_contractfrombelow.png
 resources/gfx/characters/costumes/costume_242_infamy.png
 resources/gfx/characters/costumes/costume_244_tech05.png
@@ -345,13 +550,38 @@ resources/gfx/characters/costumes/costume_301_cancer.png
 resources/gfx/characters/costumes/costume_302_leo.png
 resources/gfx/characters/costumes/costume_303_virgo.png
 resources/gfx/characters/costumes/costume_304_libra_body.png
+resources/gfx/characters/costumes/costume_304_libra_body_black.png
+resources/gfx/characters/costumes/costume_304_libra_body_blue.png
+resources/gfx/characters/costumes/costume_304_libra_body_green.png
+resources/gfx/characters/costumes/costume_304_libra_body_red.png
+resources/gfx/characters/costumes/costume_304_libra_body_white.png
 resources/gfx/characters/costumes/costume_304_libra_head.png
+resources/gfx/characters/costumes/costume_304_libra_head_black.png
+resources/gfx/characters/costumes/costume_304_libra_head_blue.png
+resources/gfx/characters/costumes/costume_304_libra_head_green.png
+resources/gfx/characters/costumes/costume_304_libra_head_red.png
+resources/gfx/characters/costumes/costume_304_libra_head_white.png
 resources/gfx/characters/costumes/costume_305_scorpio.png
+resources/gfx/characters/costumes/costume_305_scorpio_black.png
+resources/gfx/characters/costumes/costume_305_scorpio_blue.png
+resources/gfx/characters/costumes/costume_305_scorpio_green.png
+resources/gfx/characters/costumes/costume_305_scorpio_red.png
+resources/gfx/characters/costumes/costume_305_scorpio_white.png
 resources/gfx/characters/costumes/costume_306_sagittarius.png
 resources/gfx/characters/costumes/costume_307_capricorn.png
 resources/gfx/characters/costumes/costume_308_aquarius.png
 resources/gfx/characters/costumes/costume_309_pisces_body.png
+resources/gfx/characters/costumes/costume_309_pisces_body_black.png
+resources/gfx/characters/costumes/costume_309_pisces_body_blue.png
+resources/gfx/characters/costumes/costume_309_pisces_body_green.png
+resources/gfx/characters/costumes/costume_309_pisces_body_red.png
+resources/gfx/characters/costumes/costume_309_pisces_body_white.png
 resources/gfx/characters/costumes/costume_309_pisces_head.png
+resources/gfx/characters/costumes/costume_309_pisces_head_black.png
+resources/gfx/characters/costumes/costume_309_pisces_head_blue.png
+resources/gfx/characters/costumes/costume_309_pisces_head_green.png
+resources/gfx/characters/costumes/costume_309_pisces_head_red.png
+resources/gfx/characters/costumes/costume_309_pisces_head_white.png
 resources/gfx/characters/costumes/costume_310_evesmascara.png
 resources/gfx/characters/costumes/costume_311_judasshadow_body.png
 resources/gfx/characters/costumes/costume_311_judasshadow_head.png
@@ -368,9 +598,29 @@ resources/gfx/characters/costumes/costume_329_theludovicotreatment.png
 resources/gfx/characters/costumes/costume_330_soymilk.png
 resources/gfx/characters/costumes/costume_339_safetypin.png
 resources/gfx/characters/costumes/costume_340_caffeinepill_body.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_body_black.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_body_blue.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_body_green.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_body_red.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_body_white.png
 resources/gfx/characters/costumes/costume_340_caffeinepill_head.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_head_black.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_head_blue.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_head_green.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_head_red.png
+resources/gfx/characters/costumes/costume_340_caffeinepill_head_white.png
 resources/gfx/characters/costumes/costume_341_tornphoto.png
+resources/gfx/characters/costumes/costume_341_tornphoto_black.png
+resources/gfx/characters/costumes/costume_341_tornphoto_blue.png
+resources/gfx/characters/costumes/costume_341_tornphoto_green.png
+resources/gfx/characters/costumes/costume_341_tornphoto_red.png
+resources/gfx/characters/costumes/costume_341_tornphoto_white.png
 resources/gfx/characters/costumes/costume_342_bluecap.png
+resources/gfx/characters/costumes/costume_342_bluecap_black.png
+resources/gfx/characters/costumes/costume_342_bluecap_blue.png
+resources/gfx/characters/costumes/costume_342_bluecap_green.png
+resources/gfx/characters/costumes/costume_342_bluecap_red.png
+resources/gfx/characters/costumes/costume_342_bluecap_white.png
 resources/gfx/characters/costumes/costume_343_latchkey.png
 resources/gfx/characters/costumes/costume_344_matchbook.png
 resources/gfx/characters/costumes/costume_345_synthoil.png
@@ -378,9 +628,24 @@ resources/gfx/characters/costumes/costume_battery.png
 resources/gfx/characters/costumes/costume_blindfold.png
 resources/gfx/characters/costumes/costume_body.png
 resources/gfx/characters/costumes/costume_breath of life.png
+resources/gfx/characters/costumes/costume_breath of life_black.png
+resources/gfx/characters/costumes/costume_breath of life_blue.png
+resources/gfx/characters/costumes/costume_breath of life_green.png
+resources/gfx/characters/costumes/costume_breath of life_red.png
+resources/gfx/characters/costumes/costume_breath of life_white.png
 resources/gfx/characters/costumes/costume_broken stopwatch.png
 resources/gfx/characters/costumes/costume_chocolate milk.png
+resources/gfx/characters/costumes/costume_chocolate milk_black.png
+resources/gfx/characters/costumes/costume_chocolate milk_blue.png
+resources/gfx/characters/costumes/costume_chocolate milk_green.png
+resources/gfx/characters/costumes/costume_chocolate milk_red.png
+resources/gfx/characters/costumes/costume_chocolate milk_white.png
 resources/gfx/characters/costumes/costume_dead onion.png
+resources/gfx/characters/costumes/costume_dead onion_black.png
+resources/gfx/characters/costumes/costume_dead onion_blue.png
+resources/gfx/characters/costumes/costume_dead onion_green.png
+resources/gfx/characters/costumes/costume_dead onion_red.png
+resources/gfx/characters/costumes/costume_dead onion_white.png
 resources/gfx/characters/costumes/costume_godhead halo.png
 resources/gfx/characters/costumes/costume_godhead.png
 resources/gfx/characters/costumes/costume_guppy body.png
@@ -389,8 +654,18 @@ resources/gfx/characters/costumes/costume_hive mind (body).png
 resources/gfx/characters/costumes/costume_i found pills.png
 resources/gfx/characters/costumes/costume_lazarus rags.png
 resources/gfx/characters/costumes/costume_mind head.png
+resources/gfx/characters/costumes/costume_mind head_black.png
+resources/gfx/characters/costumes/costume_mind head_blue.png
+resources/gfx/characters/costumes/costume_mind head_green.png
+resources/gfx/characters/costumes/costume_mind head_red.png
+resources/gfx/characters/costumes/costume_mind head_white.png
 resources/gfx/characters/costumes/costume_moms key.png
 resources/gfx/characters/costumes/costume_monstros lung.png
+resources/gfx/characters/costumes/costume_monstros lung_black.png
+resources/gfx/characters/costumes/costume_monstros lung_blue.png
+resources/gfx/characters/costumes/costume_monstros lung_green.png
+resources/gfx/characters/costumes/costume_monstros lung_red.png
+resources/gfx/characters/costumes/costume_monstros lung_white.png
 resources/gfx/characters/costumes/costume_monstros tooth.png
 resources/gfx/characters/costumes/costume_puberty.png
 resources/gfx/characters/costumes/costume_rawliver.png
@@ -403,6 +678,11 @@ resources/gfx/characters/costumes/costume_tick.png
 resources/gfx/characters/costumes/ghost.png
 resources/gfx/characters/costumes/moms perfume.png
 resources/gfx/characters/costumes/ruawizard.png
+resources/gfx/characters/costumes/ruawizard_black.png
+resources/gfx/characters/costumes/ruawizard_blue.png
+resources/gfx/characters/costumes/ruawizard_green.png
+resources/gfx/characters/costumes/ruawizard_red.png
+resources/gfx/characters/costumes/ruawizard_white.png
 resources/gfx/characters/costumes/stopwatch.png
 resources/gfx/characters/player2/000_baby_spider.png
 resources/gfx/characters/player2/001_baby_love.png
@@ -1070,6 +1350,7 @@ resources/gfx/items/collectibles/collectibles_215_goathead.png
 resources/gfx/items/collectibles/collectibles_216_ceremonialrobes.png
 resources/gfx/items/collectibles/collectibles_217_momswig.png
 resources/gfx/items/collectibles/collectibles_218_placenta.png
+resources/gfx/items/collectibles/collectibles_219_oldbandage.png
 resources/gfx/items/collectibles/collectibles_220_sadbombs.png
 resources/gfx/items/collectibles/collectibles_221_rubbercement.png
 resources/gfx/items/collectibles/collectibles_222_antigravity.png
