@@ -46,6 +46,7 @@ namespace Gibbed.Rebirth.Unpack
             bool extractFiles = true;
             string filterPattern = null;
             bool overwriteFiles = false;
+            bool validateChecksums = false;
             bool verbose = false;
 
             var options = new OptionSet()
@@ -55,6 +56,7 @@ namespace Gibbed.Rebirth.Unpack
                 { "nu|no-unknowns", "don't extract unknown files", v => extractUnknowns = v == null },
                 { "ou|only-unknowns", "only extract unknown files", v => onlyUnknowns = v != null },
                 { "f|filter=", "only extract files using pattern", v => filterPattern = v },
+                { "c|validate-checksums", "validate checksums of extracted files", v => validateChecksums = v != null },
                 { "v|verbose", "be verbose", v => verbose = v != null },
                 { "h|help", "show this message and exit", v => showHelp = v != null },
             };
@@ -210,19 +212,22 @@ namespace Gibbed.Rebirth.Unpack
                                 }
 
                                 var buffer = temp.GetBuffer();
+
+                                if (validateChecksums == true)
+                                {
+                                    var checksum = ArchiveFile.ComputeChecksum(buffer, 0, (int)temp.Length);
+                                    if (checksum != entry.Checksum)
+                                    {
+                                        Console.WriteLine("checksum mismatch for {0}: {1:X} vs {2:X}",
+                                                          entryName,
+                                                          entry.Checksum,
+                                                          checksum);
+                                    }
+                                }
+
                                 using (var output = File.Create(entryPath))
                                 {
                                     output.Write(buffer, 0, (int)entry.Length);
-                                }
-
-                                var checksum = ArchiveFile.ComputeChecksum(buffer, 0, (int)temp.Length);
-                                if (checksum != entry.Checksum)
-                                {
-                                    Console.WriteLine("checksum mismatch for {0}: {1:X} vs {2:X}",
-                                                      entryName,
-                                                      entry.Checksum,
-                                                      checksum);
-                                    throw new InvalidOperationException();
                                 }
                             }
                         }
