@@ -1,4 +1,4 @@
-; 1326/2300 (57%)
+; 1381/2300 (60%)
 resources/font/droid_0.png
 resources/font/pftempestasevencondensed_0.png
 resources/font/teammeatfont10_0.png
@@ -1247,7 +1247,62 @@ resources/gfx/ui/giantbook/rune_06_perthro.png
 resources/gfx/ui/giantbook/rune_07_berkand.png
 resources/gfx/ui/giantbook/rune_08_algiz.png
 resources/gfx/ui/hudpickups.png
+resources/gfx/ui/loadimages/loadimages-001.png
+resources/gfx/ui/loadimages/loadimages-002.png
+resources/gfx/ui/loadimages/loadimages-003.png
+resources/gfx/ui/loadimages/loadimages-004.png
+resources/gfx/ui/loadimages/loadimages-005.png
+resources/gfx/ui/loadimages/loadimages-006.png
+resources/gfx/ui/loadimages/loadimages-007.png
+resources/gfx/ui/loadimages/loadimages-008.png
+resources/gfx/ui/loadimages/loadimages-009.png
+resources/gfx/ui/loadimages/loadimages-010.png
+resources/gfx/ui/loadimages/loadimages-011.png
+resources/gfx/ui/loadimages/loadimages-012.png
+resources/gfx/ui/loadimages/loadimages-013.png
+resources/gfx/ui/loadimages/loadimages-014.png
+resources/gfx/ui/loadimages/loadimages-015.png
+resources/gfx/ui/loadimages/loadimages-016.png
+resources/gfx/ui/loadimages/loadimages-017.png
+resources/gfx/ui/loadimages/loadimages-018.png
+resources/gfx/ui/loadimages/loadimages-019.png
+resources/gfx/ui/loadimages/loadimages-020.png
+resources/gfx/ui/loadimages/loadimages-021.png
+resources/gfx/ui/loadimages/loadimages-022.png
+resources/gfx/ui/loadimages/loadimages-023.png
+resources/gfx/ui/loadimages/loadimages-024.png
+resources/gfx/ui/loadimages/loadimages-025.png
+resources/gfx/ui/loadimages/loadimages-026.png
+resources/gfx/ui/loadimages/loadimages-027.png
+resources/gfx/ui/loadimages/loadimages-028.png
+resources/gfx/ui/loadimages/loadimages-029.png
+resources/gfx/ui/loadimages/loadimages-030.png
 resources/gfx/ui/loadimages/loadimages-031.png
+resources/gfx/ui/loadimages/loadimages-032.png
+resources/gfx/ui/loadimages/loadimages-033.png
+resources/gfx/ui/loadimages/loadimages-034.png
+resources/gfx/ui/loadimages/loadimages-035.png
+resources/gfx/ui/loadimages/loadimages-036.png
+resources/gfx/ui/loadimages/loadimages-037.png
+resources/gfx/ui/loadimages/loadimages-038.png
+resources/gfx/ui/loadimages/loadimages-039.png
+resources/gfx/ui/loadimages/loadimages-040.png
+resources/gfx/ui/loadimages/loadimages-041.png
+resources/gfx/ui/loadimages/loadimages-042.png
+resources/gfx/ui/loadimages/loadimages-043.png
+resources/gfx/ui/loadimages/loadimages-044.png
+resources/gfx/ui/loadimages/loadimages-045.png
+resources/gfx/ui/loadimages/loadimages-046.png
+resources/gfx/ui/loadimages/loadimages-047.png
+resources/gfx/ui/loadimages/loadimages-048.png
+resources/gfx/ui/loadimages/loadimages-049.png
+resources/gfx/ui/loadimages/loadimages-050.png
+resources/gfx/ui/loadimages/loadimages-051.png
+resources/gfx/ui/loadimages/loadimages-052.png
+resources/gfx/ui/loadimages/loadimages-053.png
+resources/gfx/ui/loadimages/loadimages-054.png
+resources/gfx/ui/loadimages/loadimages-055.png
+resources/gfx/ui/loadimages/loadimages-056.png
 resources/gfx/ui/main menu/challengeph.png
 resources/gfx/ui/main menu/charactermenu.png
 resources/gfx/ui/main menu/collectionmenu.png
