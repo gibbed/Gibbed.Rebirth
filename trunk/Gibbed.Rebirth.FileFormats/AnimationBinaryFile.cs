@@ -49,8 +49,6 @@ namespace Gibbed.Rebirth.FileFormats
                 {
                     var unknown3 = input.ReadValueU32(endian);
                     var unknown4 = ReadString(input, endian);
-
-                    Console.WriteLine("{0}{1}", unknown1, unknown4);
                 }
 
                 var unknown5 = input.ReadValueU32(endian);
