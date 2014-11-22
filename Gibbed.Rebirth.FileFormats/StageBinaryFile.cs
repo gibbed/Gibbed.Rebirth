@@ -72,8 +72,8 @@ namespace Gibbed.Rebirth.FileFormats
                 for (int j = 0; j < doorCount; j++)
                 {
                     var door = new Door();
-                    door.X = input.ReadValueU16(endian);
-                    door.Y = input.ReadValueU16(endian);
+                    door.X = input.ReadValueS16(endian);
+                    door.Y = input.ReadValueS16(endian);
                     door.Exists = input.ReadValueU8();
                     room.Doors[j] = door;
                 }
@@ -82,8 +82,8 @@ namespace Gibbed.Rebirth.FileFormats
                 for (int j = 0; j < spawnCount; j++)
                 {
                     var spawn = new Spawn();
-                    spawn.X = input.ReadValueU16(endian);
-                    spawn.Y = input.ReadValueU16(endian);
+                    spawn.X = input.ReadValueS16(endian);
+                    spawn.Y = input.ReadValueS16(endian);
 
                     var entityCount = input.ReadValueU8();
 
@@ -130,15 +130,15 @@ namespace Gibbed.Rebirth.FileFormats
 
         public struct Door
         {
-            public ushort X;
-            public ushort Y;
+            public short X;
+            public short Y;
             public byte Exists;
         }
 
         public struct Spawn
         {
-            public ushort X;
-            public ushort Y;
+            public short X;
+            public short Y;
             public Entity[] Entities;
         }
 
