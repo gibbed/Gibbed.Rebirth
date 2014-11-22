@@ -132,6 +132,7 @@ namespace Gibbed.Rebirth.FileFormats
                 throw new ArgumentNullException("path");
             }
 
+            path = path.ToLowerInvariant();
             ulong hash = ComputeNameHashA(path);
             hash |= ((ulong)ComputeNameHashB(path)) << 32;
             return hash;
@@ -145,7 +146,7 @@ namespace Gibbed.Rebirth.FileFormats
             }
 
             uint hash = 5381;
-            foreach (var c in path.ToLowerInvariant())
+            foreach (var c in path)
             {
                 hash *= 33;
                 hash += (byte)c;
@@ -161,7 +162,7 @@ namespace Gibbed.Rebirth.FileFormats
             }
 
             uint hash = 0x5BB2220E;
-            foreach (var c in path.ToLowerInvariant())
+            foreach (var c in path)
             {
                 hash ^= c;
                 hash *= 0x1000193;
