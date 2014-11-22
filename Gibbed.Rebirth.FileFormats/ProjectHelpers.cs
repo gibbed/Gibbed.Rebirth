@@ -26,7 +26,7 @@ namespace Gibbed.Rebirth.FileFormats
     {
         public static string Modifier(string s)
         {
-            return s.Replace(@"\", @"/");
+            return s.Replace(@"\", @"/").ToLowerInvariant();
         }
 
         public static ProjectData.HashList<ulong> LoadListsFileNames(this ProjectData.Manager manager)
