@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.Rebirth.FileFormats"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebuildFileLists", "RebuildFileLists\RebuildFileLists.csproj", "{46F69D44-337F-441B-9A88-0BEAD2311ACD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.Rebirth.ConvertStage", "Gibbed.Rebirth.ConvertStage\Gibbed.Rebirth.ConvertStage.csproj", "{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,16 @@ Global
 		{46F69D44-337F-441B-9A88-0BEAD2311ACD}.Release|Mixed Platforms.Build.0 = Release|x86
 		{46F69D44-337F-441B-9A88-0BEAD2311ACD}.Release|x86.ActiveCfg = Release|x86
 		{46F69D44-337F-441B-9A88-0BEAD2311ACD}.Release|x86.Build.0 = Release|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Debug|x86.ActiveCfg = Debug|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Debug|x86.Build.0 = Debug|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Release|Any CPU.ActiveCfg = Release|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Release|x86.ActiveCfg = Release|x86
+		{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
