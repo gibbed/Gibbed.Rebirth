@@ -1,4 +1,4 @@
-; 2298/2300 (99%)
+; 2300/2300 (100%)
 resources/font/droid_0.png
 resources/font/pftempestasevencondensed_0.png
 resources/font/teammeatfont10_0.png
@@ -2218,6 +2218,7 @@ resources/gfx/ui/main menu/endingsmenu.png
 resources/gfx/ui/main menu/extrastats.png
 resources/gfx/ui/main menu/gamemenu.png
 resources/gfx/ui/main menu/gamemenu_postitoverlap.png
+resources/gfx/ui/main menu/gamemenudemo.png
 resources/gfx/ui/main menu/gammamenu.png
 resources/gfx/ui/main menu/keyconfigmenu.png
 resources/gfx/ui/main menu/menuoverlay.png
@@ -2257,6 +2258,7 @@ resources/gfx/ui/main menu/sketch.png
 resources/gfx/ui/main menu/sketches.png
 resources/gfx/ui/main menu/statsmenu.png
 resources/gfx/ui/main menu/titlemenu.png
+resources/gfx/ui/main menu/titlemenu_ps.png
 resources/gfx/ui/main menu/whitecounter.png
 resources/gfx/ui/main menu/winstreakwidget.png
 resources/gfx/ui/mapitemicons.png
