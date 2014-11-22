@@ -43,33 +43,33 @@ namespace Gibbed.Rebirth.FileFormats
             {
                 var type = input.ReadValueU32(endian);
                 var variant = input.ReadValueU32(endian);
-                var unknown2 = input.ReadValueU8();
+                var difficulty = input.ReadValueU8();
                 var name = ReadString(input, endian);
-                var unknown4 = input.ReadValueU32(endian);
-                var unknown5 = input.ReadValueU8();
-                var unknown6 = input.ReadValueU8();
-                var unknown7 = input.ReadValueU8();
-                var unknown8 = input.ReadValueU16(endian);
+                var weight = input.ReadValueF32(endian);
+                var width = input.ReadValueU8();
+                var height = input.ReadValueU8();
+                var doorCount = input.ReadValueU8();
+                var spawnCount = input.ReadValueU16(endian);
 
-                for (int j = 0; j < unknown7; j++)
+                for (int j = 0; j < doorCount; j++)
                 {
-                    var unknown9 = input.ReadValueU16(endian);
-                    var unknown10 = input.ReadValueU16(endian);
-                    var unknown11 = input.ReadValueU8();
+                    var x = input.ReadValueU16(endian);
+                    var y = input.ReadValueU16(endian);
+                    var exists = input.ReadValueU8();
                 }
 
-                for (int j = 0; j < unknown8; j++)
+                for (int j = 0; j < spawnCount; j++)
                 {
-                    var unknown12 = input.ReadValueU16(endian);
-                    var unknown13 = input.ReadValueU16(endian);
+                    var x = input.ReadValueU16(endian);
+                    var y = input.ReadValueU16(endian);
 
-                    var unknown14 = input.ReadValueU8();
-                    for (int k = 0; k < unknown14; k++)
+                    var entityCount = input.ReadValueU8();
+                    for (int k = 0; k < entityCount; k++)
                     {
-                        var unknown15 = input.ReadValueU16(endian);
-                        var unknown16 = input.ReadValueU16(endian);
-                        var unknown17 = input.ReadValueU16(endian);
-                        var unknown18 = input.ReadValueU32(endian);
+                        var entityType = input.ReadValueU16(endian);
+                        var entityVariant = input.ReadValueU16(endian);
+                        var entitySubtype = input.ReadValueU16(endian);
+                        var entityWeight = input.ReadValueF32(endian);
                     }
                 }
             }
