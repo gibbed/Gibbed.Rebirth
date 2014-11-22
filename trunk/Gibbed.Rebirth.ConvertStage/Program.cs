@@ -120,6 +120,7 @@ namespace Gibbed.Rebirth.ConvertStage
                     OmitXmlDeclaration = true
                 };
 
+                var culture = CultureInfo.InvariantCulture;
                 using (var writer = XmlWriter.Create(outputPath, settings))
                 {
                     writer.WriteStartDocument();
@@ -128,39 +129,41 @@ namespace Gibbed.Rebirth.ConvertStage
                     foreach (var room in stb.Rooms)
                     {
                         writer.WriteStartElement("room");
-                        writer.WriteAttributeString("type", room.Type.ToString(CultureInfo.InvariantCulture));
-                        writer.WriteAttributeString("variant", room.Variant.ToString(CultureInfo.InvariantCulture));
+                        writer.WriteAttributeString("type", room.Type.ToString(culture));
+                        writer.WriteAttributeString("variant", room.Variant.ToString(culture));
                         writer.WriteAttributeString("name", room.Name);
-                        writer.WriteAttributeString("difficulty", room.Difficulty.ToString(CultureInfo.InvariantCulture));
-                        writer.WriteAttributeString("weight", room.Weight.ToString(CultureInfo.InvariantCulture));
-                        writer.WriteAttributeString("width", room.Width.ToString(CultureInfo.InvariantCulture));
-                        writer.WriteAttributeString("height", room.Height.ToString(CultureInfo.InvariantCulture));
+                        writer.WriteAttributeString("difficulty", room.Difficulty.ToString(culture));
+                        writer.WriteAttributeString("weight", room.Weight.ToString(culture));
+                        writer.WriteAttributeString("width", room.Width.ToString(culture));
+                        writer.WriteAttributeString("height", room.Height.ToString(culture));
 
                         foreach (var door in room.Doors)
                         {
                             writer.WriteStartElement("door");
-                            writer.WriteAttributeString("x", door.X.ToString(CultureInfo.InvariantCulture));
-                            writer.WriteAttributeString("y", door.Y.ToString(CultureInfo.InvariantCulture));
-                            writer.WriteAttributeString("exists", door.Exists.ToString(CultureInfo.InvariantCulture));
+                            writer.WriteAttributeString("x", door.X.ToString(culture));
+                            writer.WriteAttributeString("y", door.Y.ToString(culture));
+
+                            if (door.Exists == true)
+                            {
+                                writer.WriteAttributeString("exists", door.Exists.ToString(culture));
+                            }
+
                             writer.WriteEndElement();
                         }
 
                         foreach (var spawn in room.Spawns)
                         {
                             writer.WriteStartElement("spawn");
-                            writer.WriteAttributeString("x", spawn.X.ToString(CultureInfo.InvariantCulture));
-                            writer.WriteAttributeString("y", spawn.Y.ToString(CultureInfo.InvariantCulture));
+                            writer.WriteAttributeString("x", spawn.X.ToString(culture));
+                            writer.WriteAttributeString("y", spawn.Y.ToString(culture));
 
                             foreach (var entity in spawn.Entities)
                             {
                                 writer.WriteStartElement("entity");
-                                writer.WriteAttributeString("type", entity.Type.ToString(CultureInfo.InvariantCulture));
-                                writer.WriteAttributeString("variant",
-                                                            entity.Variant.ToString(CultureInfo.InvariantCulture));
-                                writer.WriteAttributeString("subtype",
-                                                            entity.Subtype.ToString(CultureInfo.InvariantCulture));
-                                writer.WriteAttributeString("weight",
-                                                            entity.Weight.ToString(CultureInfo.InvariantCulture));
+                                writer.WriteAttributeString("type", entity.Type.ToString(culture));
+                                writer.WriteAttributeString("variant", entity.Variant.ToString(culture));
+                                writer.WriteAttributeString("subtype", entity.Subtype.ToString(culture));
+                                writer.WriteAttributeString("weight", entity.Weight.ToString(culture));
                                 writer.WriteEndElement();
                             }
 
