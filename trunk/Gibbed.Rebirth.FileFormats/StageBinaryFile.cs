@@ -74,7 +74,7 @@ namespace Gibbed.Rebirth.FileFormats
                     var door = new Door();
                     door.X = input.ReadValueS16(endian);
                     door.Y = input.ReadValueS16(endian);
-                    door.Exists = input.ReadValueU8();
+                    door.Exists = input.ReadValueB8();
                     room.Doors[j] = door;
                 }
 
@@ -132,7 +132,7 @@ namespace Gibbed.Rebirth.FileFormats
         {
             public short X;
             public short Y;
-            public byte Exists;
+            public bool Exists;
         }
 
         public struct Spawn
