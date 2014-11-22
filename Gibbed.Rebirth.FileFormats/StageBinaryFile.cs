@@ -23,12 +23,25 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
 using Gibbed.IO;
 
 namespace Gibbed.Rebirth.FileFormats
 {
     public class StageBinaryFile
     {
+        private readonly List<Room> _Rooms;
+
+        public List<Room> Rooms
+        {
+            get { return this._Rooms; }
+        }
+
+        public StageBinaryFile()
+        {
+            this._Rooms = new List<Room>();
+        }
+
         public void Serialize(Stream output)
         {
             throw new NotImplementedException();
@@ -38,41 +51,61 @@ namespace Gibbed.Rebirth.FileFormats
         {
             const Endian endian = Endian.Little;
 
-            var count = input.ReadValueU32(endian);
-            for (uint i = 0; i < count; i++)
+            var roomCount = input.ReadValueU32(endian);
+
+            var rooms = new Room[roomCount];
+            for (uint i = 0; i < roomCount; i++)
             {
-                var type = input.ReadValueU32(endian);
-                var variant = input.ReadValueU32(endian);
-                var difficulty = input.ReadValueU8();
-                var name = ReadString(input, endian);
-                var weight = input.ReadValueF32(endian);
-                var width = input.ReadValueU8();
-                var height = input.ReadValueU8();
+                var room = new Room();
+                room.Type = input.ReadValueU32(endian);
+                room.Variant = input.ReadValueU32(endian);
+                room.Difficulty = input.ReadValueU8();
+                room.Name = ReadString(input, endian);
+                room.Weight = input.ReadValueF32(endian);
+                room.Width = input.ReadValueU8();
+                room.Height = input.ReadValueU8();
+
                 var doorCount = input.ReadValueU8();
                 var spawnCount = input.ReadValueU16(endian);
 
+                room.Doors = new Door[doorCount];
                 for (int j = 0; j < doorCount; j++)
                 {
-                    var x = input.ReadValueU16(endian);
-                    var y = input.ReadValueU16(endian);
-                    var exists = input.ReadValueU8();
+                    var door = new Door();
+                    door.X = input.ReadValueU16(endian);
+                    door.Y = input.ReadValueU16(endian);
+                    door.Exists = input.ReadValueU8();
+                    room.Doors[j] = door;
                 }
 
+                room.Spawns = new Spawn[spawnCount];
                 for (int j = 0; j < spawnCount; j++)
                 {
-                    var x = input.ReadValueU16(endian);
-                    var y = input.ReadValueU16(endian);
+                    var spawn = new Spawn();
+                    spawn.X = input.ReadValueU16(endian);
+                    spawn.Y = input.ReadValueU16(endian);
 
                     var entityCount = input.ReadValueU8();
+
+                    spawn.Entities = new Entity[entityCount];
                     for (int k = 0; k < entityCount; k++)
                     {
-                        var entityType = input.ReadValueU16(endian);
-                        var entityVariant = input.ReadValueU16(endian);
-                        var entitySubtype = input.ReadValueU16(endian);
-                        var entityWeight = input.ReadValueF32(endian);
+                        var entity = new Entity();
+                        entity.Type = input.ReadValueU16(endian);
+                        entity.Variant = input.ReadValueU16(endian);
+                        entity.Subtype = input.ReadValueU16(endian);
+                        entity.Weight = input.ReadValueF32(endian);
+                        spawn.Entities[k] = entity;
                     }
+
+                    room.Spawns[j] = spawn;
                 }
+
+                rooms[i] = room;
             }
+
+            this._Rooms.Clear();
+            this._Rooms.AddRange(rooms);
         }
 
         private static string ReadString(Stream input, Endian endian)
@@ -80,6 +113,41 @@ namespace Gibbed.Rebirth.FileFormats
             var length = input.ReadValueU16(endian);
             var text = input.ReadString(length, true, Encoding.ASCII);
             return text;
+        }
+
+        public struct Room
+        {
+            public uint Type;
+            public uint Variant;
+            public byte Difficulty;
+            public string Name;
+            public float Weight;
+            public byte Width;
+            public byte Height;
+            public Door[] Doors;
+            public Spawn[] Spawns;
+        }
+
+        public struct Door
+        {
+            public ushort X;
+            public ushort Y;
+            public byte Exists;
+        }
+
+        public struct Spawn
+        {
+            public ushort X;
+            public ushort Y;
+            public Entity[] Entities;
+        }
+
+        public struct Entity
+        {
+            public ushort Type;
+            public ushort Variant;
+            public ushort Subtype;
+            public float Weight;
         }
     }
 }
