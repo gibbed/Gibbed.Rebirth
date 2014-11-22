@@ -21,9 +21,8 @@
  */
 
 using System;
-using System.IO;
-using System.Text;
 using System.Collections.Generic;
+using System.IO;
 using Gibbed.IO;
 
 namespace Gibbed.Rebirth.FileFormats
@@ -44,7 +43,72 @@ namespace Gibbed.Rebirth.FileFormats
 
         public void Serialize(Stream output)
         {
-            throw new NotImplementedException();
+            const Endian endian = Endian.Little;
+
+            output.WriteValueS32(this._Rooms.Count, endian);
+            foreach (var room in this._Rooms)
+            {
+                output.WriteValueU32(room.Type, endian);
+                output.WriteValueU32(room.Variant, endian);
+                output.WriteValueU8(room.Difficulty);
+                output.WriteString(room.Name, endian);
+                output.WriteValueF32(room.Weight, endian);
+                output.WriteValueU8(room.Width);
+                output.WriteValueU8(room.Height);
+
+                var doorCount = room.Doors == null ? 0 : room.Doors.Length;
+                if (doorCount > byte.MaxValue)
+                {
+                    throw new InvalidOperationException();
+                }
+
+                var spawnCount = room.Spawns == null ? 0 : room.Spawns.Length;
+                if (spawnCount > ushort.MaxValue)
+                {
+                    throw new InvalidOperationException();
+                }
+
+                output.WriteValueU8((byte)doorCount);
+                output.WriteValueU16((ushort)spawnCount, endian);
+
+                if (room.Doors != null)
+                {
+                    foreach (var door in room.Doors)
+                    {
+                        output.WriteValueS16(door.X, endian);
+                        output.WriteValueS16(door.Y, endian);
+                        output.WriteValueB8(door.Exists);
+                    }
+                }
+
+                if (room.Spawns != null)
+                {
+                    foreach (var spawn in room.Spawns)
+                    {
+                        output.WriteValueS16(spawn.X, endian);
+                        output.WriteValueS16(spawn.Y, endian);
+
+                        var entityCount = spawn.Entities == null ? 0 : spawn.Entities.Length;
+                        if (entityCount > byte.MaxValue)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        output.WriteValueU8((byte)entityCount);
+
+                        if (spawn.Entities != null)
+                        {
+                            foreach (var entity in spawn.Entities)
+                            {
+                                output.WriteValueU16(entity.Type, endian);
+                                output.WriteValueU16(entity.Variant, endian);
+                                output.WriteValueU16(entity.Subtype, endian);
+                                output.WriteValueF32(entity.Weight, endian);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public void Deserialize(Stream input)
@@ -60,7 +124,7 @@ namespace Gibbed.Rebirth.FileFormats
                 room.Type = input.ReadValueU32(endian);
                 room.Variant = input.ReadValueU32(endian);
                 room.Difficulty = input.ReadValueU8();
-                room.Name = ReadString(input, endian);
+                room.Name = input.ReadString(endian);
                 room.Weight = input.ReadValueF32(endian);
                 room.Width = input.ReadValueU8();
                 room.Height = input.ReadValueU8();
@@ -106,13 +170,6 @@ namespace Gibbed.Rebirth.FileFormats
 
             this._Rooms.Clear();
             this._Rooms.AddRange(rooms);
-        }
-
-        private static string ReadString(Stream input, Endian endian)
-        {
-            var length = input.ReadValueU16(endian);
-            var text = input.ReadString(length, true, Encoding.ASCII);
-            return text;
         }
 
         public struct Room
