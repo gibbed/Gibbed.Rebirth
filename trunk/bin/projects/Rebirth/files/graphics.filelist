@@ -1,4 +1,4 @@
-; 2014/2300 (87%)
+; 2017/2300 (87%)
 resources/font/droid_0.png
 resources/font/pftempestasevencondensed_0.png
 resources/font/teammeatfont10_0.png
@@ -831,6 +831,9 @@ resources/gfx/grid/grid_poop_3.png
 resources/gfx/grid/grid_poop_corn.png
 resources/gfx/grid/grid_poop_gold.png
 resources/gfx/grid/grid_poop_rainbow.png
+resources/gfx/grid/grid_poop_red_1.png
+resources/gfx/grid/grid_poop_red_2.png
+resources/gfx/grid/grid_poop_red_3.png
 resources/gfx/grid/grid_pressureplate.png
 resources/gfx/grid/grid_spikes.png
 resources/gfx/grid/grid_tnt.png
