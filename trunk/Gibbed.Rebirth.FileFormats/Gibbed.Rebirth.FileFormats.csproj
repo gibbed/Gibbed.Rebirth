@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimationBinaryFile.cs" />
     <Compile Include="ArchiveFile.cs" />
     <Compile Include="ArchiveCompression.cs" />
     <Compile Include="BitReader.cs" />
