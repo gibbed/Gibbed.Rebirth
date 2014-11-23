@@ -336,8 +336,8 @@ namespace Gibbed.Rebirth.Unpack
 
         private static string FilterEntryName(string entryName)
         {
-            entryName = entryName.Replace(@"/", @"\");
-            if (entryName.StartsWith(@"\") == true)
+            entryName = entryName.Replace('/', Path.DirectorySeparatorChar);
+            if (entryName.Length > 0 && entryName[0] == Path.DirectorySeparatorChar)
             {
                 entryName = entryName.Substring(1);
             }
