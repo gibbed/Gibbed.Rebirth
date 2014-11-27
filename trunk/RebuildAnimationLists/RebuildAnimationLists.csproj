@@ -2,27 +2,30 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B0004480-2A5E-4805-B14B-12D368A189AC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CE7A5570-A245-4B11-AFCB-A4B42E93CFBC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gibbed.Rebirth.FileFormats</RootNamespace>
-    <AssemblyName>Gibbed.Rebirth.FileFormats</AssemblyName>
+    <RootNamespace>RebuildAnimationLists</RootNamespace>
+    <AssemblyName>RebuildAnimationLists</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,23 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animation\AnimatedActor.cs" />
-    <Compile Include="AnimationCacheBinaryFile.cs" />
-    <Compile Include="Animation\Animation.cs" />
-    <Compile Include="Animation\Content.cs" />
-    <Compile Include="Animation\LayerFrame.cs" />
-    <Compile Include="Animation\NullFrame.cs" />
-    <Compile Include="Animation\LayerAnimation.cs" />
-    <Compile Include="Animation\NullAnimation.cs" />
-    <Compile Include="Animation\RootAnimation.cs" />
-    <Compile Include="Animation\Trigger.cs" />
-    <Compile Include="ArchiveFile.cs" />
-    <Compile Include="ArchiveCompression.cs" />
-    <Compile Include="BitReader.cs" />
-    <Compile Include="ProjectHelpers.cs" />
+    <Compile Include="Breakdown.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StageBinaryFile.cs" />
-    <Compile Include="StreamHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">
@@ -66,6 +55,14 @@
     <ProjectReference Include="..\Gibbed.ProjectData\Gibbed.ProjectData.csproj">
       <Project>{F27A289E-3376-4653-89F3-D19C1ECABF33}</Project>
       <Name>Gibbed.ProjectData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gibbed.Rebirth.FileFormats\Gibbed.Rebirth.FileFormats.csproj">
+      <Project>{B0004480-2A5E-4805-B14B-12D368A189AC}</Project>
+      <Name>Gibbed.Rebirth.FileFormats</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NDesk.Options\NDesk.Options.csproj">
+      <Project>{C98A6CD6-9422-4B35-8B7A-F520D75534D1}</Project>
+      <Name>NDesk.Options</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

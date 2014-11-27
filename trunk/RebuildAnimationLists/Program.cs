@@ -28,31 +28,13 @@ using Gibbed.ProjectData;
 using Gibbed.Rebirth.FileFormats;
 using NDesk.Options;
 
-namespace RebuildFileLists
+namespace RebuildAnimationLists
 {
     internal class Program
     {
         private static string GetExecutableName()
         {
             return Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        }
-
-        private static string GetListPath(string installPath, string inputPath)
-        {
-            installPath = installPath.ToLowerInvariant();
-            inputPath = inputPath.ToLowerInvariant();
-
-            if (inputPath.StartsWith(installPath) == false)
-            {
-                return null;
-            }
-
-            var baseName = inputPath.Substring(installPath.Length + 1);
-
-            string outputPath;
-            outputPath = Path.Combine("files", baseName);
-            outputPath = Path.ChangeExtension(outputPath, ".filelist");
-            return outputPath;
         }
 
         public static void Main(string[] args)
@@ -99,7 +81,6 @@ namespace RebuildFileLists
             }
 
             var project = manager.ActiveProject;
-            HashList<ulong> knownHashes = null;
 
             var installPath = project.InstallPath;
             var listsPath = project.ListsPath;
@@ -116,101 +97,77 @@ namespace RebuildFileLists
                 return;
             }
 
-            Console.WriteLine("Searching for archives...");
-            var archivePaths = new List<string>();
-            archivePaths.AddRange(Directory.GetFiles(installPath, "*.a", SearchOption.AllDirectories));
+            var knownHashes = manager.LoadListsAnimationNames();
 
-            var outputPaths = new List<string>();
+            var inputPath = Path.Combine(installPath, "animations.a");
+            var outputPath = Path.Combine(listsPath, "files", "animations.animlist");
 
-            var breakdown = new Breakdown();
-            var tracking = new Tracking();
-
-            Console.WriteLine("Processing...");
-            for (int i = 0; i < archivePaths.Count; i++)
+            if (File.Exists(inputPath + ".bak") == true)
             {
-                var archivePath = archivePaths[i];
-
-                var outputPath = GetListPath(installPath, archivePath);
-                if (outputPath == null)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                Console.WriteLine(outputPath);
-                outputPath = Path.Combine(listsPath, outputPath);
-
-                if (outputPaths.Contains(outputPath) == true)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                outputPaths.Add(outputPath);
-
-                if (File.Exists(archivePath + ".bak") == true)
-                {
-                    archivePath += ".bak";
-                }
-
-                var archive = new ArchiveFile();
-                using (var input = File.OpenRead(archivePath))
-                {
-                    archive.Deserialize(input);
-                }
-
-                knownHashes = manager.LoadListsFileNames();
-                if (knownHashes == null)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                HandleEntries(archive.Entries.Select(e => e.CombinedNameHash).Distinct(),
-                              knownHashes,
-                              tracking,
-                              breakdown,
-                              outputPath);
+                inputPath += ".bak";
             }
 
-            using (var output = new StreamWriter(Path.Combine(Path.Combine(listsPath, "files"), "status.txt")))
+            var hashes = new List<uint>();
+
+            var archive = new ArchiveFile();
+            using (var input = File.OpenRead(inputPath))
             {
-                output.WriteLine(
-                    "{0}",
-                    new Breakdown()
+                archive.Deserialize(input);
+
+                foreach (var entry in archive.Entries)
+                {
+                    input.Seek(entry.Offset, SeekOrigin.Begin);
+
+                    using (var temp = new MemoryStream())
                     {
-                        Known = tracking.Names.Distinct().Count(),
-                        Total = tracking.Hashes.Distinct().Count(),
-                    });
+                        if (archive.IsCompressed == false)
+                        {
+                            Bogocrypt(entry, input, temp);
+                        }
+                        else
+                        {
+                            ArchiveCompression.Decompress(entry, input, temp, archive.Endian);
+                        }
+
+                        temp.Flush();
+                        temp.Position = 0;
+
+                        if (temp.Length != entry.Length)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        var cache = new AnimationCacheBinaryFile();
+                        cache.Deserialize(temp);
+
+                        hashes.AddRange(cache.AnimatedActors.Keys);
+                    }
+                }
             }
+
+            HandleEntries(hashes, knownHashes, outputPath);
         }
 
-        private static void HandleEntries(IEnumerable<ulong> entries,
-                                          HashList<ulong> knownHashes,
-                                          Tracking tracking,
-                                          Breakdown breakdown,
+        private static void HandleEntries(IEnumerable<uint> hashes,
+                                          HashList<uint> knownHashes,
                                           string outputPath)
         {
-            var localBreakdown = new Breakdown();
+            var breakdown = new Breakdown();
 
-            var localNames = new List<string>();
-            var localHashes = entries.ToArray();
-            foreach (var hash in localHashes)
+            var names = new List<string>();
+            foreach (var hash in hashes)
             {
                 var name = knownHashes[hash];
                 if (name != null)
                 {
-                    localNames.Add(name);
+                    names.Add(name);
                 }
 
-                localBreakdown.Total++;
+                breakdown.Total++;
             }
 
-            tracking.Hashes.AddRange(localHashes);
-            tracking.Names.AddRange(localNames);
-
-            var distinctLocalNames = localNames.Distinct().ToArray();
-            localBreakdown.Known += distinctLocalNames.Length;
-
-            breakdown.Known += localBreakdown.Known;
-            breakdown.Total += localBreakdown.Total;
+            var distinctNames = names.Distinct().ToArray();
+            breakdown.Known += distinctNames.Length;
 
             var outputParent = Path.GetDirectoryName(outputPath);
             if (string.IsNullOrEmpty(outputParent) == false)
@@ -220,9 +177,9 @@ namespace RebuildFileLists
 
             using (var writer = new StringWriter())
             {
-                writer.WriteLine("; {0}", localBreakdown);
+                writer.WriteLine("; {0}", breakdown);
 
-                foreach (string name in distinctLocalNames.OrderBy(dn => dn))
+                foreach (string name in distinctNames.OrderBy(dn => dn))
                 {
                     writer.WriteLine(name);
                 }
@@ -233,6 +190,33 @@ namespace RebuildFileLists
                 {
                     output.Write(writer.GetStringBuilder());
                 }
+            }
+        }
+
+        private static void Bogocrypt(ArchiveFile.Entry entry, Stream input, Stream output)
+        {
+            var key = entry.BogocryptKey;
+            long remaining = entry.Length;
+
+            var block = new byte[1024];
+            while (remaining > 0)
+            {
+                var blockLength = (int)Math.Min(block.Length, remaining + 3 & ~3);
+                var actualBlockLength = (int)Math.Min(block.Length, remaining);
+                if (blockLength == 0)
+                {
+                    throw new InvalidOperationException();
+                }
+
+                if (input.Read(block, 0, blockLength) < actualBlockLength)
+                {
+                    throw new EndOfStreamException();
+                }
+
+                key = ArchiveFile.Bogocrypt(block, 0, blockLength, key);
+
+                output.Write(block, 0, actualBlockLength);
+                remaining -= blockLength;
             }
         }
     }

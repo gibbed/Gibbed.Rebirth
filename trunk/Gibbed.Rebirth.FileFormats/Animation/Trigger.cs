@@ -20,33 +20,33 @@
  *    distribution.
  */
 
-namespace Gibbed.Rebirth.FileFormats
+using System.IO;
+using Gibbed.IO;
+
+namespace Gibbed.Rebirth.FileFormats.Animation
 {
-    public static class ProjectHelpers
+    public struct Trigger
     {
-        public static string Modifier(string s)
+        public uint EventId;
+        public uint AtFrame;
+
+        internal static Trigger Read(Stream input, Endian endian)
         {
-            return s.Replace(@"\", @"/").ToLowerInvariant();
+            Trigger instance;
+            instance.EventId = input.ReadValueU32(endian);
+            instance.AtFrame = input.ReadValueU32(endian);
+            return instance;
         }
 
-        public static ProjectData.HashList<ulong> LoadListsFileNames(this ProjectData.Manager manager)
+        internal void Write(Stream output, Endian endian)
         {
-            return manager.LoadLists("*.filelist", ArchiveFile.ComputeNameHash, Modifier);
+            Write(output, this, endian);
         }
 
-        public static ProjectData.HashList<ulong> LoadListsFileNames(this ProjectData.Project project)
+        internal static void Write(Stream output, Trigger instance, Endian endian)
         {
-            return project.LoadLists("*.filelist", ArchiveFile.ComputeNameHash, Modifier);
-        }
-
-        public static ProjectData.HashList<uint> LoadListsAnimationNames(this ProjectData.Manager manager)
-        {
-            return manager.LoadLists("*.animlist", AnimationCacheBinaryFile.ComputeNameHash, Modifier);
-        }
-
-        public static ProjectData.HashList<uint> LoadListsAnimationNames(this ProjectData.Project project)
-        {
-            return project.LoadLists("*.animlist", AnimationCacheBinaryFile.ComputeNameHash, Modifier);
+            output.WriteValueU32(instance.EventId, endian);
+            output.WriteValueU32(instance.AtFrame, endian);
         }
     }
 }

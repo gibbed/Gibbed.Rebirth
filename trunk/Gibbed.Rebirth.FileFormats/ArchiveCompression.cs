@@ -42,7 +42,7 @@ namespace Gibbed.Rebirth.FileFormats
             private readonly object _DecodeWindowLock;
             private readonly byte[] _DecodeWindow;
 
-            public readonly int Capacity = 4096;
+            public const int Capacity = 4096;
 
             public int Count
             {
@@ -152,7 +152,7 @@ namespace Gibbed.Rebirth.FileFormats
 
                 while (reader.Position < reader.Length)
                 {
-                    if (dictionary.Count + 1 >= dictionary.Capacity)
+                    if (dictionary.Count + 1 >= CodeDictionary.Capacity)
                     {
                         dictionary.Reset();
 
