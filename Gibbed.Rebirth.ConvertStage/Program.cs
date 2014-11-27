@@ -201,6 +201,8 @@ namespace Gibbed.Rebirth.ConvertStage
                 using (var writer = XmlWriter.Create(outputPath, settings))
                 {
                     writer.WriteStartDocument();
+                    writer.WriteComment("Converted to ANM2 by Gibbed.Rebirth.ConvertStage");
+
                     writer.WriteStartElement("stage");
 
                     foreach (var room in stb.Rooms)
