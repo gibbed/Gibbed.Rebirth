@@ -136,18 +136,16 @@ namespace Gibbed.Rebirth.ConvertAnimations
                 foreach (var kv in cache.AnimatedActors)
                 {
                     string entryName = hashes[kv.Key];
+                    string entryPath;
 
                     if (entryName == null)
                     {
-                        entryName = kv.Key.ToString("X8") + ".anm2";
-                        entryName = Path.Combine("__UNKNOWN", entryName);
+                        entryPath = Path.Combine(outputPath, "__UNKNOWN", kv.Key.ToString("X8") + ".anm2");
                     }
                     else
                     {
-                        entryName = FilterEntryName(entryName);
+                        entryPath = Path.Combine(outputPath, FilterEntryName(entryName));
                     }
-
-                    var entryPath = Path.Combine(outputPath, entryName);
 
                     var entryParent = Path.GetDirectoryName(entryPath);
                     if (string.IsNullOrEmpty(entryParent) == false)
@@ -167,7 +165,8 @@ namespace Gibbed.Rebirth.ConvertAnimations
                         writer.WriteStartElement("Content");
 
                         writer.WriteStartElement("Spritesheets");
-                        writer.WriteAttributeString("BasePath", instance.Content.BaseSpritesheetPath);
+                        //BaseSpritesheetPath isn't needed by the game to load actual .anm2 files.
+                        //writer.WriteAttributeString("BasePath", instance.Content.BaseSpritesheetPath);
                         foreach (var spritesheet in instance.Content.Spritesheets)
                         {
                             writer.WriteStartElement("Spritesheet");
@@ -297,8 +296,8 @@ namespace Gibbed.Rebirth.ConvertAnimations
             writer.WriteAttributeString("YPosition", frame.YPosition.ToString(culture));
             writer.WriteAttributeString("Delay", frame.Delay.ToString(culture));
             writer.WriteAttributeString("Visible", frame.Visible.ToString(culture));
-            writer.WriteAttributeString("XScale", frame.XScale.ToString(culture));
-            writer.WriteAttributeString("YScale", frame.YScale.ToString(culture));
+            writer.WriteAttributeString("XScale", (frame.XScale * 100.0f).ToString(culture));
+            writer.WriteAttributeString("YScale", (frame.YScale * 100.0f).ToString(culture));
             writer.WriteAttributeString("RedTint", (frame.RedTint * 255.0f).ToString(culture));
             writer.WriteAttributeString("GreenTint", (frame.GreenTint * 255.0f).ToString(culture));
             writer.WriteAttributeString("BlueTint", (frame.BlueTint * 255.0f).ToString(culture));
@@ -318,8 +317,8 @@ namespace Gibbed.Rebirth.ConvertAnimations
             writer.WriteAttributeString("YPivot", frame.YPivot.ToString(culture));
             writer.WriteAttributeString("Width", frame.Width.ToString(culture));
             writer.WriteAttributeString("Height", frame.Height.ToString(culture));
-            writer.WriteAttributeString("XScale", frame.XScale.ToString(culture));
-            writer.WriteAttributeString("YScale", frame.YScale.ToString(culture));
+            writer.WriteAttributeString("XScale", (frame.XScale * 100.0f).ToString(culture));
+            writer.WriteAttributeString("YScale", (frame.YScale * 100.0f).ToString(culture));
             writer.WriteAttributeString("Delay", frame.Delay.ToString(culture));
             writer.WriteAttributeString("Visible", frame.Visible.ToString(culture));
             writer.WriteAttributeString("XCrop", frame.XCrop.ToString(culture));
