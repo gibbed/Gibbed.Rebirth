@@ -75,7 +75,7 @@ namespace Gibbed.Rebirth.ConvertAnimations
                 {
                     mode = Mode.ToXml;
                 }
-                else if (extension == ".xml" || Directory.Exists(extras[0]) == true)
+                else if (extension == ".anm2" || Directory.Exists(extras[0]) == true)
                 {
                     mode = Mode.ToBinary;
                 }
@@ -113,8 +113,9 @@ namespace Gibbed.Rebirth.ConvertAnimations
                 var settings = new XmlWriterSettings
                 {
                     Encoding = Encoding.UTF8,
+                    OmitXmlDeclaration = true,
                     Indent = true,
-                    OmitXmlDeclaration = true
+                    IndentChars = "  ",
                 };
 
                 var culture = CultureInfo.InvariantCulture;
@@ -159,6 +160,8 @@ namespace Gibbed.Rebirth.ConvertAnimations
                         var instance = kv.Value;
 
                         writer.WriteStartDocument();
+                        writer.WriteComment("Converted to ANM2 by Gibbed.Rebirth.ConvertAnimations");
+
                         writer.WriteStartElement("AnimatedActor");
 
                         writer.WriteStartElement("Content");
@@ -296,13 +299,13 @@ namespace Gibbed.Rebirth.ConvertAnimations
             writer.WriteAttributeString("Visible", frame.Visible.ToString(culture));
             writer.WriteAttributeString("XScale", frame.XScale.ToString(culture));
             writer.WriteAttributeString("YScale", frame.YScale.ToString(culture));
-            writer.WriteAttributeString("RedTint", frame.RedTint.ToString(culture));
-            writer.WriteAttributeString("GreenTint", frame.GreenTint.ToString(culture));
-            writer.WriteAttributeString("BlueTint", frame.BlueTint.ToString(culture));
-            writer.WriteAttributeString("AlphaTint", frame.AlphaTint.ToString(culture));
-            writer.WriteAttributeString("RedOffset", frame.RedOffset.ToString(culture));
-            writer.WriteAttributeString("GreenOffset", frame.GreenOffset.ToString(culture));
-            writer.WriteAttributeString("BlueOffset", frame.BlueOffset.ToString(culture));
+            writer.WriteAttributeString("RedTint", (frame.RedTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("GreenTint", (frame.GreenTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("BlueTint", (frame.BlueTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("AlphaTint", (frame.AlphaTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("RedOffset", (frame.RedOffset * 255.0f).ToString(culture));
+            writer.WriteAttributeString("GreenOffset", (frame.GreenOffset * 255.0f).ToString(culture));
+            writer.WriteAttributeString("BlueOffset", (frame.BlueOffset * 255.0f).ToString(culture));
             writer.WriteAttributeString("Rotation", frame.Rotation.ToString(culture));
             writer.WriteAttributeString("Interpolated", frame.Interpolated.ToString(culture));
         }
@@ -321,13 +324,13 @@ namespace Gibbed.Rebirth.ConvertAnimations
             writer.WriteAttributeString("Visible", frame.Visible.ToString(culture));
             writer.WriteAttributeString("XCrop", frame.XCrop.ToString(culture));
             writer.WriteAttributeString("YCrop", frame.YCrop.ToString(culture));
-            writer.WriteAttributeString("RedTint", frame.RedTint.ToString(culture));
-            writer.WriteAttributeString("GreenTint", frame.GreenTint.ToString(culture));
-            writer.WriteAttributeString("BlueTint", frame.BlueTint.ToString(culture));
-            writer.WriteAttributeString("AlphaTint", frame.AlphaTint.ToString(culture));
-            writer.WriteAttributeString("RedOffset", frame.RedOffset.ToString(culture));
-            writer.WriteAttributeString("GreenOffset", frame.GreenOffset.ToString(culture));
-            writer.WriteAttributeString("BlueOffset", frame.BlueOffset.ToString(culture));
+            writer.WriteAttributeString("RedTint", (frame.RedTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("GreenTint", (frame.GreenTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("BlueTint", (frame.BlueTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("AlphaTint", (frame.AlphaTint * 255.0f).ToString(culture));
+            writer.WriteAttributeString("RedOffset", (frame.RedOffset * 255.0f).ToString(culture));
+            writer.WriteAttributeString("GreenOffset", (frame.GreenOffset * 255.0f).ToString(culture));
+            writer.WriteAttributeString("BlueOffset", (frame.BlueOffset * 255.0f).ToString(culture));
             writer.WriteAttributeString("Rotation", frame.Rotation.ToString(culture));
             writer.WriteAttributeString("Interpolated", frame.Interpolated.ToString(culture));
         }

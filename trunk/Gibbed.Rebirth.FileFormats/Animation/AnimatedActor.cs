@@ -31,7 +31,7 @@ namespace Gibbed.Rebirth.FileFormats.Animation
         public string DefaultAnimation;
         public Animation[] Animations;
 
-        internal static AnimatedActor Read(Stream input, Endian endian)
+        public static AnimatedActor Read(Stream input, Endian endian)
         {
             var content = Content.Read(input, endian);
             var defaultAnimation = input.ReadString(endian);
@@ -49,12 +49,12 @@ namespace Gibbed.Rebirth.FileFormats.Animation
             return instance;
         }
 
-        internal void Write(Stream output, Endian endian)
+        public void Write(Stream output, Endian endian)
         {
             Write(output, this, endian);
         }
 
-        internal static void Write(Stream output, AnimatedActor instance, Endian endian)
+        public static void Write(Stream output, AnimatedActor instance, Endian endian)
         {
             instance.Content.Write(output, endian);
             output.WriteString(instance.DefaultAnimation, endian);
