@@ -1,4 +1,4 @@
-; 2300/2300 (100%)
+; 2302/2302 (100%)
 resources/font/droid_0.png
 resources/font/pftempestasevencondensed_0.png
 resources/font/teammeatfont10_0.png
@@ -2251,6 +2251,7 @@ resources/gfx/ui/main menu/savedrawings/16_killmegasatan.png
 resources/gfx/ui/main menu/savedrawings/momsheartcheckmarks.png
 resources/gfx/ui/main menu/saveselectmenu.png
 resources/gfx/ui/main menu/saveselectmenu_ps.png
+resources/gfx/ui/main menu/saveselectmenu_xbox.png
 resources/gfx/ui/main menu/secretsmenucomponents.png
 resources/gfx/ui/main menu/seedentry.png
 resources/gfx/ui/main menu/seedwidget.png
@@ -2259,6 +2260,7 @@ resources/gfx/ui/main menu/sketches.png
 resources/gfx/ui/main menu/statsmenu.png
 resources/gfx/ui/main menu/titlemenu.png
 resources/gfx/ui/main menu/titlemenu_ps.png
+resources/gfx/ui/main menu/titlemenu_xbox.png
 resources/gfx/ui/main menu/whitecounter.png
 resources/gfx/ui/main menu/winstreakwidget.png
 resources/gfx/ui/mapitemicons.png
