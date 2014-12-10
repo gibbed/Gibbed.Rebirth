@@ -1,4 +1,4 @@
-; 789/790 (99%)
+; 790/791 (99%)
 resources/gfx/001.000_player.anm2
 resources/gfx/001.001_player2.anm2
 resources/gfx/002.000_tear.anm2
@@ -761,6 +761,7 @@ resources/gfx/ui/main menu/optionsmenu.anm2
 resources/gfx/ui/main menu/saveselectmenu.anm2
 resources/gfx/ui/main menu/saveselectmenu_drawing.anm2
 resources/gfx/ui/main menu/saveselectmenu_ps.anm2
+resources/gfx/ui/main menu/saveselectmenu_xbox.anm2
 resources/gfx/ui/main menu/secretsmenucomponents.anm2
 resources/gfx/ui/main menu/seedentry.anm2
 resources/gfx/ui/main menu/seedwidget.anm2
