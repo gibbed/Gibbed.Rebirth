@@ -1,4 +1,4 @@
-; 790/791 (99%)
+; 792/793 (99%)
 resources/gfx/001.000_player.anm2
 resources/gfx/001.001_player2.anm2
 resources/gfx/002.000_tear.anm2
@@ -685,6 +685,7 @@ resources/gfx/characters/n005_guppy.anm2
 resources/gfx/characters/n006_ruawizard.anm2
 resources/gfx/characters/n014_blindfold.anm2
 resources/gfx/characters/n015_blank.anm2
+resources/gfx/characters/n016_christmas.anm2
 resources/gfx/characters/t53_tick.anm2
 resources/gfx/cutscenes/credits.anm2
 resources/gfx/cutscenes/epilogue.anm2
@@ -737,6 +738,7 @@ resources/gfx/ui/achievement/achievements.anm2
 resources/gfx/ui/backselectwidget.anm2
 resources/gfx/ui/boss/versusscreen.anm2
 resources/gfx/ui/buttons.anm2
+resources/gfx/ui/cursor.anm2
 resources/gfx/ui/death screen.anm2
 resources/gfx/ui/genericpopup.anm2
 resources/gfx/ui/giantbook/giantbook.anm2

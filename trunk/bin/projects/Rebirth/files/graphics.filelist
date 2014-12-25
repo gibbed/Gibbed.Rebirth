@@ -1,4 +1,4 @@
-; 2302/2302 (100%)
+; 2305/2305 (100%)
 resources/font/droid_0.png
 resources/font/pftempestasevencondensed_0.png
 resources/font/teammeatfont10_0.png
@@ -640,6 +640,7 @@ resources/gfx/characters/costumes/costume_chocolate milk_blue.png
 resources/gfx/characters/costumes/costume_chocolate milk_green.png
 resources/gfx/characters/costumes/costume_chocolate milk_red.png
 resources/gfx/characters/costumes/costume_chocolate milk_white.png
+resources/gfx/characters/costumes/costume_christmashat.png
 resources/gfx/characters/costumes/costume_dead onion.png
 resources/gfx/characters/costumes/costume_dead onion_black.png
 resources/gfx/characters/costumes/costume_dead onion_blue.png
@@ -2108,6 +2109,7 @@ resources/gfx/ui/boss/portrait_97.0_maskofinfamy.png
 resources/gfx/ui/boss/portrait_99.0_gurdyjr.png
 resources/gfx/ui/boss/vsnames.png
 resources/gfx/ui/buttons.png
+resources/gfx/ui/cursor.png
 resources/gfx/ui/death bosses.png
 resources/gfx/ui/death enemies.png
 resources/gfx/ui/death items.png
@@ -2130,6 +2132,7 @@ resources/gfx/ui/giantbook/giantbook_011_bookofrevelations.png
 resources/gfx/ui/giantbook/giantbook_012_skull.png
 resources/gfx/ui/giantbook/giantbook_013_heartpiece.png
 resources/gfx/ui/giantbook/giantbook_014_hourglass.png
+resources/gfx/ui/giantbook/giantbook_rebirth_001_bookofbelial.png
 resources/gfx/ui/giantbook/giantbook_rebirth_001_satanicbible.png
 resources/gfx/ui/giantbook/giantbook_rebirth_002_blackheart.png
 resources/gfx/ui/giantbook/giantbook_rebirth_003_d4.png
