@@ -1,4 +1,4 @@
-; 2508/2538 (98%)
+; 2512/2538 (98%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -1446,6 +1446,7 @@ resources/gfx/cutscenes/intro.anm2
 resources/gfx/cutscenes/intro6.png
 resources/gfx/cutscenes/krystal_isaac_ending_1.ogv
 resources/gfx/cutscenes/krystal_isaac_ending_2.ogv
+resources/gfx/deadeye_tears_effect.png
 resources/gfx/deadeyeteareffect.anm2
 resources/gfx/diamond_tears.png
 resources/gfx/effect_satanradial.anm2
@@ -1541,8 +1542,10 @@ resources/gfx/grid/door_26_paytoplaydoor.png
 resources/gfx/grid/door_27_drownedcaves.png
 resources/gfx/grid/door_28_scarredroomdoor.png
 resources/gfx/grid/door_29_doortobluewomb.anm2
+resources/gfx/grid/door_29_doortobluewomb.png
 resources/gfx/grid/door_29_doortobluewomb_blue.png
 resources/gfx/grid/door_30_hushdoor.anm2
+resources/gfx/grid/door_30_hushdoor.png
 resources/gfx/grid/door_31_treasureroomdoorgreed.anm2
 resources/gfx/grid/door_31_treasureroomdoorgreed.png
 resources/gfx/grid/door_32_exitdoor.anm2
@@ -1604,6 +1607,7 @@ resources/gfx/grid/rocks_scarredwomb.png
 resources/gfx/grid/tiles_itemdungeon.anm2
 resources/gfx/grid/timerplate.anm2
 resources/gfx/grid/timerplate.png
+resources/gfx/holylight_tears_effect.png
 resources/gfx/holylightteareffect.anm2
 resources/gfx/hushbullets.png
 resources/gfx/items/collectibles/collectibles_245_2020.png
