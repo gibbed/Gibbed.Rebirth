@@ -1,4 +1,4 @@
-; 677/2538 (26%)
+; 678/2538 (26%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -674,5 +674,6 @@ resources/preload.xml
 resources/rooms/00.special rooms.stb
 resources/rooms/01.basement.stb
 resources/rooms/02.cellar.stb
+resources/secret.a
 resources/sounds.xml
 resources/stages.xml
