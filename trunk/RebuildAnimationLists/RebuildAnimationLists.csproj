@@ -60,6 +60,10 @@
       <Project>{B0004480-2A5E-4805-B14B-12D368A189AC}</Project>
       <Name>Gibbed.Rebirth.FileFormats</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gibbed.Rebirth.Unpack\Gibbed.Rebirth.Unpack.csproj">
+      <Project>{2E47152B-1F90-4146-8ECC-E67EBA11CA3D}</Project>
+      <Name>Gibbed.Rebirth.Unpack</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NDesk.Options\NDesk.Options.csproj">
       <Project>{C98A6CD6-9422-4B35-8B7A-F520D75534D1}</Project>
       <Name>NDesk.Options</Name>
