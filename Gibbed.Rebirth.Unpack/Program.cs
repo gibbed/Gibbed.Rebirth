@@ -208,7 +208,7 @@ namespace Gibbed.Rebirth.Unpack
                                 if (validateChecksums == true)
                                 {
                                     var bytes = data.ToArray();
-                                    var checksum = ArchiveFile.ComputeChecksum(bytes, 0, (int)entry.Length);
+                                    var checksum = ArchiveFile.ComputeChecksum(bytes, 0, bytes.Length);
                                     if (checksum != entry.Checksum)
                                     {
                                         Console.WriteLine(
@@ -258,7 +258,7 @@ namespace Gibbed.Rebirth.Unpack
                             throw new EndOfStreamException();
                         }
 
-                        key = ArchiveFile.Bogocrypt(block, 0, blockLength, key);
+                        key = ArchiveFile.Bogocrypt1(block, 0, blockLength, key);
 
                         output.Write(block, 0, actualBlockLength);
                         remaining -= blockLength;
@@ -296,7 +296,6 @@ namespace Gibbed.Rebirth.Unpack
                             throw new InvalidOperationException();
                         }
 
-                        var startPosition = input.Position;
                         if (input.Read(blockBytes, 0, blockLength) != blockLength)
                         {
                             throw new EndOfStreamException();
@@ -344,6 +343,34 @@ namespace Gibbed.Rebirth.Unpack
                     while (isLastBlock == false);
 
                     return new MemoryStream(outputBytes);
+                }
+
+                case ArchiveCompressionMode.Bogocrypt2:
+                {
+                    var blockBytes = new byte[1024];
+
+                    var output = new MemoryStream();
+                    long remaining = entry.Length;
+                    while (remaining >= 4)
+                    {
+                        var blockLength = (int)Math.Min(blockBytes.Length, remaining);
+                        if (input.Read(blockBytes, 0, blockLength) != blockLength)
+                        {
+                            throw new EndOfStreamException();
+                        }
+
+                        ArchiveFile.Bogocrypt2(blockBytes, 0, blockLength);
+                        output.Write(blockBytes, 0, blockLength);
+                        remaining -= blockLength;
+                    }
+
+                    if (remaining > 0)
+                    {
+                        output.WriteFromStream(input, remaining);
+                    }
+
+                    output.Position = 0;
+                    return output;
                 }
 
                 default:
