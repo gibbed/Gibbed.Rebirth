@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2014 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -33,7 +33,7 @@ namespace Gibbed.Rebirth.FileFormats
         private readonly byte[] _Signature = { 0x41, 0x52, 0x43, 0x48, 0x30, 0x30, 0x30, };
 
         private Endian _Endian;
-        private bool _IsCompressed;
+        private ArchiveCompressionMode _CompressionMode;
         private readonly List<Entry> _Entries;
 
         public ArchiveFile()
@@ -47,10 +47,10 @@ namespace Gibbed.Rebirth.FileFormats
             set { this._Endian = value; }
         }
 
-        public bool IsCompressed
+        public ArchiveCompressionMode CompressionMode
         {
-            get { return this._IsCompressed; }
-            set { this._IsCompressed = value; }
+            get { return this._CompressionMode; }
+            set { this._CompressionMode = value; }
         }
 
         public List<Entry> Entries
@@ -75,12 +75,12 @@ namespace Gibbed.Rebirth.FileFormats
                 throw new FormatException();
             }
 
-            var isCompressed = input.ReadValueB8();
+            var compressionMode = (ArchiveCompressionMode)input.ReadValueU8();
             var indexTableOffset = input.ReadValueU32(endian);
             var indexTableCount = input.ReadValueU16(endian);
 
             this._Endian = endian;
-            this._IsCompressed = isCompressed;
+            this._CompressionMode = compressionMode;
             this._Entries.Clear();
 
             if (indexTableCount > 0)
@@ -122,6 +122,28 @@ namespace Gibbed.Rebirth.FileFormats
             public uint BogocryptKey
             {
                 get { return (this.NameHashB ^ 0xF9524287u) | 1u; }
+            }
+
+            // ReSharper disable InconsistentNaming
+            public ISAAC GetISAAC()
+                // ReSharper restore InconsistentNaming
+            {
+                var seed = (ulong)this.NameHashB;
+                seed = (seed << 32) | (uint)(seed ^ ((seed ^ (seed << 15)) << 8) ^ (seed >> 9));
+
+                var data = new int[256];
+                for (int i = 0; i < data.Length; i++)
+                {
+                    var part = (uint)((seed >> 27) ^ (seed >> 45));
+                    var shift = (int)(seed >> 59);
+
+                    data[i] = (int)((part >> shift) | (part << ((-shift) & 31)));
+
+                    seed *= 6364136223846793005L;
+                    seed += 127;
+                }
+
+                return new ISAAC(data);
             }
         }
 

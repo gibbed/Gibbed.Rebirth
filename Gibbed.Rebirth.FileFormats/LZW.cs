@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2014 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.Rebirth.FileFormats
 {
-    public class ArchiveCompression
+    public class LZW
     {
         private class CodeDictionary
         {
@@ -131,15 +131,15 @@ namespace Gibbed.Rebirth.FileFormats
             }
         }
 
-        public static void Decompress(ArchiveFile.Entry entry, Stream input, Stream output, Endian endian)
+        public static void Decompress(Stream input, long length, Stream output, Endian endian)
         {
             var dictionary = new CodeDictionary();
 
-            long remaining = entry.Length;
+            long remaining = length;
             while (remaining > 0)
             {
-                var length = input.ReadValueU32(endian);
-                var bytes = input.ReadBytes(length);
+                var blockLength = input.ReadValueU32(endian);
+                var bytes = input.ReadBytes(blockLength);
 
                 var reader = new BitReader(bytes);
                 
