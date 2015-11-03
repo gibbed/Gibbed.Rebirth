@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2014 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -120,13 +120,24 @@ namespace RebuildAnimationLists
 
                     using (var temp = new MemoryStream())
                     {
-                        if (archive.IsCompressed == false)
+                        switch (archive.CompressionMode)
                         {
-                            Bogocrypt(entry, input, temp);
-                        }
-                        else
-                        {
-                            ArchiveCompression.Decompress(entry, input, temp, archive.Endian);
+                            case ArchiveCompressionMode.Bogocrypt1:
+                            {
+                                Bogocrypt(entry, input, temp);
+                                break;
+                            }
+
+                            case ArchiveCompressionMode.LZW:
+                            {
+                                LZW.Decompress(input, entry.Length, temp, archive.Endian);
+                                break;
+                            }
+
+                            default:
+                            {
+                                throw new NotSupportedException();
+                            }
                         }
 
                         temp.Flush();
