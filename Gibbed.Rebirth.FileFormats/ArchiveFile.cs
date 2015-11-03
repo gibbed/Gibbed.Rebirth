@@ -108,7 +108,7 @@ namespace Gibbed.Rebirth.FileFormats
             }
         }
 
-        public struct Entry
+        public struct Entry : IEquatable<Entry>
         {
             public uint NameHashA;
             public uint NameHashB;
@@ -151,6 +151,47 @@ namespace Gibbed.Rebirth.FileFormats
                 }
 
                 return new ISAAC(data);
+            }
+
+            public bool Equals(Entry other)
+            {
+                return this.NameHashA == other.NameHashA &&
+                       this.NameHashB == other.NameHashB &&
+                       this.Offset == other.Offset &&
+                       this.Length == other.Length &&
+                       this.Checksum == other.Checksum;
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (ReferenceEquals(null, obj) == true)
+                {
+                    return false;
+                }
+                return obj is Entry && Equals((Entry)obj);
+            }
+
+            public override int GetHashCode()
+            {
+                unchecked
+                {
+                    int hashCode = (int)this.NameHashA;
+                    hashCode = (hashCode * 397) ^ (int)this.NameHashB;
+                    hashCode = (hashCode * 397) ^ (int)this.Offset;
+                    hashCode = (hashCode * 397) ^ (int)this.Length;
+                    hashCode = (hashCode * 397) ^ (int)this.Checksum;
+                    return hashCode;
+                }
+            }
+
+            public static bool operator ==(Entry left, Entry right)
+            {
+                return left.Equals(right) == true;
+            }
+
+            public static bool operator !=(Entry left, Entry right)
+            {
+                return left.Equals(right) == false;
             }
         }
 

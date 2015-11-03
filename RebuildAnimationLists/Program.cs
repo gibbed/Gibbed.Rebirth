@@ -37,6 +37,24 @@ namespace RebuildAnimationLists
             return Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
 
+        private static string GetListPath(string installPath, string inputPath)
+        {
+            installPath = installPath.ToLowerInvariant();
+            inputPath = inputPath.ToLowerInvariant();
+
+            if (inputPath.StartsWith(installPath) == false)
+            {
+                return null;
+            }
+
+            var baseName = inputPath.Substring(installPath.Length + 1);
+
+            string outputPath;
+            outputPath = Path.Combine("files", baseName);
+            outputPath = Path.ChangeExtension(outputPath, ".animlist");
+            return outputPath;
+        }
+
         public static void Main(string[] args)
         {
             bool showHelp = false;
@@ -99,64 +117,71 @@ namespace RebuildAnimationLists
 
             var knownHashes = manager.LoadListsAnimationNames();
 
-            var inputPath = Path.Combine(installPath, "animations.a");
-            var outputPath = Path.Combine(listsPath, "files", "animations.animlist");
+            var archivePaths = new List<string>();
+            archivePaths.Add(Path.Combine(installPath, "afterbirth.a"));
+            archivePaths.Add(Path.Combine(installPath, "animations.a"));
 
-            if (File.Exists(inputPath + ".bak") == true)
+            var outputPaths = new List<string>();
+
+            var nameHash = ArchiveFile.ComputeNameHash("resources/animations.b");
+            for (int i = 0; i < archivePaths.Count; i++)
             {
-                inputPath += ".bak";
-            }
-
-            var hashes = new List<uint>();
-
-            var archive = new ArchiveFile();
-            using (var input = File.OpenRead(inputPath))
-            {
-                archive.Deserialize(input);
-
-                foreach (var entry in archive.Entries)
+                var archivePath = archivePaths[i];
+                if (File.Exists(archivePath) == false)
                 {
+                    continue;
+                }
+
+                var outputPath = GetListPath(installPath, archivePath);
+                if (outputPath == null)
+                {
+                    throw new InvalidOperationException();
+                }
+
+                Console.WriteLine(outputPath);
+                outputPath = Path.Combine(listsPath, outputPath);
+
+                if (outputPaths.Contains(outputPath) == true)
+                {
+                    throw new InvalidOperationException();
+                }
+
+                outputPaths.Add(outputPath);
+
+                if (File.Exists(archivePath + ".bak") == true)
+                {
+                    archivePath += ".bak";
+                }
+
+                var hashes = new List<uint>();
+
+                var archive = new ArchiveFile();
+                using (var input = File.OpenRead(archivePath))
+                {
+                    archive.Deserialize(input);
+
+                    var entry = archive.Entries.FirstOrDefault(e => e.CombinedNameHash == nameHash);
+                    if (entry == default(ArchiveFile.Entry))
+                    {
+                        continue;
+                    }
+
                     input.Seek(entry.Offset, SeekOrigin.Begin);
 
-                    using (var temp = new MemoryStream())
+                    using (var data = Gibbed.Rebirth.Unpack.ArchiveCompression.ReadEntry(
+                        input,
+                        entry,
+                        archive.CompressionMode,
+                        archive.Endian))
                     {
-                        switch (archive.CompressionMode)
-                        {
-                            case ArchiveCompressionMode.Bogocrypt1:
-                            {
-                                Bogocrypt1(entry, input, temp);
-                                break;
-                            }
-
-                            case ArchiveCompressionMode.LZW:
-                            {
-                                LZW.Decompress(input, entry.Length, temp, archive.Endian);
-                                break;
-                            }
-
-                            default:
-                            {
-                                throw new NotSupportedException();
-                            }
-                        }
-
-                        temp.Flush();
-                        temp.Position = 0;
-
-                        if (temp.Length != entry.Length)
-                        {
-                            throw new InvalidOperationException();
-                        }
-
                         var cache = new AnimationCacheBinaryFile();
-                        cache.Deserialize(temp);
-
+                        cache.Deserialize(data);
                         hashes.AddRange(cache.AnimatedActors.Keys);
                     }
                 }
-            }
 
-            HandleEntries(hashes, knownHashes, outputPath);
+                HandleEntries(hashes, knownHashes, outputPath);
+            }
         }
 
         private static void HandleEntries(IEnumerable<uint> hashes,
