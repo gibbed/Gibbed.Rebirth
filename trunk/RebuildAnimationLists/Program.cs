@@ -124,7 +124,7 @@ namespace RebuildAnimationLists
                         {
                             case ArchiveCompressionMode.Bogocrypt1:
                             {
-                                Bogocrypt(entry, input, temp);
+                                Bogocrypt1(entry, input, temp);
                                 break;
                             }
 
@@ -204,7 +204,7 @@ namespace RebuildAnimationLists
             }
         }
 
-        private static void Bogocrypt(ArchiveFile.Entry entry, Stream input, Stream output)
+        private static void Bogocrypt1(ArchiveFile.Entry entry, Stream input, Stream output)
         {
             var key = entry.BogocryptKey;
             long remaining = entry.Length;
@@ -224,7 +224,7 @@ namespace RebuildAnimationLists
                     throw new EndOfStreamException();
                 }
 
-                key = ArchiveFile.Bogocrypt(block, 0, blockLength, key);
+                key = ArchiveFile.Bogocrypt1(block, 0, blockLength, key);
 
                 output.Write(block, 0, actualBlockLength);
                 remaining -= blockLength;
