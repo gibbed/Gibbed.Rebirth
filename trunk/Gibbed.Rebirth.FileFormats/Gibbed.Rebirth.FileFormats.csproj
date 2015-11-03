@@ -50,8 +50,10 @@
     <Compile Include="Animation\NullAnimation.cs" />
     <Compile Include="Animation\RootAnimation.cs" />
     <Compile Include="Animation\Trigger.cs" />
+    <Compile Include="ArchiveCompressionMode.cs" />
     <Compile Include="ArchiveFile.cs" />
-    <Compile Include="ArchiveCompression.cs" />
+    <Compile Include="ISAAC.cs" />
+    <Compile Include="LZW.cs" />
     <Compile Include="BitReader.cs" />
     <Compile Include="ProjectHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2014 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -26,7 +26,10 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Gibbed.IO;
 using Gibbed.Rebirth.FileFormats;
+using ICSharpCode.SharpZipLib.Zip.Compression;
+using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using NDesk.Options;
 
 namespace Gibbed.Rebirth.Unpack
@@ -135,16 +138,25 @@ namespace Gibbed.Rebirth.Unpack
                             current++;
 
                             string entryName;
-                            if (GetEntryName(
-                                input,
-                                archive,
-                                entry,
-                                hashes,
-                                extractUnknowns,
-                                onlyUnknowns,
-                                out entryName) == false)
+                            if (hashes.Contains(entry.CombinedNameHash) == false)
                             {
-                                continue;
+                                if (extractUnknowns == false)
+                                {
+                                    continue;
+                                }
+
+                                entryName = entry.CombinedNameHash.ToString("X16");
+                                entryName = Path.Combine("__UNKNOWN", entryName + ".unknown");
+                            }
+                            else
+                            {
+                                if (onlyUnknowns == true)
+                                {
+                                    continue;
+                                }
+
+                                entryName = hashes[entry.CombinedNameHash];
+                                entryName = FilterEntryName(entryName);
                             }
 
                             if (duplicates.ContainsKey(entry.CombinedNameHash) == true)
@@ -184,50 +196,32 @@ namespace Gibbed.Rebirth.Unpack
                                                   entryName);
                             }
 
-                            input.Seek(entry.Offset, SeekOrigin.Begin);
-
                             var entryParent = Path.GetDirectoryName(entryPath);
                             if (string.IsNullOrEmpty(entryParent) == false)
                             {
                                 Directory.CreateDirectory(entryParent);
                             }
 
-                            using (var temp = new MemoryStream())
+                            input.Seek(entry.Offset, SeekOrigin.Begin);
+                            using (var data = ReadEntry(input, entry, archive.CompressionMode, archive.Endian))
                             {
-                                if (archive.IsCompressed == false)
-                                {
-                                    Bogocrypt(entry, input, temp);
-                                }
-                                else
-                                {
-                                    ArchiveCompression.Decompress(entry, input, temp, archive.Endian);
-                                }
-
-                                temp.Flush();
-                                temp.Position = 0;
-
-                                if (temp.Length != entry.Length)
-                                {
-                                    throw new InvalidOperationException();
-                                }
-
-                                var buffer = temp.GetBuffer();
-
                                 if (validateChecksums == true)
                                 {
-                                    var checksum = ArchiveFile.ComputeChecksum(buffer, 0, (int)temp.Length);
+                                    var bytes = data.ToArray();
+                                    var checksum = ArchiveFile.ComputeChecksum(bytes, 0, (int)entry.Length);
                                     if (checksum != entry.Checksum)
                                     {
-                                        Console.WriteLine("checksum mismatch for {0}: {1:X} vs {2:X}",
-                                                          entryName,
-                                                          entry.Checksum,
-                                                          checksum);
+                                        Console.WriteLine(
+                                            "checksum mismatch for {0}: {1:X} vs {2:X}",
+                                            entryName,
+                                            entry.Checksum,
+                                            checksum);
                                     }
                                 }
 
                                 using (var output = File.Create(entryPath))
                                 {
-                                    output.Write(buffer, 0, (int)entry.Length);
+                                    output.WriteFromStream(data, entry.Length);
                                 }
                             }
                         }
@@ -236,102 +230,125 @@ namespace Gibbed.Rebirth.Unpack
             }
         }
 
-        private static void Bogocrypt(ArchiveFile.Entry entry, Stream input, Stream output)
-        {
-            var key = entry.BogocryptKey;
-            long remaining = entry.Length;
-
-            var block = new byte[1024];
-            while (remaining > 0)
-            {
-                var blockLength = (int)Math.Min(block.Length, remaining + 3 & ~3);
-                var actualBlockLength = (int)Math.Min(block.Length, remaining);
-                if (blockLength == 0)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                if (input.Read(block, 0, blockLength) < actualBlockLength)
-                {
-                    throw new EndOfStreamException();
-                }
-
-                key = ArchiveFile.Bogocrypt(block, 0, blockLength, key);
-
-                output.Write(block, 0, actualBlockLength);
-                remaining -= blockLength;
-            }
-        }
-
-        private static bool GetEntryName(
+        private static MemoryStream ReadEntry(
             Stream input,
-            ArchiveFile archive,
             ArchiveFile.Entry entry,
-            ProjectData.HashList<ulong> hashes,
-            bool extractUnknowns,
-            bool onlyUnknowns,
-            out string entryName)
+            ArchiveCompressionMode mode,
+            Endian endian)
         {
-            entryName = hashes[entry.CombinedNameHash];
-
-            if (entryName == null)
+            switch (mode)
             {
-                if (extractUnknowns == false)
+                case ArchiveCompressionMode.Bogocrypt1:
                 {
-                    return false;
+                    var output = new MemoryStream();
+                    var key = entry.BogocryptKey;
+                    long remaining = entry.Length;
+                    var block = new byte[1024];
+                    while (remaining > 0)
+                    {
+                        var blockLength = (int)Math.Min(block.Length, remaining + 3 & ~3);
+                        var actualBlockLength = (int)Math.Min(block.Length, remaining);
+                        if (blockLength == 0)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        if (input.Read(block, 0, blockLength) < actualBlockLength)
+                        {
+                            throw new EndOfStreamException();
+                        }
+
+                        key = ArchiveFile.Bogocrypt(block, 0, blockLength, key);
+
+                        output.Write(block, 0, actualBlockLength);
+                        remaining -= blockLength;
+                    }
+                    return output;
                 }
 
-                string type;
-                string extension;
+                case ArchiveCompressionMode.LZW:
                 {
-                    var guess = new byte[64];
-                    int read = 0;
+                    var output = new MemoryStream();
+                    LZW.Decompress(input, entry.Length, output, endian);
+                    return output;
+                }
 
-                    if (archive.IsCompressed == false)
+                case ArchiveCompressionMode.MiniZ:
+                {
+                    ISAAC isaac = null;
+                    var outputBytes = new byte[entry.Length];
+                    var outputOffset = 0;
+                    var blockBytes = new byte[0x800];
+                    long remaining = entry.Length;
+
+                    bool isCompressed = true;
+                    bool isLastBlock;
+                    do
                     {
-                        if (entry.Length > 0)
+                        var blockFlags = input.ReadValueU32(endian);
+                        var blockLength = (int)(blockFlags & ~0x80000000u);
+                        isLastBlock = (blockFlags & 0x80000000u) != 0;
+
+                        if (blockLength > blockBytes.Length)
                         {
-                            input.Seek(entry.Offset, SeekOrigin.Begin);
-                            read = input.Read(guess, 0, (int)Math.Min(entry.Length, guess.Length));
+                            throw new InvalidOperationException();
+                        }
+
+                        var startPosition = input.Position;
+                        if (input.Read(blockBytes, 0, blockLength) != blockLength)
+                        {
+                            throw new EndOfStreamException();
+                        }
+
+                        if (isCompressed == false || (isLastBlock == false && blockLength == 1024))
+                        {
+                            isCompressed = false;
+                            if (isaac == null)
+                            {
+                                isaac = entry.GetISAAC();
+                            }
+
+                            int seed = 0;
+                            for (int o = 0; o < blockLength; o++)
+                            {
+                                if ((o & 3) != 0)
+                                {
+                                    seed >>= 8;
+                                }
+                                else
+                                {
+                                    seed = isaac.Value();
+                                }
+
+                                blockBytes[o] ^= (byte)seed;
+                            }
+
+                            Array.Copy(blockBytes, 0, outputBytes, outputOffset, blockLength);
+
+                            outputOffset += blockLength;
+                            remaining -= blockLength;
+                        }
+                        else
+                        {
+                            using (var temp = new MemoryStream(blockBytes, false))
+                            {
+                                var zlib = new InflaterInputStream(temp, new Inflater(true));
+                                var read = zlib.Read(outputBytes, outputOffset, (int)Math.Min(remaining, 1024));
+                                outputOffset += read;
+                                remaining -= read;
+                            }
                         }
                     }
-                    else
-                    {
-                        //throw new NotImplementedException();
-                    }
+                    while (isLastBlock == false);
 
-                    //var tuple = FileDetection.Detect(guess, Math.Min(guess.Length, read));
-                    //type = tuple != null ? tuple.Item1 : "unknown";
-                    //extension = tuple != null ? tuple.Item2 : null;
-                    type = "unknown";
-                    extension = null;
+                    return new MemoryStream(outputBytes);
                 }
 
-                entryName = entry.CombinedNameHash.ToString("X16");
-
-                if (string.IsNullOrEmpty(extension) == false)
+                default:
                 {
-                    entryName = Path.ChangeExtension(entryName, "." + extension);
+                    throw new NotSupportedException();
                 }
-
-                if (string.IsNullOrEmpty(type) == false)
-                {
-                    entryName = Path.Combine(type, entryName);
-                }
-
-                entryName = Path.Combine("__UNKNOWN", entryName);
             }
-            else
-            {
-                if (onlyUnknowns == true)
-                {
-                    return false;
-                }
-
-                entryName = FilterEntryName(entryName);
-            }
-
-            return true;
         }
 
         private static string FilterEntryName(string entryName)
