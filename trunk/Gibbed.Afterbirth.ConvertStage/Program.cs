@@ -210,7 +210,7 @@ namespace Gibbed.Afterbirth.ConvertStage
                 using (var writer = XmlWriter.Create(outputPath, settings))
                 {
                     writer.WriteStartDocument();
-                    writer.WriteComment("Converted to ANM2 by Gibbed.Rebirth.ConvertStage");
+                    writer.WriteComment("Converted to ANM2 by Gibbed.Afterbirth.ConvertStage");
 
                     writer.WriteStartElement("stage");
 
