@@ -1,7 +1,8 @@
-; 2506/2538 (98%)
+; 2508/2538 (98%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
+resources/archive_afterbirth.a.cpp
 resources/babies.xml
 resources/backdrops.xml
 resources/bosscolors.xml
@@ -1452,6 +1453,7 @@ resources/gfx/effects/effect_000_specialshopkeepers.png
 resources/gfx/effects/effect_003_bloodtear_hush.png
 resources/gfx/effects/effect_005.1_megamawfire.png
 resources/gfx/effects/effect_005_fire.png
+resources/gfx/effects/effect_005_fire_blue.png
 resources/gfx/effects/effect_005_fire_purple.png
 resources/gfx/effects/effect_009_poof01.png
 resources/gfx/effects/effect_009_poof01_large.png
