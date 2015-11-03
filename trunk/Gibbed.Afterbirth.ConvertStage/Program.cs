@@ -27,10 +27,10 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.XPath;
-using Gibbed.Rebirth.FileFormats;
+using Gibbed.Afterbirth.FileFormats;
 using NDesk.Options;
 
-namespace Gibbed.Rebirth.ConvertStage
+namespace Gibbed.Afterbirth.ConvertStage
 {
     public class Program
     {
@@ -126,11 +126,13 @@ namespace Gibbed.Rebirth.ConvertStage
                         var room = new StageBinaryFile.Room();
                         ParseAttribute(rawRoom, "type", out room.Type, culture);
                         ParseAttribute(rawRoom, "variant", out room.Variant, culture);
+                        ParseAttribute(rawRoom, "subtype", out room.Subtype, culture);
                         ParseAttribute(rawRoom, "name", out room.Name);
                         ParseAttribute(rawRoom, "difficulty", out room.Difficulty, culture);
                         ParseAttribute(rawRoom, "weight", out room.Weight, culture);
                         ParseAttribute(rawRoom, "width", out room.Width, culture);
                         ParseAttribute(rawRoom, "height", out room.Height, culture);
+                        ParseAttribute(rawRoom, "shape", out room.Shape, culture);
 
                         var rawDoors = rawRoom.Select("door");
                         var doors = new List<StageBinaryFile.Door>();
@@ -217,11 +219,13 @@ namespace Gibbed.Rebirth.ConvertStage
                         writer.WriteStartElement("room");
                         writer.WriteAttributeString("type", room.Type.ToString(culture));
                         writer.WriteAttributeString("variant", room.Variant.ToString(culture));
+                        writer.WriteAttributeString("subtype", room.Subtype.ToString(culture));
                         writer.WriteAttributeString("name", room.Name);
                         writer.WriteAttributeString("difficulty", room.Difficulty.ToString(culture));
                         writer.WriteAttributeString("weight", room.Weight.ToString(culture));
                         writer.WriteAttributeString("width", room.Width.ToString(culture));
                         writer.WriteAttributeString("height", room.Height.ToString(culture));
+                        writer.WriteAttributeString("shape", room.Shape.ToString(culture));
 
                         foreach (var door in room.Doors)
                         {
