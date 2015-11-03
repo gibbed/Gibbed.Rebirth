@@ -1,4 +1,4 @@
-; 678/2538 (26%)
+; 683/2538 (26%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -8,6 +8,7 @@ resources/bosscolors.xml
 resources/bossportraits.xml
 resources/challenges.xml
 resources/costumes2.xml
+resources/curses.xml
 resources/cutscenes.xml
 resources/entities2.xml
 resources/font/teammeatfont10.fnt
@@ -412,6 +413,8 @@ resources/gfx/cutscenes/credits_page7.png
 resources/gfx/cutscenes/credits_page8.png
 resources/gfx/cutscenes/credits_page9.png
 resources/gfx/cutscenes/intro6.png
+resources/gfx/cutscenes/krystal_isaac_ending_1.ogv
+resources/gfx/cutscenes/krystal_isaac_ending_2.ogv
 resources/gfx/effects/effect_005.1_megamawfire.png
 resources/gfx/effects/effect_005_fire.png
 resources/gfx/effects/effect_009_poof01.png
@@ -675,5 +678,7 @@ resources/rooms/00.special rooms.stb
 resources/rooms/01.basement.stb
 resources/rooms/02.cellar.stb
 resources/secret.a
+resources/seedmenu.xml
 resources/sounds.xml
 resources/stages.xml
+resources/translations.xml
