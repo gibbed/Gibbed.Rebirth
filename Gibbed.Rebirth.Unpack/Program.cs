@@ -263,6 +263,7 @@ namespace Gibbed.Rebirth.Unpack
                         output.Write(block, 0, actualBlockLength);
                         remaining -= blockLength;
                     }
+                    output.Position = 0;
                     return output;
                 }
 
@@ -270,6 +271,7 @@ namespace Gibbed.Rebirth.Unpack
                 {
                     var output = new MemoryStream();
                     LZW.Decompress(input, entry.Length, output, endian);
+                    output.Position = 0;
                     return output;
                 }
 
