@@ -1,4 +1,4 @@
-; 2484/2538 (97%)
+; 2506/2538 (98%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -584,6 +584,7 @@ resources/gfx/273.001_thelamb.anm2
 resources/gfx/274.000_megasatanhead.anm2
 resources/gfx/274.001_megasatanhand.anm2
 resources/gfx/275.000_megasatan2head.anm2
+resources/gfx/275.001_megasatan2hand.anm2
 resources/gfx/276.000_roundy.anm2
 resources/gfx/277.000_black boney.anm2
 resources/gfx/278.000_black globin.anm2
@@ -1108,6 +1109,11 @@ resources/gfx/characters/costumes/costume_433_myshadow.png
 resources/gfx/characters/costumes/costume_434_jarofflies.png
 resources/gfx/characters/costumes/costume_438_binky.png
 resources/gfx/characters/costumes/costume_boomerang.png
+resources/gfx/characters/costumes/costume_boomerang_black.png
+resources/gfx/characters/costumes/costume_boomerang_blue.png
+resources/gfx/characters/costumes/costume_boomerang_green.png
+resources/gfx/characters/costumes/costume_boomerang_red.png
+resources/gfx/characters/costumes/costume_boomerang_white.png
 resources/gfx/characters/costumes/costume_mawmark.png
 resources/gfx/characters/costumes/costume_megablast.png
 resources/gfx/characters/costumes/costume_rebirth_90_thejar.png
@@ -1134,6 +1140,11 @@ resources/gfx/characters/costumes/transformation_mushroom_head.png
 resources/gfx/characters/costumes/transformation_poop_body.png
 resources/gfx/characters/costumes/transformation_poop_head.png
 resources/gfx/characters/costumes/x_overdose.png
+resources/gfx/characters/costumes/x_overdose_black.png
+resources/gfx/characters/costumes/x_overdose_blue.png
+resources/gfx/characters/costumes/x_overdose_green.png
+resources/gfx/characters/costumes/x_overdose_red.png
+resources/gfx/characters/costumes/x_overdose_white.png
 resources/gfx/characters/n001_puberty.anm2
 resources/gfx/characters/n002_i found pills.anm2
 resources/gfx/characters/n005_guppy.anm2
@@ -1916,6 +1927,7 @@ resources/gfx/ui/boss/bossname_79.0_gemini.png
 resources/gfx/ui/boss/bossname_79.1_steven.png
 resources/gfx/ui/boss/bossname_79.2_blightedovum.png
 resources/gfx/ui/boss/bossname_81.0_thefallen.png
+resources/gfx/ui/boss/bossname_81.1_krampus.png
 resources/gfx/ui/boss/bossname_82.0_headlesshorseman.png
 resources/gfx/ui/boss/bossname_84.0_satan.png
 resources/gfx/ui/boss/bossname_97.0_maskofinfamy.png
@@ -1932,6 +1944,16 @@ resources/gfx/ui/boss/bossspot_18_shop.png
 resources/gfx/ui/boss/doubletrouble.png
 resources/gfx/ui/boss/frame.png
 resources/gfx/ui/boss/playername_01_isaac.png
+resources/gfx/ui/boss/playername_02_magdalene.png
+resources/gfx/ui/boss/playername_03_cain.png
+resources/gfx/ui/boss/playername_04_judas.png
+resources/gfx/ui/boss/playername_05_eve.png
+resources/gfx/ui/boss/playername_06_bluebaby.png
+resources/gfx/ui/boss/playername_07_samson.png
+resources/gfx/ui/boss/playername_08_azazel.png
+resources/gfx/ui/boss/playername_09_eden.png
+resources/gfx/ui/boss/playername_10_lazarus.png
+resources/gfx/ui/boss/playername_12_thelost.png
 resources/gfx/ui/boss/playername_13_lilith.png
 resources/gfx/ui/boss/playerportrait_13_lilith.png
 resources/gfx/ui/boss/playerspot_13_burning_basement.png
