@@ -1,4 +1,4 @@
-; 789/1009 (78%)
+; 1008/1009 (99%)
 resources/gfx/001.000_player.anm2
 resources/gfx/001.001_player2.anm2
 resources/gfx/002.000_tear.anm2
@@ -14,6 +14,17 @@ resources/gfx/002.009_chaos card tear.anm2
 resources/gfx/002.010_lost contact tear.anm2
 resources/gfx/002.011_cupid tear.anm2
 resources/gfx/002.012_cupid blood tear.anm2
+resources/gfx/002.013_nail tear.anm2
+resources/gfx/002.014_pupula tear.anm2
+resources/gfx/002.015_pupula blood tear.anm2
+resources/gfx/002.016_gods flesh tear.anm2
+resources/gfx/002.017_gods flesh blood tear.anm2
+resources/gfx/002.018_diamond tear.anm2
+resources/gfx/002.019_tear explosivo.anm2
+resources/gfx/002.020_coin tear.anm2
+resources/gfx/002.021_multidimensional tear.anm2
+resources/gfx/002.022_stone tear.anm2
+resources/gfx/002.023_nail blood tear.anm2
 resources/gfx/003.001_brother bobby.anm2
 resources/gfx/003.002_demon baby.anm2
 resources/gfx/003.003_little chubby.anm2
@@ -61,6 +72,29 @@ resources/gfx/003.068_guillotine.anm2
 resources/gfx/003.073_blue spider.anm2
 resources/gfx/003.075_samsons chains.anm2
 resources/gfx/003.079_gemini familiar.anm2
+resources/gfx/003.080_incubus.anm2
+resources/gfx/003.081_fates reward.anm2
+resources/gfx/003.082_lil chest.anm2
+resources/gfx/003.083_sworn protector.anm2
+resources/gfx/003.084_friend zone.anm2
+resources/gfx/003.085_lost fly.anm2
+resources/gfx/003.086_charged baby.anm2
+resources/gfx/003.087_lil gurdy.anm2
+resources/gfx/003.088_bumbo.anm2
+resources/gfx/003.089_censer.anm2
+resources/gfx/003.090_key bum.anm2
+resources/gfx/003.091_rune bag.anm2
+resources/gfx/003.092_seraphim.anm2
+resources/gfx/003.093_gb bug.anm2
+resources/gfx/003.094_spidermod.anm2
+resources/gfx/003.095_farting baby.anm2
+resources/gfx/003.096_succubus.anm2
+resources/gfx/003.097_lilloki.anm2
+resources/gfx/003.098_obsessedfan.anm2
+resources/gfx/003.099_papafly.anm2
+resources/gfx/003.100_milk.anm2
+resources/gfx/003.101_multidimensional baby.anm2
+resources/gfx/003.102_superbum.anm2
 resources/gfx/003.207_ballofbandages l1.anm2
 resources/gfx/003.207_ballofbandages l2.anm2
 resources/gfx/003.207_ballofbandages l3.anm2
@@ -95,24 +129,31 @@ resources/gfx/004.008_firebomb.anm2
 resources/gfx/004.009_buttbomb.anm2
 resources/gfx/004.010_mr mega bomb.anm2
 resources/gfx/004.011_bobby bomb.anm2
+resources/gfx/004.012_glitterbomb.anm2
 resources/gfx/005.011_heart.anm2
 resources/gfx/005.012_heart (half).anm2
 resources/gfx/005.013_heart (soul).anm2
 resources/gfx/005.014_heart (eternal).anm2
 resources/gfx/005.015_double heart.anm2
 resources/gfx/005.016_black heart.anm2
+resources/gfx/005.017_goldheart.anm2
 resources/gfx/005.021_penny.anm2
 resources/gfx/005.022_nickel.anm2
 resources/gfx/005.023_dime.anm2
 resources/gfx/005.024_double penny.anm2
+resources/gfx/005.025_sticky nickel.anm2
 resources/gfx/005.031_key.anm2
 resources/gfx/005.032_golden key.anm2
 resources/gfx/005.033_keyring.anm2
 resources/gfx/005.041_bomb.anm2
 resources/gfx/005.042_double bomb.anm2
+resources/gfx/005.043_golden bomb.anm2
 resources/gfx/005.050_chest.anm2
 resources/gfx/005.051_bombchest.anm2
+resources/gfx/005.052_spikedchest.anm2
+resources/gfx/005.053_eternalchest.anm2
 resources/gfx/005.060_locked chest.anm2
+resources/gfx/005.069_grabbag.anm2
 resources/gfx/005.071_pill blue-blue.anm2
 resources/gfx/005.072_pill white-blue.anm2
 resources/gfx/005.073_pill orange-orange.anm2
@@ -122,6 +163,10 @@ resources/gfx/005.076_pill pink-red.anm2
 resources/gfx/005.077_pill blue-cadetblue.anm2
 resources/gfx/005.078_pill yellow-orange.anm2
 resources/gfx/005.079_pill dots-white.anm2
+resources/gfx/005.080_pill white-azure.anm2
+resources/gfx/005.081_pill black-yellow.anm2
+resources/gfx/005.082_pill white-black.anm2
+resources/gfx/005.083_pill white-yellow.anm2
 resources/gfx/005.090_littlebattery.anm2
 resources/gfx/005.100_collectible.anm2
 resources/gfx/005.150_shop item.anm2
@@ -129,6 +174,8 @@ resources/gfx/005.301_tarot card.anm2
 resources/gfx/005.302_suit card.anm2
 resources/gfx/005.303_rune1.anm2
 resources/gfx/005.304_rune2.anm2
+resources/gfx/005.305_emergencycontact.anm2
+resources/gfx/005.306_diceshard.anm2
 resources/gfx/005.340_big chest.anm2
 resources/gfx/005.350_trinket.anm2
 resources/gfx/005.360_red chest.anm2
@@ -142,6 +189,10 @@ resources/gfx/006.005_devil beggar.anm2
 resources/gfx/006.006_shell game.anm2
 resources/gfx/006.007_key master.anm2
 resources/gfx/006.008_donationmachine.anm2
+resources/gfx/006.009_bomb bum.anm2
+resources/gfx/006.010_restockmachine.anm2
+resources/gfx/006.011_greeddonationmachine.anm2
+resources/gfx/007.001.003_dark ring.anm2
 resources/gfx/007.001_thick red laser.anm2
 resources/gfx/007.002_thin red laser.anm2
 resources/gfx/007.003_shoop laser.anm2
@@ -149,13 +200,19 @@ resources/gfx/007.004_pride laser.anm2
 resources/gfx/007.005_lightbeam.anm2
 resources/gfx/007.006_cagevislaser.anm2
 resources/gfx/007.006_giant red laser.anm2
+resources/gfx/007.007_tractorbeam laser.anm2
+resources/gfx/007.008_light ring.anm2
+resources/gfx/007.009_brimtech.anm2
 resources/gfx/008.000_moms knife.anm2
 resources/gfx/009.000_projectile.anm2
 resources/gfx/009.001_bone projectile.anm2
 resources/gfx/009.002_fire projectile.anm2
 resources/gfx/009.003_puke projectile.anm2
+resources/gfx/009.005_corn projectile.anm2
+resources/gfx/009.006_hush projectile.anm2
 resources/gfx/010.000_frowning gaper.anm2
 resources/gfx/010.001_gaper.anm2
+resources/gfx/010.002_flaminggaper.anm2
 resources/gfx/011.000_gusher.anm2
 resources/gfx/011.001_pacer.anm2
 resources/gfx/012.000_horf.anm2
@@ -171,17 +228,24 @@ resources/gfx/016.002_mulliboom.anm2
 resources/gfx/017.001_shopkeeper.anm2
 resources/gfx/017.002_secret room keeper.anm2
 resources/gfx/017.003_errorkeeper.anm2
+resources/gfx/017.004_special shopkeeper.anm2
+resources/gfx/017.005_special secret room keeper.anm2
 resources/gfx/018.000_attack fly.anm2
 resources/gfx/019.000_larry jr..anm2
 resources/gfx/019.001_the hollow.anm2
 resources/gfx/020.000_monstro.anm2
 resources/gfx/021.000_maggot.anm2
 resources/gfx/022.000_hive.anm2
+resources/gfx/022.001_drowned hive.anm2
+resources/gfx/023.000.001_my shadow.anm2
 resources/gfx/023.000_charger.anm2
+resources/gfx/023.001_drowned charger.anm2
 resources/gfx/024.000_globin.anm2
 resources/gfx/024.001_gazing globin.anm2
+resources/gfx/024.002_dank globin.anm2
 resources/gfx/025.000_boom fly.anm2
 resources/gfx/025.001_red boom fly.anm2
+resources/gfx/025.002_drowned boom fly.anm2
 resources/gfx/026.000_maw.anm2
 resources/gfx/026.001_red maw.anm2
 resources/gfx/026.002_psychic maw.anm2
@@ -212,8 +276,10 @@ resources/gfx/038.002_ultra pride baby.anm2
 resources/gfx/039.000_vis.anm2
 resources/gfx/039.001_double vis.anm2
 resources/gfx/039.002_chubber.anm2
+resources/gfx/039.003_scarred double vis.anm2
 resources/gfx/039.022_chubber projectile.anm2
 resources/gfx/040.000_guts.anm2
+resources/gfx/040.001_scarred guts.anm2
 resources/gfx/041.000_knight.anm2
 resources/gfx/041.001_selfless knight.anm2
 resources/gfx/042.000_stone grimace.anm2
@@ -249,6 +315,7 @@ resources/gfx/056.000_lump.anm2
 resources/gfx/057.000_membrain.anm2
 resources/gfx/057.001_mama guts.anm2
 resources/gfx/058.000_para-bite.anm2
+resources/gfx/058.001_scarred para-bite.anm2
 resources/gfx/059.000_fred.anm2
 resources/gfx/060.000_eye.anm2
 resources/gfx/060.001_bloodshot eye.anm2
@@ -256,6 +323,7 @@ resources/gfx/061.000_sucker.anm2
 resources/gfx/061.001_spit.anm2
 resources/gfx/062.000_pin.anm2
 resources/gfx/062.001_scolex.anm2
+resources/gfx/062.002_thefrail.anm2
 resources/gfx/063.000_famine.anm2
 resources/gfx/064.000_pestilence.anm2
 resources/gfx/065.000_war.anm2
@@ -363,6 +431,7 @@ resources/gfx/1000.043_poop explosion.anm2
 resources/gfx/1000.046_trinity shield.anm2
 resources/gfx/1000.048_battery.anm2
 resources/gfx/1000.049_heart.anm2
+resources/gfx/1000.050_bouncinglaserimpact.anm2
 resources/gfx/1000.050_brimstoneimpact.anm2
 resources/gfx/1000.050_brimstoneimpact_cagevis.anm2
 resources/gfx/1000.050_laserimpact.anm2
@@ -381,10 +450,32 @@ resources/gfx/1000.074_isaacs carpet.anm2
 resources/gfx/1000.076_dice floor.anm2
 resources/gfx/1000.077_largebloodexplosion.anm2
 resources/gfx/1000.078_lemon party.anm2
+resources/gfx/1000.081_friendly ball.anm2
+resources/gfx/1000.082_wombhole teleport.anm2
+resources/gfx/1000.083_spear of destiny.anm2
+resources/gfx/1000.084_evil eye.anm2
+resources/gfx/1000.085_diamond particle.anm2
+resources/gfx/1000.086_nail particle.anm2
+resources/gfx/1000.087_falling ember.anm2
+resources/gfx/1000.088_darksmoke.anm2
+resources/gfx/1000.089_ultragreedfootsteps.anm2
+resources/gfx/1000.090_puddle milk.anm2
+resources/gfx/1000.091_moms hand.anm2
+resources/gfx/1000.092_creep (powder).anm2
+resources/gfx/1000.093_pentagram (powder).anm2
+resources/gfx/1000.095_goldparticle.anm2
+resources/gfx/1000.096_hushlaser.anm2
+resources/gfx/1000.097_impact.anm2
+resources/gfx/1000.098_coinparticle.anm2
+resources/gfx/1000.099_splash.anm2
+resources/gfx/1000.101_hushlaserup.anm2
+resources/gfx/1000.102_bullet poof_hush.anm2
+resources/gfx/1000.103_ultragreedbling.anm2
 resources/gfx/101.000_daddy long legs.anm2
 resources/gfx/101.001_triachnid.anm2
 resources/gfx/102.000_isaac (final boss).anm2
 resources/gfx/102.001_ (final boss).anm2
+resources/gfx/102.002_ (alt).anm2
 resources/gfx/201.000_stone eye.anm2
 resources/gfx/202.000_constant stone shooter.anm2
 resources/gfx/203.000_brimstone head.anm2
@@ -396,18 +487,23 @@ resources/gfx/206.000_crazy long legs.anm2
 resources/gfx/206.001_small crazy long legs.anm2
 resources/gfx/207.000_fatty.anm2
 resources/gfx/207.001_pale fatty.anm2
+resources/gfx/207.002_flamingfatty.anm2
 resources/gfx/208.000_fatsack.anm2
 resources/gfx/209.000_blubber.anm2
 resources/gfx/210.000_half sack.anm2
 resources/gfx/212.000_deathshead.anm2
 resources/gfx/212.000_moms hand.anm2
+resources/gfx/212.001_dank deathshead.anm2
 resources/gfx/213.000_level2fly.anm2
 resources/gfx/214.000_level2spider.anm2
 resources/gfx/216.000_dip.anm2
+resources/gfx/216.001_corn.anm2
+resources/gfx/216.002_browniecorn.anm2
 resources/gfx/218.000_wall hugger.anm2
 resources/gfx/219.000_wizoob.anm2
 resources/gfx/220.000_cod worm.anm2
 resources/gfx/220.000_squirt.anm2
+resources/gfx/220.001_dank squirt.anm2
 resources/gfx/221.000_swinger.anm2
 resources/gfx/222.000_ring fly.anm2
 resources/gfx/223.000_dinga.anm2
@@ -424,6 +520,7 @@ resources/gfx/234.000_onetooth.anm2
 resources/gfx/235.000_gapingmaw.anm2
 resources/gfx/236.000_broken gapingmaw.anm2
 resources/gfx/237.000_gurgling.anm2
+resources/gfx/237.002_turdling.anm2
 resources/gfx/238.000_splasher.anm2
 resources/gfx/239.000_grub.anm2
 resources/gfx/240.000_wall creep.anm2
@@ -433,6 +530,7 @@ resources/gfx/243.000_conjoined spitty.anm2
 resources/gfx/244.000_round worm.anm2
 resources/gfx/245.000_poop.anm2
 resources/gfx/246.000_ragling.anm2
+resources/gfx/246.001_ragmans ragling.anm2
 resources/gfx/247.000_flesh mobile host.anm2
 resources/gfx/248.000_psychic horf.anm2
 resources/gfx/249.000_full fly.anm2
@@ -442,9 +540,15 @@ resources/gfx/252.000_nulls.anm2
 resources/gfx/253.000_psytumor.anm2
 resources/gfx/254.000_floating knight.anm2
 resources/gfx/255.000_nightcrawler.anm2
+resources/gfx/256.000_dartfly.anm2
+resources/gfx/257.000_conjoinedfatty.anm2
+resources/gfx/257.001_blueconjoinedfatty.anm2
+resources/gfx/258.000_fat bat.anm2
+resources/gfx/259.000_imp.anm2
 resources/gfx/260.000_haunt.anm2
 resources/gfx/260.010_lil haunt.anm2
 resources/gfx/261.000_dingle.anm2
+resources/gfx/261.001_dangle.anm2
 resources/gfx/262.000_megamaw.anm2
 resources/gfx/263.000_megamaw2.anm2
 resources/gfx/264.000_mega fatty.anm2
@@ -461,6 +565,39 @@ resources/gfx/273.001_thelamb.anm2
 resources/gfx/274.000_megasatanhead.anm2
 resources/gfx/274.001_megasatanhand.anm2
 resources/gfx/275.000_megasatan2head.anm2
+resources/gfx/275.001_megasatan2hand.anm2
+resources/gfx/276.000_roundy.anm2
+resources/gfx/277.000_black boney.anm2
+resources/gfx/278.000_black globin.anm2
+resources/gfx/279.000_black globins head.anm2
+resources/gfx/280.000_black globins body.anm2
+resources/gfx/281.000_swarm.anm2
+resources/gfx/282.000_megaclotty.anm2
+resources/gfx/283.000_boneknight.anm2
+resources/gfx/284.000_cyclopia.anm2
+resources/gfx/285.000_red ghost.anm2
+resources/gfx/286.000_fleshdeathshead.anm2
+resources/gfx/287.000_moms dead hand.anm2
+resources/gfx/288.000_dukie.anm2
+resources/gfx/289.000_ulcer.anm2
+resources/gfx/290.000_meatball.anm2
+resources/gfx/291.000_pitfall.anm2
+resources/gfx/293.000_ultragreedcoins.anm2
+resources/gfx/294.000_ultragreeddoor.anm2
+resources/gfx/295.000_cornmine.anm2
+resources/gfx/297.000_bluegaper.anm2
+resources/gfx/298.000_blue boil.anm2
+resources/gfx/299.000_greedgaper.anm2
+resources/gfx/401.000_thestain.anm2
+resources/gfx/402.000_brownie.anm2
+resources/gfx/403.000_theforsaken.anm2
+resources/gfx/404.000_littlehorn.anm2
+resources/gfx/404.001_darkball.anm2
+resources/gfx/405.000_ragman.anm2
+resources/gfx/405.001_ragman_rolling_head.anm2
+resources/gfx/406.000_ultragreed.anm2
+resources/gfx/407.000_hush.anm2
+resources/gfx/408.000_hush_skinless.anm2
 resources/gfx/backdrop/effect_error.anm2
 resources/gfx/backdrop/mega_satan_land.anm2
 resources/gfx/characters/001_the sad onion.anm2
@@ -672,6 +809,46 @@ resources/gfx/characters/342_blue cap.anm2
 resources/gfx/characters/343_latchkey.anm2
 resources/gfx/characters/344_matchbook.anm2
 resources/gfx/characters/345_synthoil.anm2
+resources/gfx/characters/353_bomberboy.anm2
+resources/gfx/characters/354_crackerjacks.anm2
+resources/gfx/characters/355_momspearls.anm2
+resources/gfx/characters/356_carbattery.anm2
+resources/gfx/characters/358_thewiz.anm2
+resources/gfx/characters/359_8inchnail.anm2
+resources/gfx/characters/366_scatterbombs.anm2
+resources/gfx/characters/368_epiphora.anm2
+resources/gfx/characters/369_continuum.anm2
+resources/gfx/characters/370_mrdolly.anm2
+resources/gfx/characters/373_deadeye.anm2
+resources/gfx/characters/374_holylight.anm2
+resources/gfx/characters/375_hosthat.anm2
+resources/gfx/characters/377_burstingsack.anm2
+resources/gfx/characters/379_pupuladuplex.anm2
+resources/gfx/characters/380_paytoplay.anm2
+resources/gfx/characters/381_edensblessing.anm2
+resources/gfx/characters/391_betrayal.anm2
+resources/gfx/characters/392_zodiac.anm2
+resources/gfx/characters/393_serpentskiss.anm2
+resources/gfx/characters/394_marked.anm2
+resources/gfx/characters/395_techx.anm2
+resources/gfx/characters/397_tractorbeam.anm2
+resources/gfx/characters/399_mawofthevoid.anm2
+resources/gfx/characters/402_chaos.anm2
+resources/gfx/characters/407_purity.anm2
+resources/gfx/characters/408_athame.anm2
+resources/gfx/characters/409_emptyvessel.anm2
+resources/gfx/characters/410_evileye.anm2
+resources/gfx/characters/411_lustyblood.anm2
+resources/gfx/characters/412_cambionconception.anm2
+resources/gfx/characters/413_immaculateconception.anm2
+resources/gfx/characters/414_moreoptions.anm2
+resources/gfx/characters/418_fruitcake.anm2
+resources/gfx/characters/424_sackhead.anm2
+resources/gfx/characters/425_nightlight.anm2
+resources/gfx/characters/428_pjs.anm2
+resources/gfx/characters/432_glitterbombs.anm2
+resources/gfx/characters/433_myshadow.anm2
+resources/gfx/characters/438_binky.anm2
 resources/gfx/characters/character_002_magdalenehead.anm2
 resources/gfx/characters/character_003_cainseyepatch.anm2
 resources/gfx/characters/character_004_judasfez.anm2
@@ -686,10 +863,26 @@ resources/gfx/characters/n006_ruawizard.anm2
 resources/gfx/characters/n014_blindfold.anm2
 resources/gfx/characters/n015_blank.anm2
 resources/gfx/characters/n016_christmas.anm2
+resources/gfx/characters/n017_purity glow.anm2
+resources/gfx/characters/n018_empty vessel.anm2
+resources/gfx/characters/n019_mawmark.anm2
+resources/gfx/characters/n020_transformation mushroom.anm2
+resources/gfx/characters/n021_transformation_angel.anm2
+resources/gfx/characters/n022_transformation_bob.anm2
+resources/gfx/characters/n023_transformation_drugs.anm2
+resources/gfx/characters/n024_transformation_mom.anm2
+resources/gfx/characters/n025_transformation_baby.anm2
+resources/gfx/characters/n026_transformation_evilangel.anm2
+resources/gfx/characters/n027_transformation_poop.anm2
+resources/gfx/characters/n029_overdose.anm2
+resources/gfx/characters/n030_boomerang.anm2
+resources/gfx/characters/n031_megablast.anm2
 resources/gfx/characters/t53_tick.anm2
+resources/gfx/crownoflight.anm2
 resources/gfx/cutscenes/credits.anm2
 resources/gfx/cutscenes/epilogue.anm2
 resources/gfx/cutscenes/intro.anm2
+resources/gfx/deadeyeteareffect.anm2
 resources/gfx/effect_satanradial.anm2
 resources/gfx/grid/door_01_normaldoor.anm2
 resources/gfx/grid/door_02_treasureroomdoor.anm2
@@ -710,6 +903,10 @@ resources/gfx/grid/door_17_bardoor.anm2
 resources/gfx/grid/door_18_crackeddoor.anm2
 resources/gfx/grid/door_20_secrettrapdoor.anm2
 resources/gfx/grid/door_24_megasatandoor.anm2
+resources/gfx/grid/door_29_doortobluewomb.anm2
+resources/gfx/grid/door_30_hushdoor.anm2
+resources/gfx/grid/door_31_treasureroomdoorgreed.anm2
+resources/gfx/grid/door_32_exitdoor.anm2
 resources/gfx/grid/effect_005_fire.anm2
 resources/gfx/grid/effect_ember.anm2
 resources/gfx/grid/grid_fireplace.anm2
@@ -721,6 +918,7 @@ resources/gfx/grid/grid_pressureplate.anm2
 resources/gfx/grid/grid_rock.anm2
 resources/gfx/grid/grid_spikes.anm2
 resources/gfx/grid/grid_tnt.anm2
+resources/gfx/grid/grid_tnt_pushable.anm2
 resources/gfx/grid/grid_web.anm2
 resources/gfx/grid/props_01_basement.anm2
 resources/gfx/grid/props_03_caves.anm2
@@ -729,40 +927,54 @@ resources/gfx/grid/props_07_the womb.anm2
 resources/gfx/grid/props_09_sheol.anm2
 resources/gfx/grid/props_10_cathedral.anm2
 resources/gfx/grid/props_11_the chest.anm2
+resources/gfx/grid/props_12_greed.anm2
 resources/gfx/grid/tiles_itemdungeon.anm2
+resources/gfx/grid/timerplate.anm2
+resources/gfx/holylightteareffect.anm2
 resources/gfx/lightgradient.anm2
 resources/gfx/lightgradient_vita.anm2
+resources/gfx/spotlight.anm2
 resources/gfx/statuseffects.anm2
 resources/gfx/tearhalo.anm2
 resources/gfx/ui/achievement/achievements.anm2
+resources/gfx/ui/babyselect.anm2
 resources/gfx/ui/backselectwidget.anm2
 resources/gfx/ui/boss/versusscreen.anm2
 resources/gfx/ui/buttons.anm2
+resources/gfx/ui/completion_widget.anm2
 resources/gfx/ui/cursor.anm2
 resources/gfx/ui/death screen.anm2
 resources/gfx/ui/genericpopup.anm2
 resources/gfx/ui/giantbook/giantbook.anm2
 resources/gfx/ui/giantbook/giantbook_eternalheart.anm2
 resources/gfx/ui/giantbook/giantbook_sleep.anm2
+resources/gfx/ui/giantbook/giantbook_superbum.anm2
 resources/gfx/ui/giantbook/giantbook_whoreofbabylon.anm2
 resources/gfx/ui/giantbook/giantbookbig.anm2
 resources/gfx/ui/hudpickups.anm2
+resources/gfx/ui/leaderboardmenu.anm2
 resources/gfx/ui/main menu/challengemenu.anm2
 resources/gfx/ui/main menu/charactermenu.anm2
 resources/gfx/ui/main menu/characterportraits.anm2
 resources/gfx/ui/main menu/collectionmenu.anm2
+resources/gfx/ui/main menu/continueprogress_widget.anm2
 resources/gfx/ui/main menu/controllerselectmenu.anm2
 resources/gfx/ui/main menu/difficultywidget.anm2
 resources/gfx/ui/main menu/endingsmenu.anm2
 resources/gfx/ui/main menu/gamemenu.anm2
 resources/gfx/ui/main menu/gammamenu.anm2
 resources/gfx/ui/main menu/keyconfigmenu.anm2
+resources/gfx/ui/main menu/menu_dailyrun.anm2
 resources/gfx/ui/main menu/menushadow.anm2
 resources/gfx/ui/main menu/optionsmenu.anm2
+resources/gfx/ui/main menu/prompt_rebirthdata.anm2
 resources/gfx/ui/main menu/saveselectmenu.anm2
 resources/gfx/ui/main menu/saveselectmenu_drawing.anm2
 resources/gfx/ui/main menu/secretsmenucomponents.anm2
 resources/gfx/ui/main menu/seedentry.anm2
+resources/gfx/ui/main menu/seedselectionwidget.anm2
+resources/gfx/ui/main menu/seedsmenu.anm2
+resources/gfx/ui/main menu/seedunlockpaper.anm2
 resources/gfx/ui/main menu/seedwidget.anm2
 resources/gfx/ui/main menu/statsmenu.anm2
 resources/gfx/ui/main menu/titlemenu.anm2
@@ -772,7 +984,13 @@ resources/gfx/ui/minimap1.anm2
 resources/gfx/ui/minimap2.anm2
 resources/gfx/ui/pausescreen.anm2
 resources/gfx/ui/pausescreenstats.anm2
+resources/gfx/ui/prompt_yesno.anm2
+resources/gfx/ui/scoremenu.anm2
 resources/gfx/ui/stage/nightmare1.anm2
+resources/gfx/ui/stage/nightmare10.anm2
+resources/gfx/ui/stage/nightmare11.anm2
+resources/gfx/ui/stage/nightmare12.anm2
+resources/gfx/ui/stage/nightmare13.anm2
 resources/gfx/ui/stage/nightmare2.anm2
 resources/gfx/ui/stage/nightmare3.anm2
 resources/gfx/ui/stage/nightmare4.anm2
@@ -788,3 +1006,4 @@ resources/gfx/ui/ui_chargebar.anm2
 resources/gfx/ui/ui_fortunepaper.anm2
 resources/gfx/ui/ui_hearts.anm2
 resources/gfx/ui/ui_streak.anm2
+resources/gfx/veins.anm2
