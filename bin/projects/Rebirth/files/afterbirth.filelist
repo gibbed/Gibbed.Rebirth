@@ -1,4 +1,4 @@
-; 2426/2538 (95%)
+; 2484/2538 (97%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -685,11 +685,20 @@ resources/gfx/backdrop/effect_error.anm2
 resources/gfx/backdrop/mega_satan_land.anm2
 resources/gfx/backdrop/mega_satan_land.png
 resources/gfx/backdrop/orange_overlay.png
+resources/gfx/backdrop/shading_ih.png
+resources/gfx/backdrop/shading_iih.png
+resources/gfx/backdrop/shading_iiv.png
+resources/gfx/backdrop/shading_iv.png
+resources/gfx/backdrop/shading_lbl.png
+resources/gfx/backdrop/shading_lbr.png
+resources/gfx/backdrop/shading_ltl.png
+resources/gfx/backdrop/shading_ltr.png
 resources/gfx/bosses/afterbirth/boss_078_bluebaby_hush.png
 resources/gfx/bosses/afterbirth/boss_085_dangle.png
 resources/gfx/bosses/afterbirth/boss_hush.png
 resources/gfx/bosses/afterbirth/boss_hush_skinless.png
 resources/gfx/bosses/afterbirth/boss_thefrail.png
+resources/gfx/bosses/afterbirth/boss_thefrail2.png
 resources/gfx/bosses/afterbirth/boss_turdling.png
 resources/gfx/bosses/afterbirth/boss_ultragreed.png
 resources/gfx/bosses/afterbirth/boss_ultragreed_body.png
@@ -1079,7 +1088,11 @@ resources/gfx/characters/costumes/costume_409_emptyvessel.png
 resources/gfx/characters/costumes/costume_410_evileye.png
 resources/gfx/characters/costumes/costume_411_lustyblood.png
 resources/gfx/characters/costumes/costume_412_cambionconception_stage1.png
+resources/gfx/characters/costumes/costume_412_cambionconception_stage2.png
+resources/gfx/characters/costumes/costume_412_cambionconception_stage3.png
 resources/gfx/characters/costumes/costume_413_immaculateconception_stage1.png
+resources/gfx/characters/costumes/costume_413_immaculateconception_stage2.png
+resources/gfx/characters/costumes/costume_413_immaculateconception_stage3.png
 resources/gfx/characters/costumes/costume_414_moreoptions.png
 resources/gfx/characters/costumes/costume_418_fruitcake.png
 resources/gfx/characters/costumes/costume_418_fruitcake_black.png
@@ -1092,6 +1105,7 @@ resources/gfx/characters/costumes/costume_425_nightlight.png
 resources/gfx/characters/costumes/costume_428_pjs.png
 resources/gfx/characters/costumes/costume_432_glitterbomb.png
 resources/gfx/characters/costumes/costume_433_myshadow.png
+resources/gfx/characters/costumes/costume_434_jarofflies.png
 resources/gfx/characters/costumes/costume_438_binky.png
 resources/gfx/characters/costumes/costume_boomerang.png
 resources/gfx/characters/costumes/costume_mawmark.png
@@ -1099,7 +1113,11 @@ resources/gfx/characters/costumes/costume_megablast.png
 resources/gfx/characters/costumes/costume_rebirth_90_thejar.png
 resources/gfx/characters/costumes/emptyvessel body.png
 resources/gfx/characters/costumes/emptyvessel head.png
+resources/gfx/characters/costumes/nicelilith.png
 resources/gfx/characters/costumes/purityglow_blue.png
+resources/gfx/characters/costumes/purityglow_orange.png
+resources/gfx/characters/costumes/purityglow_red.png
+resources/gfx/characters/costumes/purityglow_yellow.png
 resources/gfx/characters/costumes/transformation_angel_body.png
 resources/gfx/characters/costumes/transformation_angel_head.png
 resources/gfx/characters/costumes/transformation_baby.png
@@ -1416,6 +1434,7 @@ resources/gfx/cutscenes/intro.anm2
 resources/gfx/cutscenes/intro6.png
 resources/gfx/cutscenes/krystal_isaac_ending_1.ogv
 resources/gfx/cutscenes/krystal_isaac_ending_2.ogv
+resources/gfx/deadeyeteareffect.anm2
 resources/gfx/diamond_tears.png
 resources/gfx/effect_satanradial.anm2
 resources/gfx/effects/effect_000_specialshopkeepers.png
@@ -1436,9 +1455,11 @@ resources/gfx/effects/effect_085_diamondgibs.png
 resources/gfx/effects/effect_086__nailgibs.png
 resources/gfx/effects/effect_088_darksmoke.png
 resources/gfx/effects/effect_089_ultragreedfootsteps.png
+resources/gfx/effects/effect_101_firesword.png
 resources/gfx/effects/effect_blackpowder.png
 resources/gfx/effects/effect_bouncinglaserimpact.png
 resources/gfx/effects/effect_coingibs.png
+resources/gfx/effects/effect_dankdroplets.png
 resources/gfx/effects/effect_darkring.png
 resources/gfx/effects/effect_greedgibs.png
 resources/gfx/effects/effect_impact.png
@@ -1450,6 +1471,7 @@ resources/gfx/effects/special_hangingguys.png
 resources/gfx/effects/techstone.png
 resources/gfx/effects/ultragreedbling.png
 resources/gfx/effects/wombhole_blue.png
+resources/gfx/effects/wombhole_orange.png
 resources/gfx/familiar/familiar_095_fartbaby.png
 resources/gfx/familiar/familiar_097_shooters_lilloki.png
 resources/gfx/familiar/familiar_098_obsessedfan.png
@@ -1475,6 +1497,7 @@ resources/gfx/familiar/familiar_special_96_succubus.png
 resources/gfx/familiar/familiars_shooters_92_seraphim.png
 resources/gfx/glow.png
 resources/gfx/godsflesh_tears.png
+resources/gfx/grid/door_01_burningbasement.png
 resources/gfx/grid/door_01_normaldoor.anm2
 resources/gfx/grid/door_02_treasureroomdoor.anm2
 resources/gfx/grid/door_03_ambushroomdoor.anm2
@@ -1494,24 +1517,36 @@ resources/gfx/grid/door_09_bossambushroomdoor.anm2
 resources/gfx/grid/door_10_bossroomdoor.anm2
 resources/gfx/grid/door_11_trapdoor.anm2
 resources/gfx/grid/door_11_wombhole.anm2
+resources/gfx/grid/door_11_wombhole_blue.png
 resources/gfx/grid/door_15_bossrushdoor.anm2
 resources/gfx/grid/door_16_doublelock.anm2
 resources/gfx/grid/door_17_bardoor.anm2
 resources/gfx/grid/door_18_crackeddoor.anm2
 resources/gfx/grid/door_20_secrettrapdoor.anm2
 resources/gfx/grid/door_24_megasatandoor.anm2
+resources/gfx/grid/door_26_paytoplaydoor.png
+resources/gfx/grid/door_27_drownedcaves.png
+resources/gfx/grid/door_28_scarredroomdoor.png
+resources/gfx/grid/door_29_doortobluewomb.anm2
+resources/gfx/grid/door_29_doortobluewomb_blue.png
+resources/gfx/grid/door_30_hushdoor.anm2
 resources/gfx/grid/door_31_treasureroomdoorgreed.anm2
 resources/gfx/grid/door_31_treasureroomdoorgreed.png
 resources/gfx/grid/door_32_exitdoor.anm2
 resources/gfx/grid/door_32_exitdoor.png
 resources/gfx/grid/effect_005_fire.anm2
 resources/gfx/grid/effect_ember.anm2
+resources/gfx/grid/grid_bridge_dankdepths.png
+resources/gfx/grid/grid_bridge_drownedcaves.png
+resources/gfx/grid/grid_bridge_scarredwomb.png
 resources/gfx/grid/grid_fireplace.anm2
 resources/gfx/grid/grid_locks.anm2
 resources/gfx/grid/grid_pit.anm2
 resources/gfx/grid/grid_pit.png
+resources/gfx/grid/grid_pit_blood_scarredwomb.png
 resources/gfx/grid/grid_pit_catacombs.png
 resources/gfx/grid/grid_pit_cathedral.png
+resources/gfx/grid/grid_pit_dankdepths.png
 resources/gfx/grid/grid_pit_darkroom.png
 resources/gfx/grid/grid_pit_depths.png
 resources/gfx/grid/grid_pit_megasatan.png
@@ -1519,10 +1554,14 @@ resources/gfx/grid/grid_pit_necropolis.png
 resources/gfx/grid/grid_pit_water.anm2
 resources/gfx/grid/grid_pit_water.png
 resources/gfx/grid/grid_pit_water_catacombs.png
+resources/gfx/grid/grid_pit_water_dankdepths.png
+resources/gfx/grid/grid_pit_water_drownedcaves.png
 resources/gfx/grid/grid_pit_womb.png
 resources/gfx/grid/grid_poop.anm2
+resources/gfx/grid/grid_poop_black.png
 resources/gfx/grid/grid_pressureplate.anm2
 resources/gfx/grid/grid_pressureplate.png
+resources/gfx/grid/grid_pressureplate_silver.png
 resources/gfx/grid/grid_rock.anm2
 resources/gfx/grid/grid_spikes.anm2
 resources/gfx/grid/grid_tnt.anm2
@@ -1537,6 +1576,7 @@ resources/gfx/grid/props_05_depths.anm2
 resources/gfx/grid/props_05_depths.png
 resources/gfx/grid/props_07_the womb.anm2
 resources/gfx/grid/props_07_the womb.png
+resources/gfx/grid/props_07_the womb_blue.png
 resources/gfx/grid/props_09_sheol.anm2
 resources/gfx/grid/props_09_sheol.png
 resources/gfx/grid/props_10_cathedral.anm2
@@ -1544,9 +1584,14 @@ resources/gfx/grid/props_10_cathedral.png
 resources/gfx/grid/props_11_chest.png
 resources/gfx/grid/props_11_the chest.anm2
 resources/gfx/grid/props_12_greed.anm2
+resources/gfx/grid/rocks_bluewomb.png
+resources/gfx/grid/rocks_burningbasement.png
+resources/gfx/grid/rocks_drownedcaves.png
+resources/gfx/grid/rocks_scarredwomb.png
 resources/gfx/grid/tiles_itemdungeon.anm2
 resources/gfx/grid/timerplate.anm2
 resources/gfx/grid/timerplate.png
+resources/gfx/holylightteareffect.anm2
 resources/gfx/hushbullets.png
 resources/gfx/items/collectibles/collectibles_245_2020.png
 resources/gfx/items/collectibles/collectibles_290_thejar.png
@@ -1667,6 +1712,7 @@ resources/gfx/monsters/afterbirth/024.002_dankglobin.png
 resources/gfx/monsters/afterbirth/025.002_drownedboomfly.png
 resources/gfx/monsters/afterbirth/039.003_scarreddoublevis.png
 resources/gfx/monsters/afterbirth/040.001_scarredguts.png
+resources/gfx/monsters/afterbirth/058.001_scaredparabite_scarred.png
 resources/gfx/monsters/afterbirth/058.001_scarredparabite.png
 resources/gfx/monsters/afterbirth/207.002_flamingfatty.png
 resources/gfx/monsters/afterbirth/212.001_dankdeathshead.png
@@ -1701,6 +1747,9 @@ resources/gfx/monsters/afterbirth/enemy_fire.png
 resources/gfx/monsters/afterbirth/monster_000_bodies01_dank.png
 resources/gfx/monsters/afterbirth/monster_000_bodies01_drowned.png
 resources/gfx/monsters/afterbirth/monster_005_bodies01_black.png
+resources/gfx/monsters/afterbirth/monster_010_fly_hush_1.png
+resources/gfx/monsters/afterbirth/monster_010_fly_hush_2.png
+resources/gfx/monsters/afterbirth/monster_010_fly_hush_3.png
 resources/gfx/monsters/afterbirth/monster_216_dip_corn.png
 resources/gfx/monsters/afterbirth/monster_216_dip_corn_brownie.png
 resources/gfx/monsters/afterbirth/monster_blue.png
@@ -1710,8 +1759,13 @@ resources/gfx/monsters/afterbirth/monster_graybodies.png
 resources/gfx/monsters/afterbirth/monster_greedkeeper.png
 resources/gfx/monsters/classic/monster_010_fly.png
 resources/gfx/monsters/classic/monster_048_flaminghopper.png
+resources/gfx/monsters/classic/monster_197_fred_scarred.png
+resources/gfx/monsters/classic/monster_198_lump_scarred.png
+resources/gfx/monsters/classic/monster_199_parabite_scarred.png
 resources/gfx/monsters/rebirth/monster_235_gapingmaw.png
+resources/gfx/monsters/rebirth/monster_244_roundworm_scarred.png
 resources/gfx/pupula_tears.png
+resources/gfx/satan_radial_ultragreed.png
 resources/gfx/spotlight.anm2
 resources/gfx/spotlight.png
 resources/gfx/statuseffects.anm2
@@ -2058,6 +2112,8 @@ resources/gfx/ui/main menu/optionsmenu.png
 resources/gfx/ui/main menu/optionsmenudark.png
 resources/gfx/ui/main menu/prompt_rebirthdata.anm2
 resources/gfx/ui/main menu/prompt_rebirthdata.png
+resources/gfx/ui/main menu/savedrawings/17_1000percent.png
+resources/gfx/ui/main menu/savedrawings/corruptdata.png
 resources/gfx/ui/main menu/saveselectmenu.anm2
 resources/gfx/ui/main menu/saveselectmenu.png
 resources/gfx/ui/main menu/saveselectmenu_drawing.anm2
@@ -2092,6 +2148,8 @@ resources/gfx/ui/minimap2.png
 resources/gfx/ui/pausescreen.anm2
 resources/gfx/ui/pausescreen.png
 resources/gfx/ui/pausescreenstats.anm2
+resources/gfx/ui/popup_controllerconnectionlost.png
+resources/gfx/ui/popup_controllerselect.png
 resources/gfx/ui/popup_dailyrunconnectionfailure.png
 resources/gfx/ui/popup_unrecognizedcontroller.png
 resources/gfx/ui/prompt_yesno.anm2
