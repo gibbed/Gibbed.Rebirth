@@ -119,6 +119,7 @@ namespace RebuildFileLists
             Console.WriteLine("Searching for archives...");
             var archivePaths = new List<string>();
             archivePaths.AddRange(Directory.GetFiles(installPath, "*.a", SearchOption.AllDirectories));
+            archivePaths.RemoveAll(p => p.Contains("_unpack") == true);
 
             var outputPaths = new List<string>();
 
