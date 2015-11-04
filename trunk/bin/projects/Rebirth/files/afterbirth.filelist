@@ -1,4 +1,4 @@
-; 2512/2538 (98%)
+; 2568/2595 (98%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -491,6 +491,7 @@ resources/gfx/1000.099_splash.anm2
 resources/gfx/1000.101_hushlaserup.anm2
 resources/gfx/1000.102_bullet poof_hush.anm2
 resources/gfx/1000.103_ultragreedbling.anm2
+resources/gfx/1000.104_fireworks.anm2
 resources/gfx/101.000_daddy long legs.anm2
 resources/gfx/101.001_triachnid.anm2
 resources/gfx/102.000_isaac (final boss).anm2
@@ -937,6 +938,7 @@ resources/gfx/characters/342_blue cap.anm2
 resources/gfx/characters/343_latchkey.anm2
 resources/gfx/characters/344_matchbook.anm2
 resources/gfx/characters/345_synthoil.anm2
+resources/gfx/characters/350_toxicshock.anm2
 resources/gfx/characters/353_bomberboy.anm2
 resources/gfx/characters/354_crackerjacks.anm2
 resources/gfx/characters/355_momspearls.anm2
@@ -944,13 +946,16 @@ resources/gfx/characters/356_carbattery.anm2
 resources/gfx/characters/358_thewiz.anm2
 resources/gfx/characters/359_8inchnail.anm2
 resources/gfx/characters/366_scatterbombs.anm2
+resources/gfx/characters/367_stickybombs.anm2
 resources/gfx/characters/368_epiphora.anm2
 resources/gfx/characters/369_continuum.anm2
 resources/gfx/characters/370_mrdolly.anm2
+resources/gfx/characters/371_curseofthetower.anm2
 resources/gfx/characters/373_deadeye.anm2
 resources/gfx/characters/374_holylight.anm2
 resources/gfx/characters/375_hosthat.anm2
 resources/gfx/characters/377_burstingsack.anm2
+resources/gfx/characters/378_no2.anm2
 resources/gfx/characters/379_pupuladuplex.anm2
 resources/gfx/characters/380_paytoplay.anm2
 resources/gfx/characters/381_edensblessing.anm2
@@ -960,6 +965,7 @@ resources/gfx/characters/393_serpentskiss.anm2
 resources/gfx/characters/394_marked.anm2
 resources/gfx/characters/395_techx.anm2
 resources/gfx/characters/397_tractorbeam.anm2
+resources/gfx/characters/398_godsflesh.anm2
 resources/gfx/characters/399_mawofthevoid.anm2
 resources/gfx/characters/402_chaos.anm2
 resources/gfx/characters/407_purity.anm2
@@ -971,9 +977,11 @@ resources/gfx/characters/412_cambionconception.anm2
 resources/gfx/characters/413_immaculateconception.anm2
 resources/gfx/characters/414_moreoptions.anm2
 resources/gfx/characters/418_fruitcake.anm2
+resources/gfx/characters/420_blackpowder.anm2
 resources/gfx/characters/424_sackhead.anm2
 resources/gfx/characters/425_nightlight.anm2
 resources/gfx/characters/428_pjs.anm2
+resources/gfx/characters/429_headofthekeeper.anm2
 resources/gfx/characters/432_glitterbombs.anm2
 resources/gfx/characters/433_myshadow.anm2
 resources/gfx/characters/438_binky.anm2
@@ -1043,6 +1051,7 @@ resources/gfx/characters/costumes/character_010_lazarus2_white.png
 resources/gfx/characters/costumes/character_012_thelost.png
 resources/gfx/characters/costumes/character_013_blackjudas.png
 resources/gfx/characters/costumes/character_014_lilith.png
+resources/gfx/characters/costumes/costume_350_toxicshock.png
 resources/gfx/characters/costumes/costume_353_bomberboy.png
 resources/gfx/characters/costumes/costume_354_crackerjacks.png
 resources/gfx/characters/costumes/costume_355_momspearls.png
@@ -1055,6 +1064,7 @@ resources/gfx/characters/costumes/costume_358_thewiz_red.png
 resources/gfx/characters/costumes/costume_358_thewiz_white.png
 resources/gfx/characters/costumes/costume_359_8inchnail.png
 resources/gfx/characters/costumes/costume_366_scatterbombs.png
+resources/gfx/characters/costumes/costume_367_stickybombs.png
 resources/gfx/characters/costumes/costume_368_epiphora.png
 resources/gfx/characters/costumes/costume_369_continuum.png
 resources/gfx/characters/costumes/costume_369_continuum_black.png
@@ -1063,10 +1073,12 @@ resources/gfx/characters/costumes/costume_369_continuum_green.png
 resources/gfx/characters/costumes/costume_369_continuum_red.png
 resources/gfx/characters/costumes/costume_369_continuum_white.png
 resources/gfx/characters/costumes/costume_370_mrdolly.png
+resources/gfx/characters/costumes/costume_371_curseofthetower.png
 resources/gfx/characters/costumes/costume_373_deadeye.png
 resources/gfx/characters/costumes/costume_374_holylight.png
 resources/gfx/characters/costumes/costume_375_hosthat.png
 resources/gfx/characters/costumes/costume_377_burstingsack.png
+resources/gfx/characters/costumes/costume_378_no2.png
 resources/gfx/characters/costumes/costume_379_pupuladuplex.png
 resources/gfx/characters/costumes/costume_380_paytoplay.png
 resources/gfx/characters/costumes/costume_381_edensblessing.png
@@ -1076,6 +1088,12 @@ resources/gfx/characters/costumes/costume_393_serpentskiss.png
 resources/gfx/characters/costumes/costume_394_marked.png
 resources/gfx/characters/costumes/costume_395_techx.png
 resources/gfx/characters/costumes/costume_397_tractorbeam.png
+resources/gfx/characters/costumes/costume_398_godsflesh.png
+resources/gfx/characters/costumes/costume_398_godsflesh_black.png
+resources/gfx/characters/costumes/costume_398_godsflesh_blue.png
+resources/gfx/characters/costumes/costume_398_godsflesh_green.png
+resources/gfx/characters/costumes/costume_398_godsflesh_red.png
+resources/gfx/characters/costumes/costume_398_godsflesh_white.png
 resources/gfx/characters/costumes/costume_399_mawofthevoid.png
 resources/gfx/characters/costumes/costume_399_mawofthevoid_body.png
 resources/gfx/characters/costumes/costume_402_chaos.png
@@ -1102,9 +1120,11 @@ resources/gfx/characters/costumes/costume_418_fruitcake_blue.png
 resources/gfx/characters/costumes/costume_418_fruitcake_green.png
 resources/gfx/characters/costumes/costume_418_fruitcake_red.png
 resources/gfx/characters/costumes/costume_418_fruitcake_white.png
+resources/gfx/characters/costumes/costume_420_blackpowder.png
 resources/gfx/characters/costumes/costume_424_sackhead.png
 resources/gfx/characters/costumes/costume_425_nightlight.png
 resources/gfx/characters/costumes/costume_428_pjs.png
+resources/gfx/characters/costumes/costume_429_headofthekeeper.png
 resources/gfx/characters/costumes/costume_432_glitterbomb.png
 resources/gfx/characters/costumes/costume_433_myshadow.png
 resources/gfx/characters/costumes/costume_434_jarofflies.png
@@ -1475,6 +1495,7 @@ resources/gfx/effects/effect_bouncinglaserimpact.png
 resources/gfx/effects/effect_coingibs.png
 resources/gfx/effects/effect_dankdroplets.png
 resources/gfx/effects/effect_darkring.png
+resources/gfx/effects/effect_fireworks.png
 resources/gfx/effects/effect_greedgibs.png
 resources/gfx/effects/effect_impact.png
 resources/gfx/effects/effect_pentagram.png
@@ -1610,11 +1631,16 @@ resources/gfx/grid/timerplate.png
 resources/gfx/holylight_tears_effect.png
 resources/gfx/holylightteareffect.anm2
 resources/gfx/hushbullets.png
+resources/gfx/items/collectibles/collectibles_018_adollar.png
+resources/gfx/items/collectibles/collectibles_074_aquarter.png
+resources/gfx/items/collectibles/collectibles_109_moneyispower.png
 resources/gfx/items/collectibles/collectibles_245_2020.png
 resources/gfx/items/collectibles/collectibles_290_thejar.png
 resources/gfx/items/collectibles/collectibles_347_diplopia.png
 resources/gfx/items/collectibles/collectibles_348_placebo.png
 resources/gfx/items/collectibles/collectibles_349_woodennickel.png
+resources/gfx/items/collectibles/collectibles_350_toxicshock.png
+resources/gfx/items/collectibles/collectibles_351_megabean.png
 resources/gfx/items/collectibles/collectibles_352_glasscannon.png
 resources/gfx/items/collectibles/collectibles_353_bomberboy.png
 resources/gfx/items/collectibles/collectibles_354_crackjacks.png
@@ -1628,26 +1654,32 @@ resources/gfx/items/collectibles/collectibles_361_fatesreward.png
 resources/gfx/items/collectibles/collectibles_362_lilchest.png
 resources/gfx/items/collectibles/collectibles_363_swornprotector.png
 resources/gfx/items/collectibles/collectibles_364_friendzone.png
+resources/gfx/items/collectibles/collectibles_365_lostfly.png
 resources/gfx/items/collectibles/collectibles_366_scatterbombs.png
+resources/gfx/items/collectibles/collectibles_367_stickybombs.png
 resources/gfx/items/collectibles/collectibles_368_epiphora.png
 resources/gfx/items/collectibles/collectibles_369_continuum.png
 resources/gfx/items/collectibles/collectibles_370_mrdolly.png
+resources/gfx/items/collectibles/collectibles_371_curseofthetower.png
 resources/gfx/items/collectibles/collectibles_372_chargedbaby.png
 resources/gfx/items/collectibles/collectibles_373_deadeye.png
 resources/gfx/items/collectibles/collectibles_374_holylight.png
 resources/gfx/items/collectibles/collectibles_375_hosthat.png
 resources/gfx/items/collectibles/collectibles_376_restock.png
 resources/gfx/items/collectibles/collectibles_377_burstingsack.png
+resources/gfx/items/collectibles/collectibles_378_numbertwo.png
 resources/gfx/items/collectibles/collectibles_379_pupuladuplex.png
 resources/gfx/items/collectibles/collectibles_380_paytoplay.png
 resources/gfx/items/collectibles/collectibles_381_edensblessing.png
 resources/gfx/items/collectibles/collectibles_382_friendlyball.png
 resources/gfx/items/collectibles/collectibles_383_teardetonator.png
 resources/gfx/items/collectibles/collectibles_384_lilgurdy.png
+resources/gfx/items/collectibles/collectibles_385_bumbo.png
 resources/gfx/items/collectibles/collectibles_386_d12.png
 resources/gfx/items/collectibles/collectibles_387_censer.png
 resources/gfx/items/collectibles/collectibles_388_keybum.png
 resources/gfx/items/collectibles/collectibles_389_runebag.png
+resources/gfx/items/collectibles/collectibles_390_seraphim.png
 resources/gfx/items/collectibles/collectibles_391_betrayal.png
 resources/gfx/items/collectibles/collectibles_392_zodiac.png
 resources/gfx/items/collectibles/collectibles_393_serpentskiss.png
@@ -1655,10 +1687,12 @@ resources/gfx/items/collectibles/collectibles_394_marked.png
 resources/gfx/items/collectibles/collectibles_395_techx.png
 resources/gfx/items/collectibles/collectibles_396_ventriclerazor.png
 resources/gfx/items/collectibles/collectibles_397_tractorbeam.png
+resources/gfx/items/collectibles/collectibles_398_godsflesh.png
 resources/gfx/items/collectibles/collectibles_399_mawofthevoid.png
 resources/gfx/items/collectibles/collectibles_400_spearofdestiny.png
 resources/gfx/items/collectibles/collectibles_401_explosivo.png
 resources/gfx/items/collectibles/collectibles_402_chaos.png
+resources/gfx/items/collectibles/collectibles_403_spidermod.png
 resources/gfx/items/collectibles/collectibles_404_fartbaby.png
 resources/gfx/items/collectibles/collectibles_405_gbbug.png
 resources/gfx/items/collectibles/collectibles_406_d8.png
@@ -1670,21 +1704,30 @@ resources/gfx/items/collectibles/collectibles_411_lustyblood.png
 resources/gfx/items/collectibles/collectibles_412_cambionconception.png
 resources/gfx/items/collectibles/collectibles_413_immaculateconception.png
 resources/gfx/items/collectibles/collectibles_414_moreoptions.png
+resources/gfx/items/collectibles/collectibles_415_crownoflight.png
 resources/gfx/items/collectibles/collectibles_417_succubus.png
 resources/gfx/items/collectibles/collectibles_418_fruitcake.png
+resources/gfx/items/collectibles/collectibles_419_teleport20.png
+resources/gfx/items/collectibles/collectibles_420_blackpowder.png
 resources/gfx/items/collectibles/collectibles_421_kidneybean.png
 resources/gfx/items/collectibles/collectibles_422_glowinghourglass.png
 resources/gfx/items/collectibles/collectibles_423_circleofprotection.png
 resources/gfx/items/collectibles/collectibles_424_sackhead.png
 resources/gfx/items/collectibles/collectibles_425_nightlight.png
+resources/gfx/items/collectibles/collectibles_426_obsessedfan.png
 resources/gfx/items/collectibles/collectibles_427_minecrafter.png
 resources/gfx/items/collectibles/collectibles_428_pjs.png
+resources/gfx/items/collectibles/collectibles_429_headofthekeeper.png
+resources/gfx/items/collectibles/collectibles_430_papafly.png
 resources/gfx/items/collectibles/collectibles_431_multidimensionalbaby.png
 resources/gfx/items/collectibles/collectibles_432_glitterbombs.png
 resources/gfx/items/collectibles/collectibles_433_myshadow.png
 resources/gfx/items/collectibles/collectibles_434_jarofflies.png
+resources/gfx/items/collectibles/collectibles_435_lilloki.png
+resources/gfx/items/collectibles/collectibles_436_milk.png
 resources/gfx/items/collectibles/collectibles_437_d7.png
 resources/gfx/items/collectibles/collectibles_438_binky.png
+resources/gfx/items/collectibles/collectibles_439_momsbox.png
 resources/gfx/items/collectibles/collectibles_440_kidneystone.png
 resources/gfx/items/levelitem_001_itemaltar.png
 resources/gfx/items/pick ups/grabbag.png
@@ -1710,14 +1753,24 @@ resources/gfx/items/trinkets/trinket_065_tapeworm.png
 resources/gfx/items/trinkets/trinket_066_lazyworm.png
 resources/gfx/items/trinkets/trinket_067_crackeddice.png
 resources/gfx/items/trinkets/trinket_068_supermagnet.png
+resources/gfx/items/trinkets/trinket_069_fadedpolaroid.png
 resources/gfx/items/trinkets/trinket_070_louse.png
+resources/gfx/items/trinkets/trinket_071_bobsbladder.png
 resources/gfx/items/trinkets/trinket_072_watchbattery.png
 resources/gfx/items/trinkets/trinket_073_blastingcap.png
 resources/gfx/items/trinkets/trinket_074_studfinder.png
+resources/gfx/items/trinkets/trinket_075_error.png
 resources/gfx/items/trinkets/trinket_076_pokerchip.png
+resources/gfx/items/trinkets/trinket_077_blister.png
+resources/gfx/items/trinkets/trinket_078_secondhand.png
+resources/gfx/items/trinkets/trinket_079_endlessnameless.png
 resources/gfx/items/trinkets/trinket_080_blackfeather.png
 resources/gfx/items/trinkets/trinket_081_blindrage.png
-resources/gfx/items/trinkets/trinket_084_ribofgreed.png
+resources/gfx/items/trinkets/trinket_082_goldenhorseshoe.png
+resources/gfx/items/trinkets/trinket_086_lillarva.png
+resources/gfx/items/trinkets/trinket_087_momslocket.png
+resources/gfx/items/trinkets/trinket_088_no.png
+resources/gfx/items/trinkets/trinket_089_childleash.png
 resources/gfx/items/trinkets/trinket_090_browncap.png
 resources/gfx/lightgradient.anm2
 resources/gfx/lightgradient_vita.anm2
@@ -1783,6 +1836,8 @@ resources/gfx/monsters/rebirth/monster_235_gapingmaw.png
 resources/gfx/monsters/rebirth/monster_244_roundworm_scarred.png
 resources/gfx/pupula_tears.png
 resources/gfx/satan_radial_ultragreed.png
+resources/gfx/spidermod_healthbar.anm2
+resources/gfx/spidermod_healthbar.png
 resources/gfx/spotlight.anm2
 resources/gfx/spotlight.png
 resources/gfx/statuseffects.anm2
@@ -1870,6 +1925,7 @@ resources/gfx/ui/achievement/achievement_challenge27.png
 resources/gfx/ui/achievement/achievement_challenge28.png
 resources/gfx/ui/achievement/achievement_challenge29.png
 resources/gfx/ui/achievement/achievement_challenge30.png
+resources/gfx/ui/achievement/achievement_generosity.png
 resources/gfx/ui/achievement/achievements.anm2
 resources/gfx/ui/baby_select.png
 resources/gfx/ui/babyselect.anm2

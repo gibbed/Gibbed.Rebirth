@@ -1,4 +1,4 @@
-; 1008/1009 (99%)
+; 1017/1018 (99%)
 resources/gfx/001.000_player.anm2
 resources/gfx/001.001_player2.anm2
 resources/gfx/002.000_tear.anm2
@@ -471,6 +471,7 @@ resources/gfx/1000.099_splash.anm2
 resources/gfx/1000.101_hushlaserup.anm2
 resources/gfx/1000.102_bullet poof_hush.anm2
 resources/gfx/1000.103_ultragreedbling.anm2
+resources/gfx/1000.104_fireworks.anm2
 resources/gfx/101.000_daddy long legs.anm2
 resources/gfx/101.001_triachnid.anm2
 resources/gfx/102.000_isaac (final boss).anm2
@@ -809,6 +810,7 @@ resources/gfx/characters/342_blue cap.anm2
 resources/gfx/characters/343_latchkey.anm2
 resources/gfx/characters/344_matchbook.anm2
 resources/gfx/characters/345_synthoil.anm2
+resources/gfx/characters/350_toxicshock.anm2
 resources/gfx/characters/353_bomberboy.anm2
 resources/gfx/characters/354_crackerjacks.anm2
 resources/gfx/characters/355_momspearls.anm2
@@ -816,13 +818,16 @@ resources/gfx/characters/356_carbattery.anm2
 resources/gfx/characters/358_thewiz.anm2
 resources/gfx/characters/359_8inchnail.anm2
 resources/gfx/characters/366_scatterbombs.anm2
+resources/gfx/characters/367_stickybombs.anm2
 resources/gfx/characters/368_epiphora.anm2
 resources/gfx/characters/369_continuum.anm2
 resources/gfx/characters/370_mrdolly.anm2
+resources/gfx/characters/371_curseofthetower.anm2
 resources/gfx/characters/373_deadeye.anm2
 resources/gfx/characters/374_holylight.anm2
 resources/gfx/characters/375_hosthat.anm2
 resources/gfx/characters/377_burstingsack.anm2
+resources/gfx/characters/378_no2.anm2
 resources/gfx/characters/379_pupuladuplex.anm2
 resources/gfx/characters/380_paytoplay.anm2
 resources/gfx/characters/381_edensblessing.anm2
@@ -832,6 +837,7 @@ resources/gfx/characters/393_serpentskiss.anm2
 resources/gfx/characters/394_marked.anm2
 resources/gfx/characters/395_techx.anm2
 resources/gfx/characters/397_tractorbeam.anm2
+resources/gfx/characters/398_godsflesh.anm2
 resources/gfx/characters/399_mawofthevoid.anm2
 resources/gfx/characters/402_chaos.anm2
 resources/gfx/characters/407_purity.anm2
@@ -843,9 +849,11 @@ resources/gfx/characters/412_cambionconception.anm2
 resources/gfx/characters/413_immaculateconception.anm2
 resources/gfx/characters/414_moreoptions.anm2
 resources/gfx/characters/418_fruitcake.anm2
+resources/gfx/characters/420_blackpowder.anm2
 resources/gfx/characters/424_sackhead.anm2
 resources/gfx/characters/425_nightlight.anm2
 resources/gfx/characters/428_pjs.anm2
+resources/gfx/characters/429_headofthekeeper.anm2
 resources/gfx/characters/432_glitterbombs.anm2
 resources/gfx/characters/433_myshadow.anm2
 resources/gfx/characters/438_binky.anm2
@@ -933,6 +941,7 @@ resources/gfx/grid/timerplate.anm2
 resources/gfx/holylightteareffect.anm2
 resources/gfx/lightgradient.anm2
 resources/gfx/lightgradient_vita.anm2
+resources/gfx/spidermod_healthbar.anm2
 resources/gfx/spotlight.anm2
 resources/gfx/statuseffects.anm2
 resources/gfx/tearhalo.anm2
