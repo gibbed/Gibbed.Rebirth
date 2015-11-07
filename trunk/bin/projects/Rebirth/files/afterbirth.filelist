@@ -1,4 +1,4 @@
-; 2568/2595 (98%)
+; 2575/2599 (99%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -696,6 +696,9 @@ resources/gfx/backdrop/shading_lbl.png
 resources/gfx/backdrop/shading_lbr.png
 resources/gfx/backdrop/shading_ltl.png
 resources/gfx/backdrop/shading_ltr.png
+resources/gfx/backdrop/water_blood.png
+resources/gfx/backdrop/water_dank.png
+resources/gfx/backdrop/water_fire.png
 resources/gfx/bosses/afterbirth/boss_078_bluebaby_hush.png
 resources/gfx/bosses/afterbirth/boss_085_dangle.png
 resources/gfx/bosses/afterbirth/boss_hush.png
@@ -1051,6 +1054,7 @@ resources/gfx/characters/costumes/character_010_lazarus2_white.png
 resources/gfx/characters/costumes/character_012_thelost.png
 resources/gfx/characters/costumes/character_013_blackjudas.png
 resources/gfx/characters/costumes/character_014_lilith.png
+resources/gfx/characters/costumes/character_015_keeper.png
 resources/gfx/characters/costumes/costume_350_toxicshock.png
 resources/gfx/characters/costumes/costume_353_bomberboy.png
 resources/gfx/characters/costumes/costume_354_crackerjacks.png
@@ -1621,6 +1625,7 @@ resources/gfx/grid/props_10_cathedral.png
 resources/gfx/grid/props_11_chest.png
 resources/gfx/grid/props_11_the chest.anm2
 resources/gfx/grid/props_12_greed.anm2
+resources/gfx/grid/props_12_greed.png
 resources/gfx/grid/rocks_bluewomb.png
 resources/gfx/grid/rocks_burningbasement.png
 resources/gfx/grid/rocks_drownedcaves.png
@@ -2017,7 +2022,9 @@ resources/gfx/ui/boss/playername_09_eden.png
 resources/gfx/ui/boss/playername_10_lazarus.png
 resources/gfx/ui/boss/playername_12_thelost.png
 resources/gfx/ui/boss/playername_13_lilith.png
+resources/gfx/ui/boss/playername_14_thekeeper.png
 resources/gfx/ui/boss/playerportrait_13_lilith.png
+resources/gfx/ui/boss/playerportrait_14_keeper.png
 resources/gfx/ui/boss/playerspot_13_burning_basement.png
 resources/gfx/ui/boss/playerspot_14_drowned_caves.png
 resources/gfx/ui/boss/playerspot_15_dank_depths.png
