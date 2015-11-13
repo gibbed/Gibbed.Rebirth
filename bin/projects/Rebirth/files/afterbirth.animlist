@@ -1,4 +1,4 @@
-; 1017/1018 (99%)
+; 1020/1021 (99%)
 resources/gfx/001.000_player.anm2
 resources/gfx/001.001_player2.anm2
 resources/gfx/002.000_tear.anm2
@@ -864,6 +864,9 @@ resources/gfx/characters/character_005_evehead.anm2
 resources/gfx/characters/character_007_samsonhead.anm2
 resources/gfx/characters/character_008_azazelhead.anm2
 resources/gfx/characters/character_009_edenhair1.anm2
+resources/gfx/characters/character_lazarushair1.anm2
+resources/gfx/characters/character_lazarushair2.anm2
+resources/gfx/characters/character_lilithhair.anm2
 resources/gfx/characters/n001_puberty.anm2
 resources/gfx/characters/n002_i found pills.anm2
 resources/gfx/characters/n005_guppy.anm2

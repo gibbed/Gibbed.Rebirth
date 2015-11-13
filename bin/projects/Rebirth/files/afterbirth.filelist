@@ -1,4 +1,4 @@
-; 2575/2599 (99%)
+; 2589/2613 (99%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -995,6 +995,9 @@ resources/gfx/characters/character_005_evehead.anm2
 resources/gfx/characters/character_007_samsonhead.anm2
 resources/gfx/characters/character_008_azazelhead.anm2
 resources/gfx/characters/character_009_edenhair1.anm2
+resources/gfx/characters/character_lazarushair1.anm2
+resources/gfx/characters/character_lazarushair2.anm2
+resources/gfx/characters/character_lilithhair.anm2
 resources/gfx/characters/costumes/character_001_isaac.png
 resources/gfx/characters/costumes/character_001_isaac_black.png
 resources/gfx/characters/costumes/character_001_isaac_blue.png
@@ -1045,6 +1048,8 @@ resources/gfx/characters/costumes/character_009_lazarus_blue.png
 resources/gfx/characters/costumes/character_009_lazarus_green.png
 resources/gfx/characters/costumes/character_009_lazarus_red.png
 resources/gfx/characters/costumes/character_009_lazarus_white.png
+resources/gfx/characters/costumes/character_009_lazarushair.png
+resources/gfx/characters/costumes/character_009_lazarushair2.png
 resources/gfx/characters/costumes/character_010_lazarus2.png
 resources/gfx/characters/costumes/character_010_lazarus2_black.png
 resources/gfx/characters/costumes/character_010_lazarus2_blue.png
@@ -1054,6 +1059,7 @@ resources/gfx/characters/costumes/character_010_lazarus2_white.png
 resources/gfx/characters/costumes/character_012_thelost.png
 resources/gfx/characters/costumes/character_013_blackjudas.png
 resources/gfx/characters/costumes/character_014_lilith.png
+resources/gfx/characters/costumes/character_014_lilithhair.png
 resources/gfx/characters/costumes/character_015_keeper.png
 resources/gfx/characters/costumes/costume_350_toxicshock.png
 resources/gfx/characters/costumes/costume_353_bomberboy.png
@@ -1734,6 +1740,7 @@ resources/gfx/items/collectibles/collectibles_437_d7.png
 resources/gfx/items/collectibles/collectibles_438_binky.png
 resources/gfx/items/collectibles/collectibles_439_momsbox.png
 resources/gfx/items/collectibles/collectibles_440_kidneystone.png
+resources/gfx/items/collectibles/collectibles_441_megasatansbreath.png
 resources/gfx/items/levelitem_001_itemaltar.png
 resources/gfx/items/pick ups/grabbag.png
 resources/gfx/items/pick ups/pickup_001_heart.png
@@ -1772,6 +1779,7 @@ resources/gfx/items/trinkets/trinket_079_endlessnameless.png
 resources/gfx/items/trinkets/trinket_080_blackfeather.png
 resources/gfx/items/trinkets/trinket_081_blindrage.png
 resources/gfx/items/trinkets/trinket_082_goldenhorseshoe.png
+resources/gfx/items/trinkets/trinket_083_storekey.png
 resources/gfx/items/trinkets/trinket_086_lillarva.png
 resources/gfx/items/trinkets/trinket_087_momslocket.png
 resources/gfx/items/trinkets/trinket_088_no.png
@@ -1908,6 +1916,11 @@ resources/gfx/ui/achievement/achievement_242_luckypenny.png
 resources/gfx/ui/achievement/achievement_243_specialhangingshopkeepers.png
 resources/gfx/ui/achievement/achievement_244_woodennickel.png
 resources/gfx/ui/achievement/achievement_245_cainpaperclip.png
+resources/gfx/ui/achievement/achievement_246_everythingisterrible2.png
+resources/gfx/ui/achievement/achievement_247_specialshopkeepers.png
+resources/gfx/ui/achievement/achievement_248_everazorblade.png
+resources/gfx/ui/achievement/achievement_249_storekey.png
+resources/gfx/ui/achievement/achievement_250_lostholymantle.png
 resources/gfx/ui/achievement/achievement_252_hivebaby.png
 resources/gfx/ui/achievement/achievement_253_buddybaby.png
 resources/gfx/ui/achievement/achievement_254_colorfulbaby.png
@@ -1931,6 +1944,7 @@ resources/gfx/ui/achievement/achievement_challenge28.png
 resources/gfx/ui/achievement/achievement_challenge29.png
 resources/gfx/ui/achievement/achievement_challenge30.png
 resources/gfx/ui/achievement/achievement_generosity.png
+resources/gfx/ui/achievement/achievement_megablast.png
 resources/gfx/ui/achievement/achievements.anm2
 resources/gfx/ui/baby_select.png
 resources/gfx/ui/babyselect.anm2
