@@ -1,4 +1,4 @@
-; 2589/2613 (99%)
+; 2607/2631 (99%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -1209,6 +1209,7 @@ resources/gfx/characters/player2/035_baby_green.png
 resources/gfx/characters/player2/036_baby_lil.png
 resources/gfx/characters/player2/037_baby_big.png
 resources/gfx/characters/player2/038_baby_brown.png
+resources/gfx/characters/player2/039_baby_noose.png
 resources/gfx/characters/player2/040_baby_hive.png
 resources/gfx/characters/player2/041_baby_buddy.png
 resources/gfx/characters/player2/042_baby_colorful.png
@@ -1221,7 +1222,9 @@ resources/gfx/characters/player2/048_baby_dark.png
 resources/gfx/characters/player2/049_baby_picky.png
 resources/gfx/characters/player2/050_baby_revenge.png
 resources/gfx/characters/player2/051_baby_belial.png
+resources/gfx/characters/player2/052_baby_sale.png
 resources/gfx/characters/player2/053_baby_goatbaby.png
+resources/gfx/characters/player2/054_baby_super greedbaby.png
 resources/gfx/characters/player2/203_baby_steven.png
 resources/gfx/characters/player2/204_baby_monocle.png
 resources/gfx/characters/player2/205_baby_belial.png
@@ -1716,6 +1719,7 @@ resources/gfx/items/collectibles/collectibles_412_cambionconception.png
 resources/gfx/items/collectibles/collectibles_413_immaculateconception.png
 resources/gfx/items/collectibles/collectibles_414_moreoptions.png
 resources/gfx/items/collectibles/collectibles_415_crownoflight.png
+resources/gfx/items/collectibles/collectibles_416_deeppockets.png
 resources/gfx/items/collectibles/collectibles_417_succubus.png
 resources/gfx/items/collectibles/collectibles_418_fruitcake.png
 resources/gfx/items/collectibles/collectibles_419_teleport20.png
@@ -1780,6 +1784,8 @@ resources/gfx/items/trinkets/trinket_080_blackfeather.png
 resources/gfx/items/trinkets/trinket_081_blindrage.png
 resources/gfx/items/trinkets/trinket_082_goldenhorseshoe.png
 resources/gfx/items/trinkets/trinket_083_storekey.png
+resources/gfx/items/trinkets/trinket_084_ribofgreed.png
+resources/gfx/items/trinkets/trinket_085_karma.png
 resources/gfx/items/trinkets/trinket_086_lillarva.png
 resources/gfx/items/trinkets/trinket_087_momslocket.png
 resources/gfx/items/trinkets/trinket_088_no.png
@@ -1871,6 +1877,7 @@ resources/gfx/ui/achievement/achievement_187_emptyvessel.png
 resources/gfx/ui/achievement/achievement_188_edensblessing.png
 resources/gfx/ui/achievement/achievement_189_swornprotector.png
 resources/gfx/ui/achievement/achievement_190_incubus.png
+resources/gfx/ui/achievement/achievement_191_apenny.png
 resources/gfx/ui/achievement/achievement_192_lilchest.png
 resources/gfx/ui/achievement/achievement_193_censer.png
 resources/gfx/ui/achievement/achievement_194_evileye.png
@@ -1883,6 +1890,7 @@ resources/gfx/ui/achievement/achievement_200_keybum.png
 resources/gfx/ui/achievement/achievement_201_gbbug.png
 resources/gfx/ui/achievement/achievement_202_zodiac.png
 resources/gfx/ui/achievement/achievement_203_boxoffriends.png
+resources/gfx/ui/achievement/achievement_204_ribofgreed.png
 resources/gfx/ui/achievement/achievement_205_crybaby.png
 resources/gfx/ui/achievement/achievement_206_redbaby.png
 resources/gfx/ui/achievement/achievement_207_greenbaby.png
@@ -1895,6 +1903,7 @@ resources/gfx/ui/achievement/achievement_213_longbaby.png
 resources/gfx/ui/achievement/achievement_214_yellowbaby.png
 resources/gfx/ui/achievement/achievement_215_whitebaby.png
 resources/gfx/ui/achievement/achievement_216_bigbaby.png
+resources/gfx/ui/achievement/achievement_217_noosebaby.png
 resources/gfx/ui/achievement/achievement_218_runebag.png
 resources/gfx/ui/achievement/achievement_219_cambionconception.png
 resources/gfx/ui/achievement/achievement_220_serpentskiss.png
@@ -1912,6 +1921,13 @@ resources/gfx/ui/achievement/achievement_231_d8.png
 resources/gfx/ui/achievement/achievement_232_blankrune.png
 resources/gfx/ui/achievement/achievement_233_kidneystone.png
 resources/gfx/ui/achievement/achievement_234_bluewomb.png
+resources/gfx/ui/achievement/achievement_235_1000percent.png
+resources/gfx/ui/achievement/achievement_236_keeperwoodennickel.png
+resources/gfx/ui/achievement/achievement_237_keeperstorekey.png
+resources/gfx/ui/achievement/achievement_238_deeppockets.png
+resources/gfx/ui/achievement/achievement_239_karma.png
+resources/gfx/ui/achievement/achievement_240_stickynickels.png
+resources/gfx/ui/achievement/achievement_241_supergreedbaby.png
 resources/gfx/ui/achievement/achievement_242_luckypenny.png
 resources/gfx/ui/achievement/achievement_243_specialhangingshopkeepers.png
 resources/gfx/ui/achievement/achievement_244_woodennickel.png
@@ -1921,6 +1937,7 @@ resources/gfx/ui/achievement/achievement_247_specialshopkeepers.png
 resources/gfx/ui/achievement/achievement_248_everazorblade.png
 resources/gfx/ui/achievement/achievement_249_storekey.png
 resources/gfx/ui/achievement/achievement_250_lostholymantle.png
+resources/gfx/ui/achievement/achievement_251_keeper.png
 resources/gfx/ui/achievement/achievement_252_hivebaby.png
 resources/gfx/ui/achievement/achievement_253_buddybaby.png
 resources/gfx/ui/achievement/achievement_254_colorfulbaby.png
@@ -1933,6 +1950,7 @@ resources/gfx/ui/achievement/achievement_260_darkbaby.png
 resources/gfx/ui/achievement/achievement_261_pickybaby.png
 resources/gfx/ui/achievement/achievement_262_revengebaby.png
 resources/gfx/ui/achievement/achievement_263_belialbaby.png
+resources/gfx/ui/achievement/achievement_264_salebaby.png
 resources/gfx/ui/achievement/achievement_challenge21.png
 resources/gfx/ui/achievement/achievement_challenge22.png
 resources/gfx/ui/achievement/achievement_challenge23.png
