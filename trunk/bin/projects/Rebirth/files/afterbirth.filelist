@@ -1,4 +1,4 @@
-; 2607/2631 (99%)
+; 2617/2641 (99%)
 resources/achievements.xml
 resources/ambush.xml
 resources/animations.b
@@ -1061,11 +1061,21 @@ resources/gfx/characters/costumes/character_013_blackjudas.png
 resources/gfx/characters/costumes/character_014_lilith.png
 resources/gfx/characters/costumes/character_014_lilithhair.png
 resources/gfx/characters/costumes/character_015_keeper.png
+resources/gfx/characters/costumes/costume_129_bucket of lard_black.png
+resources/gfx/characters/costumes/costume_129_bucket of lard_blue.png
+resources/gfx/characters/costumes/costume_129_bucket of lard_green.png
+resources/gfx/characters/costumes/costume_129_bucket of lard_red.png
+resources/gfx/characters/costumes/costume_129_bucket of lard_white.png
 resources/gfx/characters/costumes/costume_350_toxicshock.png
 resources/gfx/characters/costumes/costume_353_bomberboy.png
 resources/gfx/characters/costumes/costume_354_crackerjacks.png
 resources/gfx/characters/costumes/costume_355_momspearls.png
 resources/gfx/characters/costumes/costume_356_carbattery.png
+resources/gfx/characters/costumes/costume_356_carbattery_black.png
+resources/gfx/characters/costumes/costume_356_carbattery_blue.png
+resources/gfx/characters/costumes/costume_356_carbattery_green.png
+resources/gfx/characters/costumes/costume_356_carbattery_red.png
+resources/gfx/characters/costumes/costume_356_carbattery_white.png
 resources/gfx/characters/costumes/costume_358_thewiz.png
 resources/gfx/characters/costumes/costume_358_thewiz_black.png
 resources/gfx/characters/costumes/costume_358_thewiz_blue.png
