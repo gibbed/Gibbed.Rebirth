@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -30,9 +30,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RebuildFileLists")]
 [assembly: AssemblyDescription("http://gib.me/")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Gibbed")]
 [assembly: AssemblyProduct("RebuildFileLists")]
-[assembly: AssemblyCopyright("Copyright © Gibbed 2015")]
+[assembly: AssemblyCopyright("Copyright © Gibbed 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
