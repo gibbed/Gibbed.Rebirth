@@ -18,7 +18,10 @@
 x64/
 x86/
 bld/
-[Bb]in/
+[Bb]in/*.exe
+[Bb]in/*.dll
+[Bb]in/*.manifest
+projects/*/[Bb]in/
 [Oo]bj/
 [Ll]og/
 
