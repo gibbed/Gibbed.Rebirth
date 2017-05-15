@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CE7A5570-A245-4B11-AFCB-A4B42E93CFBC}</ProjectGuid>
+    <ProjectGuid>{E3F7BBD8-27E8-4F2F-A62E-2C8B575DF8FD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RebuildAnimationLists</RootNamespace>
-    <AssemblyName>RebuildAnimationLists</AssemblyName>
+    <RootNamespace>Gibbed.Rebirth.ConvertStage</RootNamespace>
+    <AssemblyName>Gibbed.Rebirth.ConvertStage</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,26 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Breakdown.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">
-      <Project>{047857BA-DAA3-4CA7-AFB8-A1B082B28C6A}</Project>
-      <Name>Gibbed.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gibbed.ProjectData\Gibbed.ProjectData.csproj">
-      <Project>{F27A289E-3376-4653-89F3-D19C1ECABF33}</Project>
-      <Name>Gibbed.ProjectData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gibbed.Rebirth.FileFormats\Gibbed.Rebirth.FileFormats.csproj">
       <Project>{B0004480-2A5E-4805-B14B-12D368A189AC}</Project>
       <Name>Gibbed.Rebirth.FileFormats</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gibbed.Rebirth.Unpack\Gibbed.Rebirth.Unpack.csproj">
-      <Project>{2E47152B-1F90-4146-8ECC-E67EBA11CA3D}</Project>
-      <Name>Gibbed.Rebirth.Unpack</Name>
     </ProjectReference>
     <ProjectReference Include="..\NDesk.Options\NDesk.Options.csproj">
       <Project>{C98A6CD6-9422-4B35-8B7A-F520D75534D1}</Project>
