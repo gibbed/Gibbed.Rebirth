@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -109,16 +109,30 @@ namespace Gibbed.Rebirth.Unpack
 
             using (var input = File.OpenRead(inputPath))
             {
-                var archive = new ArchiveFile();
+                IArchiveFile archive;
+
+                if (ArchiveFile.IsValid(input) == true)
+                {
+                    archive = new ArchiveFile();
+                }
+                else if (Antibirth.FileFormats.ArchiveFile.IsValid(input) == true)
+                {
+                    archive = new Antibirth.FileFormats.ArchiveFile();
+                }
+                else
+                {
+                    throw new NotSupportedException();
+                }
+
                 archive.Deserialize(input);
 
                 var hashes = manager.LoadListsFileNames();
 
                 if (extractFiles == true)
                 {
-                    var entries = archive.Entries.OrderBy(e => e.Offset).ToArray();
+                    var sortedEntries = archive.Entries.OrderBy(e => e.Offset).ToArray();
 
-                    if (entries.Length > 0)
+                    if (sortedEntries.Length > 0)
                     {
                         if (verbose == true)
                         {
@@ -126,24 +140,24 @@ namespace Gibbed.Rebirth.Unpack
                         }
 
                         long current = 0;
-                        long total = entries.Length;
+                        long total = sortedEntries.Length;
                         var padding = total.ToString(CultureInfo.InvariantCulture).Length;
 
                         var duplicates = new Dictionary<ulong, int>();
 
-                        foreach (var entry in entries)
+                        foreach (var entry in sortedEntries)
                         {
                             current++;
 
                             string entryName;
-                            if (hashes.Contains(entry.CombinedNameHash) == false)
+                            if (hashes.Contains(entry.NameHash) == false)
                             {
                                 if (extractUnknowns == false)
                                 {
                                     continue;
                                 }
 
-                                entryName = entry.CombinedNameHash.ToString("X16");
+                                entryName = entry.NameHash.ToString("X16");
                                 entryName = Path.Combine("__UNKNOWN", entryName + ".unknown");
                             }
                             else
@@ -153,13 +167,13 @@ namespace Gibbed.Rebirth.Unpack
                                     continue;
                                 }
 
-                                entryName = hashes[entry.CombinedNameHash];
+                                entryName = hashes[entry.NameHash];
                                 entryName = FilterEntryName(entryName);
                             }
 
-                            if (duplicates.ContainsKey(entry.CombinedNameHash) == true)
+                            if (duplicates.ContainsKey(entry.NameHash) == true)
                             {
-                                var number = duplicates[entry.CombinedNameHash]++;
+                                var number = duplicates[entry.NameHash]++;
                                 var e = Path.GetExtension(entryName);
                                 var nn =
                                     Path.ChangeExtension(
@@ -170,7 +184,7 @@ namespace Gibbed.Rebirth.Unpack
                             }
                             else
                             {
-                                duplicates[entry.CombinedNameHash] = 0;
+                                duplicates[entry.NameHash] = 0;
                             }
 
                             if (filter != null &&
@@ -202,13 +216,9 @@ namespace Gibbed.Rebirth.Unpack
                             }
 
                             input.Seek(entry.Offset, SeekOrigin.Begin);
-                            using (var data = ArchiveCompression.ReadEntry(
-                                input,
-                                entry,
-                                archive.CompressionMode,
-                                archive.Endian))
+                            using (var data = entry.Read(input, archive))
                             {
-                                if (validateChecksums == true)
+                                if (archive.HasChecksums == true && validateChecksums == true)
                                 {
                                     var bytes = data.ToArray();
                                     var checksum = ArchiveFile.ComputeChecksum(bytes, 0, bytes.Length);

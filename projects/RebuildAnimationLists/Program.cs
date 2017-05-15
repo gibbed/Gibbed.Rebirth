@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -155,24 +155,33 @@ namespace RebuildAnimationLists
 
                 var hashes = new List<uint>();
 
-                var archive = new ArchiveFile();
                 using (var input = File.OpenRead(archivePath))
                 {
+                    IArchiveFile archive;
+
+                    if (ArchiveFile.IsValid(input) == true)
+                    {
+                        archive = new ArchiveFile();
+                    }
+                    else if (Gibbed.Antibirth.FileFormats.ArchiveFile.IsValid(input) == true)
+                    {
+                        archive = new Gibbed.Antibirth.FileFormats.ArchiveFile();
+                    }
+                    else
+                    {
+                        throw new NotSupportedException();
+                    }
+
                     archive.Deserialize(input);
 
-                    var entry = archive.Entries.FirstOrDefault(e => e.CombinedNameHash == nameHash);
-                    if (entry == default(ArchiveFile.Entry))
+                    var entry = archive.Entries.FirstOrDefault(e => e.NameHash == nameHash);
+                    if (entry == null)
                     {
                         continue;
                     }
 
                     input.Seek(entry.Offset, SeekOrigin.Begin);
-
-                    using (var data = Gibbed.Rebirth.Unpack.ArchiveCompression.ReadEntry(
-                        input,
-                        entry,
-                        archive.CompressionMode,
-                        archive.Endian))
+                    using (var data = entry.Read(input, archive))
                     {
                         var cache = new AnimationCacheBinaryFile();
                         cache.Deserialize(data);
@@ -229,7 +238,7 @@ namespace RebuildAnimationLists
             }
         }
 
-        private static void Bogocrypt1(ArchiveFile.Entry entry, Stream input, Stream output)
+        private static void Bogocrypt1(ArchiveEntry entry, Stream input, Stream output)
         {
             var key = entry.BogocryptKey;
             long remaining = entry.Length;

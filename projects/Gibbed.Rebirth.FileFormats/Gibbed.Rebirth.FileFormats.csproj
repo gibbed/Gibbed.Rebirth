@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,7 +55,10 @@
     <Compile Include="Animation\RootAnimation.cs" />
     <Compile Include="Animation\Trigger.cs" />
     <Compile Include="ArchiveCompressionMode.cs" />
+    <Compile Include="ArchiveEntry.cs" />
     <Compile Include="ArchiveFile.cs" />
+    <Compile Include="IArchiveEntry.cs" />
+    <Compile Include="IArchiveFile.cs" />
     <Compile Include="ISAAC.cs" />
     <Compile Include="LZW.cs" />
     <Compile Include="BitReader.cs" />
@@ -69,6 +76,9 @@
       <Project>{F27A289E-3376-4653-89F3-D19C1ECABF33}</Project>
       <Name>Gibbed.ProjectData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

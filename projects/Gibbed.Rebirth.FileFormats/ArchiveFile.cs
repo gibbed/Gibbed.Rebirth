@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -28,24 +28,36 @@ using Gibbed.IO;
 
 namespace Gibbed.Rebirth.FileFormats
 {
-    public class ArchiveFile
+    public class ArchiveFile : IArchiveFile
     {
+        private static readonly byte[] _Signature; 
         private static readonly byte[] _Bogocrypt2Table;
 
         static ArchiveFile()
         {
+            _Signature = new byte[] { 0x41, 0x52, 0x43, 0x48, 0x30, 0x30, 0x30 };
             _Bogocrypt2Table = GetBogocrypt2Table();
         }
 
-        private readonly byte[] _Signature = { 0x41, 0x52, 0x43, 0x48, 0x30, 0x30, 0x30, };
-
+        private long _BasePosition;
         private Endian _Endian;
         private ArchiveCompressionMode _CompressionMode;
-        private readonly List<Entry> _Entries;
+        private readonly List<ArchiveEntry> _Entries;
 
         public ArchiveFile()
         {
-            this._Entries = new List<Entry>();
+            this._Entries = new List<ArchiveEntry>();
+        }
+
+        public bool HasChecksums
+        {
+            get { return true; }
+        }
+
+        public long BasePosition
+        {
+            get { return this._BasePosition; }
+            set { this._BasePosition = value; }
         }
 
         public Endian Endian
@@ -60,9 +72,17 @@ namespace Gibbed.Rebirth.FileFormats
             set { this._CompressionMode = value; }
         }
 
-        public List<Entry> Entries
+        public IEnumerable<IArchiveEntry> Entries
         {
             get { return this._Entries; }
+        }
+
+        public static bool IsValid(Stream input)
+        {
+            var basePosition = input.Position;
+            var magic = input.ReadBytes(7);
+            input.Position = basePosition;
+            return magic.SequenceEqual(_Signature);
         }
 
         public void Serialize(Stream output)
@@ -86,112 +106,26 @@ namespace Gibbed.Rebirth.FileFormats
             var indexTableOffset = input.ReadValueU32(endian);
             var indexTableCount = input.ReadValueU16(endian);
 
+            this._BasePosition = basePosition;
             this._Endian = endian;
             this._CompressionMode = compressionMode;
             this._Entries.Clear();
 
             if (indexTableCount > 0)
             {
-                var entries = new Entry[indexTableCount];
+                var entries = new ArchiveEntry[indexTableCount];
                 input.Seek(basePosition + indexTableOffset, SeekOrigin.Begin);
                 for (int i = 0; i < indexTableCount; i++)
                 {
-                    Entry entry;
-                    entry.NameHashA = input.ReadValueU32(endian);
-                    entry.NameHashB = input.ReadValueU32(endian);
+                    var entry = new ArchiveEntry();
+                    entry.NameHashPartA = input.ReadValueU32(endian);
+                    entry.NameHashPartB = input.ReadValueU32(endian);
                     entry.Offset = input.ReadValueU32(endian);
                     entry.Length = input.ReadValueU32(endian);
                     entry.Checksum = input.ReadValueU32(endian);
                     entries[i] = entry;
                 }
                 this._Entries.AddRange(entries);
-            }
-        }
-
-        public struct Entry : IEquatable<Entry>
-        {
-            public uint NameHashA;
-            public uint NameHashB;
-            public uint Offset;
-            public uint Length;
-            public uint Checksum;
-
-            public ulong CombinedNameHash
-            {
-                get
-                {
-                    // ReSharper disable RedundantCast
-                    return ((ulong)this.NameHashA) | ((ulong)this.NameHashB) << 32;
-                    // ReSharper restore RedundantCast
-                }
-            }
-
-            public uint BogocryptKey
-            {
-                get { return (this.NameHashB ^ 0xF9524287u) | 1u; }
-            }
-
-            // ReSharper disable InconsistentNaming
-            public ISAAC GetISAAC()
-                // ReSharper restore InconsistentNaming
-            {
-                var seed = (ulong)this.NameHashB;
-                seed = (seed << 32) | (uint)(seed ^ ((seed ^ (seed << 15)) << 8) ^ (seed >> 9));
-
-                var data = new int[256];
-                for (int i = 0; i < data.Length; i++)
-                {
-                    var part = (uint)((seed >> 27) ^ (seed >> 45));
-                    var shift = (int)(seed >> 59);
-
-                    data[i] = (int)((part >> shift) | (part << ((-shift) & 31)));
-
-                    seed *= 6364136223846793005L;
-                    seed += 127;
-                }
-
-                return new ISAAC(data);
-            }
-
-            public bool Equals(Entry other)
-            {
-                return this.NameHashA == other.NameHashA &&
-                       this.NameHashB == other.NameHashB &&
-                       this.Offset == other.Offset &&
-                       this.Length == other.Length &&
-                       this.Checksum == other.Checksum;
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (ReferenceEquals(null, obj) == true)
-                {
-                    return false;
-                }
-                return obj is Entry && Equals((Entry)obj);
-            }
-
-            public override int GetHashCode()
-            {
-                unchecked
-                {
-                    int hashCode = (int)this.NameHashA;
-                    hashCode = (hashCode * 397) ^ (int)this.NameHashB;
-                    hashCode = (hashCode * 397) ^ (int)this.Offset;
-                    hashCode = (hashCode * 397) ^ (int)this.Length;
-                    hashCode = (hashCode * 397) ^ (int)this.Checksum;
-                    return hashCode;
-                }
-            }
-
-            public static bool operator ==(Entry left, Entry right)
-            {
-                return left.Equals(right) == true;
-            }
-
-            public static bool operator !=(Entry left, Entry right)
-            {
-                return left.Equals(right) == false;
             }
         }
 

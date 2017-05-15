@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -152,23 +152,37 @@ namespace RebuildFileLists
                     archivePath += ".bak";
                 }
 
-                var archive = new ArchiveFile();
                 using (var input = File.OpenRead(archivePath))
                 {
+                    IArchiveFile archive;
+
+                    if (ArchiveFile.IsValid(input) == true)
+                    {
+                        archive = new ArchiveFile();
+                    }
+                    else if (Gibbed.Antibirth.FileFormats.ArchiveFile.IsValid(input) == true)
+                    {
+                        archive = new Gibbed.Antibirth.FileFormats.ArchiveFile();
+                    }
+                    else
+                    {
+                        throw new NotSupportedException();
+                    }
+
                     archive.Deserialize(input);
-                }
 
-                knownHashes = manager.LoadListsFileNames();
-                if (knownHashes == null)
-                {
-                    throw new InvalidOperationException();
-                }
+                    knownHashes = manager.LoadListsFileNames();
+                    if (knownHashes == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
 
-                HandleEntries(archive.Entries.Select(e => e.CombinedNameHash).Distinct(),
-                              knownHashes,
-                              tracking,
-                              breakdown,
-                              outputPath);
+                    HandleEntries(archive.Entries.Select(e => e.NameHash).Distinct(),
+                                  knownHashes,
+                                  tracking,
+                                  breakdown,
+                                  outputPath);
+                }
             }
 
             using (var output = new StreamWriter(Path.Combine(Path.Combine(listsPath, "files"), "status.txt")))
