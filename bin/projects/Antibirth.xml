@@ -1,5 +1,5 @@
 <project>
-	<name>Rebirth</name>
+	<name>Antibirth</name>
 	<dependencies>
 		<dependency>Shared</dependency>
 	</dependencies>
