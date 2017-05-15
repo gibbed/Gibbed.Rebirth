@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/d05eyc7i5drvcp7j?svg=true)](https://ci.appveyor.com/project/gibbed/gibbed-rebirth)
